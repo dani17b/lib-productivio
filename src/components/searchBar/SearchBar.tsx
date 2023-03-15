@@ -4,6 +4,10 @@ import { GoSearch } from 'react-icons/go';
 import { MdKeyboardVoice } from 'react-icons/md';
 
 interface SearchBarProps {
+  /**
+   *
+   * Function to search for input
+   */
   onSearch: (searchTerm: string) => void;
 }
 
