@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+
+<Meta 
+    title="Introduction/Style/Variables"/>
+
+# Style variables
+These global variables make it easy to update various design elements throughout the application. By centralizing these values, it's easier to make design changes without having to manually update each component.
+## How to use them:
+Just import the **/style/vars.scss** file into your .scss file by using:
+```
+@import '../../relative/path/to/vars.scss'
+```
+
+## List of variables:
+
+### Colors
+
+| Name             | Description                                                 | Default Value |
+| ---------------- | ----------------------------------------------------------- | ------------- |
+| `$primary-color` | Main color used for the application              | `#1a3891`     |
+| `$secondary-color` | Complementary color used for the application  | `#8394c4`     |
+
+### Breakpoints
+
+| Name                 | Description                                                         | Default Value |
+| -------------------- | ------------------------------------------------------------------- | ------------- |
+| `$mobile-breakpoint` | Width at which the application switches to a mobile layout | `575.98px`    |
+
+### Font
+
+| Name           | Description                                                                      | Default Value |
+| -------------- | -------------------------------------------------------------------------------- | ------------- |
+| `$default-font` | Default font used throughout the application                          | `'Inter', sans-serif` |
+
+### Other
+
+| Name                    | Description                                                    | Default Value |
+| ----------------------- | -------------------------------------------------------------- | ------------- |
+| `$default-padding`      | Default padding used on various elements throughout the application | `20px`        |
+| `$default-shadow`       | Shadow effect used on various elements throughout the application   | `5px 5px 7px rgba(0, 0, 0, 0.064), 2px 2px 3px rgba(0, 0, 0, 0.064)` |
+| `$default-border-radius` | Rounded corner effect used on various elements throughout the application | `6px`        |
