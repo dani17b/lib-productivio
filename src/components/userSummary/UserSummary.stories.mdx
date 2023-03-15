@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { UserSummary } from './UserSummary';
+
+<Meta title="Components/Content/UserSummary" component={UserSummary} />
+
+# UserSummary
+
+UserSummary placed in the user profile. It contains - The user's profile picture - User's username - User's current missions/tasks - User's level - User's contacts - User's total score/points
+
+<Props of={UserSummary} />
+
+export const Template = (args) => (
+  (
+    <LevelProps
+      username={args.username}
+      totalPoints={args.totalPoints}
+      level={args.level}
+    />
+  ),
+  (<ContactsNumberProps contactsNumber={args.contactsNumber} />),
+  (<CurrentTasksProps currentTasks={args.currentTasks} />)
+);
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+    args={{
+      username="UserName",
+      totalPoints="200",
+      level="1",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
