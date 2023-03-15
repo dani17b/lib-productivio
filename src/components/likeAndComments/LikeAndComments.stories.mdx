@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { LikeAndComments } from './LikeAndComments';
+
+<Meta 
+    title="Components/Content/LikeAndComments" 
+    component={LikeAndComments}
+/>
+
+# LikeAndComments
+LikeAndComments component.
+
+<Props of={LikeAndComments} />
+
+
+export const Template = (args) => <LikeAndComments label={args.label} showAny={args.showAny}/>;
+
+## Basic2
+<Canvas>
+  <Story 
+    name="Basic2"
+    args={{
+        label : 'Label likeAndComments'
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic2" />
+
+
