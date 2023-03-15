@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, } from '@storybook/addon-docs';
+import { Header } from './Header';
+
+<Meta 
+    title="Components/Content/Header" 
+    component={Header}
+/>
+
+export const Template = (args) => <Header label={args.label}/>;
+
+<Canvas>
+  <Story 
+    name="Basic"
+   >
+        {Template.bind({})}
+  </Story>
+</Canvas>
+
+...........................................................................................................................................................
+
+
+# Header
+This component is the header that is common to all web screens. At the moment it does not have functionalities, it is only visual
+
+
+
+
+
+
+
