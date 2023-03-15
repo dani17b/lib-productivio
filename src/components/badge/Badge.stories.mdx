@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { Badge } from './Badge';
+
+<Meta 
+    title="Components/Content/Badge" 
+    component={Badge}
+/>
+
+# Badge
+Badge component.
+
+<Props of={Badge} />
+
+
+export const Template = (args) => <Badge label={args.label} showAny={args.showAny}/>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args={{
+        label : 'Label badge'
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
+
+
+
