@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { TaskProgressBar } from './TaskProgressBar';
+
+<Meta 
+    title="Components/Content/TaskProgressBar" 
+    component={TaskProgressBar}
+/>
+
+# TaskProgressBar
+TaskProgressBar component.
+
+<Props of={TaskProgressBar} />
+
+
+export const Template = (args) => <TaskProgressBar percentage={args.percentage} time={args.time}/>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="0%"
+    args={{
+        percentage : 0,
+        time : 0
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+  <Story 
+    name="20%"
+    args={{
+        percentage : 20,
+        time : 1
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+  <Story 
+    name="50%"
+    args={{
+        percentage : 50,
+        time : 2
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
+
+
+

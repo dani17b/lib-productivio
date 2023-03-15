@@ -1,19 +1,32 @@
 import './taskProgressBar.scss';
 
 export interface TaskProgressProps {
-    percentage: number,
-    time: number
+  /**
+   * Percentage completed of the task
+   */
+  percentage: number;
+  /**
+   * Time (in hours) spent on the task
+   */
+  time: number;
 }
 
 export const TaskProgressBar = (props: TaskProgressProps) => {
-
-    const {percentage, time} = props;
+  const { percentage, time } = props;
   return (
     <div className="progress_bar_parent">
-      <div className="progress_bar_child"  style={{width : percentage + '%'}}>
-        {percentage >= 35 && <span>{percentage}% ({time}h)</span>}
+      <div className="progress_bar_child" style={{ width: percentage + '%' }}>
+        {percentage >= 35 && (
+          <span>
+            {percentage}% ({time}h)
+          </span>
+        )}
       </div>
-      {percentage < 35 && <span>{percentage}% ({time}h)</span>}
+      {percentage < 35 && (
+        <span>
+          {percentage}% ({time}h)
+        </span>
+      )}
     </div>
   );
 };
