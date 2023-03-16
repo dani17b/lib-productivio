@@ -12,15 +12,15 @@ TaskProgressBar component.
 <Props of={TaskProgressBar} />
 
 
-export const Template = (args) => <TaskProgressBar percentage={args.percentage} time={args.time}/>;
+export const Template = (args) => <TaskProgressBar percentage={args.percentage} text={args.text}/>;
 
 ## Basic
 <Canvas>
   <Story 
-    name="0%"
+    name="0% - NO TEXT"
     args={{
-        percentage : 0,
-        time : 0
+        percentage : 0
+        
     }}
    >
         {Template.bind({})}
@@ -29,7 +29,7 @@ export const Template = (args) => <TaskProgressBar percentage={args.percentage} 
     name="20%"
     args={{
         percentage : 20,
-        time : 1
+        text : "1h"
     }}
    >
         {Template.bind({})}
@@ -38,7 +38,7 @@ export const Template = (args) => <TaskProgressBar percentage={args.percentage} 
     name="50%"
     args={{
         percentage : 50,
-        time : 2
+        text : "HALFWAY THERE!"
     }}
    >
         {Template.bind({})}
