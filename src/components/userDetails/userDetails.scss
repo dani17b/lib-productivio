@@ -15,7 +15,8 @@
     }
 
     &__info{
-        width: 273px;
+        width: 265px;
+        padding-left: 15px;
         display: flex;
         flex-direction: column;
 
@@ -36,6 +37,8 @@
         }
         
         &__bottom{
+            width: fit-content;
+            color: rgb(99, 98, 97);
             height: fit-content;
             font-size: 14px;
         }
