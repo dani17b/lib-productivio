@@ -16,10 +16,8 @@ export const Template = (args) => <SearchBar onSearch={args.onSearch} />;
 <Canvas>
   <Story
     name="Basic"
-    args={{
-      onSearch: (searchTerm) => {
-        console.log(searchTerm);
-      },
+    actions={{
+      onSearch: 'onSearch',
     }}
   >
     {Template.bind({})}
