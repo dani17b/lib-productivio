@@ -4,7 +4,7 @@ $item-color: #757575;
 .search-bar {
   margin: 10px;
   background-color: $background-color;
-  width: 100%;
+  width: fit-content;
   border-radius: 6px;
   display: flex;
   align-items: center;
