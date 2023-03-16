@@ -10,15 +10,19 @@ UserSummary placed in the user profile. It contains - The user's profile picture
 <Props of={UserSummary} />
 
 export const Template = (args) => (
-  (
-    <LevelProps
-      username={args.username}
-      totalPoints={args.totalPoints}
-      level={args.level}
-    />
-  ),
-  (<ContactsNumberProps contactsNumber={args.contactsNumber} />),
-  (<CurrentTasksProps currentTasks={args.currentTasks} />)
+  <LevelProps
+    userName={args.userName}
+    totalPoints={args.totalPoints}
+    level={args.level}
+  />
+);
+
+export const Template2 = (args) => (
+  <ContactsNumberProps contactsNumber={args.contactsNumber} />
+);
+
+export const Template3 = (args) => (
+  <CurrentTasksProps currentTasks={args.currentTasks} />
 );
 
 ## Basic
@@ -27,12 +31,28 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      username="UserName",
-      totalPoints="200",
-      level="1",
+      userName: 'UserName',
+      totalPoints: 'Users total points',
+      level: 'Users current level',
     }}
   >
     {Template.bind({})}
+  </Story>
+  <Story
+    name="ContactsNumbers"
+    args={{
+      contactsNumber: 'Users total contacts',
+    }}
+  >
+    {Template2.bind({})}
+  </Story>
+  <Story
+    name="Tasks"
+    args={{
+      currentTasks: 'Users tasks/missions in progress',
+    }}
+  >
+    {Template3.bind({})}
   </Story>
 </Canvas>
 

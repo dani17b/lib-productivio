@@ -1,8 +1,37 @@
 import { useState, useEffect } from 'react';
-import { ContactsNumberProps, CurrentTasksProps, LevelProps } from './actions';
+// import { ContactsNumberProps, CurrentTasksProps, LevelProps } from './actions';
 import './userSummary.scss';
 
-export const UserSummary = () => {
+interface LevelProps {
+  /**
+   * Label that contains the user's username
+   */
+  username: string;
+  /**
+   * User's total points
+   */
+  totalPoints: number;
+  /**
+   * User's current level
+   */
+  level: number;
+}
+
+interface ContactsNumberProps {
+  /**
+   * User's total contacts
+   */
+  contactsNumber: number;
+}
+
+interface CurrentTasksProps {
+  /**
+   * Total number of current missions/tasks
+   */
+  currentTasks: number;
+}
+
+export const UserSummary = (props: any) => {
   const [level, setLevel] = useState<LevelProps>({
     //TODO Añadir lógica real
     username: 'Logica pendiente',
@@ -20,12 +49,12 @@ export const UserSummary = () => {
     updateLevel(level.totalPoints);
   }, [level.totalPoints]);
 
-  const [contacts, setContacts] = useState<ContactsNumberProps>({
+  const [contacts /*setContacts*/] = useState<ContactsNumberProps>({
     //TODO Añadir lógica real
     contactsNumber: 4,
   });
 
-  const [tasks, setTasks] = useState<CurrentTasksProps>({
+  const [tasks /*setTasks*/] = useState<CurrentTasksProps>({
     //TODO Añadir lógica real
     currentTasks: 2,
   });
