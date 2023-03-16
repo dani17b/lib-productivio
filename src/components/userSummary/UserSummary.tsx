@@ -1,16 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './userSummary.scss';
 
 interface UserSummaryProps {
+  /**
+   * Label that contains the user's username
+   */
   username: string;
+  /**
+   * User's total points
+   */
   totalPoints: number;
+  /**
+   * User's current level
+   */
   level: number;
+  /**
+   * User's total contacts
+   */
   contactsNumber: number;
+  /**
+   * Total number of current missions/tasks
+   */
   currentTasks: number;
 }
 
 export const UserSummary = (props: UserSummaryProps) => {
-  const [userProps, setUserProps] = useState<UserSummaryProps>({
+  const [userProps /*setUserProps*/] = useState<UserSummaryProps>({
     //TODO Añadir lógica real
     username: 'Logica pendiente',
     totalPoints: 2,
