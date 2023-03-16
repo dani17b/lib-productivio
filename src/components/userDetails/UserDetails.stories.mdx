@@ -5,7 +5,8 @@ import { UserDetails } from './UserDetails';
 
 # UserDetails
 
-UserDetails component.
+UserDetails component should shows the username from the user, the profile picture, a short description
+and the average score from all projects.
 
 <Props of={UserDetails} />
 
@@ -16,11 +17,11 @@ UserDetails component.
     name="Basic"
     args={{
       user: {
-        username: '',
-        description: '',
-        score: 0,
-        profileColor: '',
-        img: '',
+        username: 'Myusername',
+        description: 'This is a brief description from the user',
+        score: 4,
+        profileColor: 'yellow',
+        img: '/src/img/myPic.jpg',
       },
     }}
   >
