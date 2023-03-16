@@ -23,6 +23,7 @@ export function SearchBar(props: SearchBarProps) {
     timerRef.current = window.setTimeout(() => {
       onSearch(newSearchTerm);
     }, DELAY_TIME);
+    setSearchTerm('');
   };
 
   useEffect(() => {
