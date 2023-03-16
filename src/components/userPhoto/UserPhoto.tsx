@@ -6,7 +6,7 @@ interface UserPhotoProps {
   borderColor: string;
 }
 
-export const UserImage: React.FC<UserPhotoProps> = ({
+export const UserPhoto: React.FC<UserPhotoProps> = ({
   imageSrc,
   borderColor,
 }) => {
