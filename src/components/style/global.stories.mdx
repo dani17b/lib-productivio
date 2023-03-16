@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+
+<Meta 
+    title="Introduction/Style/Default global style"/>
+
+# Default global styles
+The `body` element is the container for all content on the webpage. The styles applied to it are:
+- Elements displayed centered and sorted vertically by default (using **display: flex**, **flex-direction: column** and **align-items: center**).
+
+- Margins and paddings set to 0 by default (Using **margin: 0** and **padding: 0**).
+
+- Font set to the default font set in vars.scss (**font-family: $default-font**).
+
+- Width set to 100% of the screen width on mobiles (**width: 100vw**, **max-width: 100vw** and **box-sizing: border-box**, this last one to prevent overflowing when using padding).
