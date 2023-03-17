@@ -1,6 +1,6 @@
 import { IoMdPersonAdd } from 'react-icons/io';
 import { IconContext } from 'react-icons';
-import 'src/components/addIcon/addIcon.scss';
+import './addIcon.scss';
 
 export interface IconProps {
   /**
