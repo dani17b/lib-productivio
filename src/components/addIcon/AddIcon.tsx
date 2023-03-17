@@ -6,18 +6,18 @@ export interface IconProps {
   /**
    * Function associated to the button
    */
-  action?: () => void;
+  onClick?: () => void;
 }
 
 export const AddIcon = (props: IconProps) => {
-  const { action } = props;
+  const { onClick } = props;
 
   return (
     <IconContext.Provider
       value={{ color: 'white', size: '20px', className: 'rounded-button' }}
     >
       <div>
-        <IoMdPersonAdd onClick={action} />
+        <IoMdPersonAdd onClick={onClick} />
       </div>
     </IconContext.Provider>
   );

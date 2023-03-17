@@ -4,7 +4,6 @@ import { AddIcon } from './AddIcon';
 
 <Meta
     title="Components/Content/AddIcon"
-    argTypes={{ onClick: { action: 'clicked' } }}
     component={AddIcon}
 />
 
@@ -13,19 +12,16 @@ AddIcon component. If you click you execute a function
 
 <Props of={AddIcon} />
 
-export const Template = (args) => <AddIcon action={args.action}/>;
+export const Template = (args) => <AddIcon onClick={args.onClick}/>;
 export const Basic = Template.bind({});
-Basic.args = {
-  action: () => console.log('Button clicked!'),
-};
 
 ## Basic
 
 <Canvas>
     <Story
     name="Basic"
-    args={{
-        action: Basic.args.action
+    actions={{
+      onSearch: 'onSearch',
     }}
     >
     {Template.bind({})}
