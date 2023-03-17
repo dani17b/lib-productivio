@@ -6,23 +6,31 @@ export interface TaskProgressProps {
    */
   percentage: number;
   /**
-   * Additional info to be displayed
+   * Additional text to be displayed on progress bar
    */
   text?: string;
 }
 
 export const TaskProgressBar = (props: TaskProgressProps) => {
-  const { percentage, text } = props;
+  const TEXT_LIMIT = 35;
+  let { percentage, text } = props;
+
+  if (percentage > 100) {
+    percentage = 100;
+  }
+  if (percentage < 0) {
+    percentage = 0;
+  }
   return (
     <div className="progress_bar_parent">
       <div className="progress_bar_child" style={{ width: percentage + '%' }}>
-        {percentage >= 35 && (
+        {percentage >= TEXT_LIMIT && (
           <span>
             {percentage}% {text}
           </span>
         )}
       </div>
-      {percentage < 35 && (
+      {percentage < TEXT_LIMIT && (
         <span>
           {percentage}% {text}
         </span>

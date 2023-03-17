@@ -1,44 +1,63 @@
 import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
 import { TaskProgressBar } from './TaskProgressBar';
 
-<Meta 
-    title="Components/Content/TaskProgressBar" 
-    component={TaskProgressBar}
-/>
+<Meta title="Components/Content/TaskProgressBar" component={TaskProgressBar} />
 
 # TaskProgressBar
+
 TaskProgressBar component.
 
 <Props of={TaskProgressBar} />
 
-
-export const Template = (args) => <TaskProgressBar percentage={args.percentage} text={args.text}/>;
+export const Template = (args) => (
+  <TaskProgressBar percentage={args.percentage} text={args.text} />
+);
 
 ## Basic
 <Canvas>
   <Story 
     name="0% - NO TEXT"
+     argTypes={{
+      percentage: 
+        { control: { type: 'number', min:0, max:100, step: 1 } } 
+    }}
+   
     args={{
         percentage : 0
-        
     }}
+     
+  
    >
         {Template.bind({})}
   </Story>
   <Story 
     name="20%"
+    argTypes={{
+      percentage: 
+        { control: { type: 'number', min:0, max:100, step: 1 } } 
+    }}
     args={{
         percentage : 20,
         text : "1h"
+    }}
+    controls={{
+        percentage: { type: 'range', min: 0, max: 100 }
     }}
    >
         {Template.bind({})}
   </Story>
   <Story 
     name="50%"
+    argTypes={{
+      percentage: 
+        { control: { type: 'number', min:0, max:100, step: 1 } } 
+    }}
     args={{
         percentage : 50,
         text : "HALFWAY THERE!"
+    }}
+    controls={{
+        percentage: { type: 'range', min: 0, max: 100 }
     }}
    >
         {Template.bind({})}
@@ -46,6 +65,3 @@ export const Template = (args) => <TaskProgressBar percentage={args.percentage} 
 </Canvas>
 
 <ArgsTable story="Basic" />
-
-
-
