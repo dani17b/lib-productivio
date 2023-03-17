@@ -30,34 +30,6 @@ export const Template = (args) => (
    >
         {Template.bind({})}
   </Story>
-  <Story 
-    name="20%"
-    argTypes={{
-      percentage: 
-        { control: { type: 'number', min:0, max:100, step: 1 } } 
-    }}
-    args={{
-        percentage : 20,
-        text : "1h"
-    }}
-   
-   >
-        {Template.bind({})}
-  </Story>
-  <Story 
-    name="50%"
-    argTypes={{
-      percentage: 
-        { control: { type: 'number', min:0, max:100, step: 1 } } 
-    }}
-    args={{
-        percentage : 50,
-        text : "HALFWAY THERE!"
-    }}
-   
-   >
-        {Template.bind({})}
-  </Story>
 </Canvas>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="0% - NO TEXT" />
