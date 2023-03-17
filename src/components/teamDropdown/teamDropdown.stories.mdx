@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { TeamDropdown, TeamDropdownProps } from './TeamDropdown';
+
+<Meta 
+    title="Components/Menus/TeamDropdown" 
+    component={TeamDropdown} 
+/>
+
+# TeamDropdown
+Component that shows team members profiles.
+
+<Props of={TeamDropdown} />
+
+## Use example
+
+This is a basic example on how to use the component `TeamDropdown`.
+
+<Canvas>
+  <Story 
+    name="Basic example"
+    args={{
+      title: 'Development team',
+      data: [{ name: 'John Doe' }, { name: 'Jane Doe' }],
+    }}
+   >
+    {(args) => <TeamDropdown {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable of={TeamDropdown} story="Basic example" />

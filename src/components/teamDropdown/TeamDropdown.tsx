@@ -3,8 +3,17 @@ import { useState } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 
 export interface TeamDropdownProps {
+  /**
+   * Dropdown Menu render title
+   */
   title: string;
+  /**
+   * Components to render on dropdown clicked
+   */
   data: any[]; //TODO Cambiar cuando se sepan los datos que van al componente del perfil
+  /**
+   * Color to the dropdown menu
+   */
   bgColor?: string;
 }
 
