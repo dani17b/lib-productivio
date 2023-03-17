@@ -8,20 +8,13 @@ import { LikeAndComments } from './LikeAndComments';
 LikeAndComments component.
 
 export const Template = (args) => (
-  <LikeAndComments label={args.label} />
+  <LikeAndComments />
 );
 
 ## Basic
 
 <Canvas>
-  <Story
-    name="Basic"
-    args={{
-      label: 'Label likeAndComments',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+  <Story name="Basic"><Template /></Story>
 </Canvas>
 
 <ArgsTable story="Basic" />
