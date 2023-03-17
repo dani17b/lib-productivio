@@ -11,6 +11,7 @@
 .progress_bar_parent span{
     color: aquamarine;
     font-size: 15px;
+    margin-left: 15px;
 }
 
 .progress_bar_child{
@@ -19,10 +20,11 @@
     width: 80%;
     border-radius: 20px;
     text-align: center;
-    margin-right: 10px;
+   
 }
 
 .progress_bar_child span{
     color: darkblue;
     font-size: 15px;
+    margin-left: 15px;
 }
