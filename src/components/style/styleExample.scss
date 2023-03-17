@@ -1,0 +1,26 @@
+@import './vars.scss';
+
+.styles {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &>div {
+        width: 400px;
+        font-family: $default-font;
+        padding: $default-padding;
+        border-radius: $default-border-radius;
+        box-shadow: $default-shadow;
+        margin-top: 30px;
+        color: white;
+    }
+
+    &__primary {
+        background-color: $primary-color;        
+    }
+
+    &__secondary {
+        background-color: $secondary-color;        
+    }
+}
