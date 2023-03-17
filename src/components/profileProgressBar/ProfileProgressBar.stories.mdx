@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { ProfileProgressBar } from './ProfileProgressBar';
+
+<Meta 
+    title="Components/Content/ProfileProgressBar" 
+    component={ProfileProgressBar}
+/>
+
+# ProfileProgressBar
+ProfileProgressBar component.
+
+<Props of={ProfileProgressBar} />
+
+
+export const Template = (args) => <ProfileProgressBar completed={args.completed} bgColor={args.bgColor} completedColor={args.completedColor}/>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args={{
+        completed : 'Percentage completed'
+        
+    }}
+    controls={{
+        completed: { type: 'range', min: 0, max: 100 }
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
