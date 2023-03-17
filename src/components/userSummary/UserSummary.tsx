@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './userSummary.scss';
 
 interface UserSummaryProps {
@@ -25,14 +24,7 @@ interface UserSummaryProps {
 }
 
 export const UserSummary = (props: UserSummaryProps) => {
-  const [userProps /*setUserProps*/] = useState<UserSummaryProps>({
-    //TODO Añadir lógica real
-    username: 'Logica pendiente',
-    totalPoints: 2,
-    level: 1,
-    contactsNumber: 123,
-    currentTasks: 3,
-  });
+  const { username, totalPoints, level, contactsNumber, currentTasks } = props;
 
   return (
     <div className="user-summary">
@@ -40,21 +32,15 @@ export const UserSummary = (props: UserSummaryProps) => {
         <div className="user-summary__user-pic"></div>
       </div>
       <div className="user-summary__center-column">
-        <div className="user-summary__username">
-          danituriño22 {userProps.username}
-        </div>
+        <div className="user-summary__username"> {username}</div>
         <div className="user-summary__current-missions">
-          {userProps.currentTasks} misiones en curso
+          {currentTasks} missions in progress
         </div>
-        <div className="user-summary__user-level">Nivel {userProps.level}</div>
+        <div className="user-summary__user-level">Level {level}</div>
       </div>
       <div className="user-summary__right-column">
-        <div className="user-summary__contacts">
-          {userProps.contactsNumber} contactos
-        </div>
-        <div className="user-summary__total-points">
-          {userProps.totalPoints}pts
-        </div>
+        <div className="user-summary__contacts">{contactsNumber} contacts</div>
+        <div className="user-summary__total-points">{totalPoints}pts</div>
       </div>
     </div>
   );
