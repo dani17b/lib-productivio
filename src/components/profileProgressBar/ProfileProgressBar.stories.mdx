@@ -22,12 +22,12 @@ export const Template = (args) => <ProfileProgressBar completed={args.completed}
         completed : 'Percentage completed'
         
     }}
+    controls={{
+        completed: { type: 'range', min: 0, max: 100 }
+    }}
    >
         {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Basic" />
-
-
-
