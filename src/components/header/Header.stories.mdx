@@ -1,26 +1,32 @@
-import { Meta, Story, Canvas, } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
 import { Header } from './Header';
 
 <Meta 
-    title="Components/Content/Header" 
+    title="Components/Menus/Header" 
     component={Header}
 />
 
-export const Template = (args) => <Header label={args.label}/>;
+# Header
+This component is the header that is common to all web screens. At the moment it does not have functionalities, it is only visual. The notifications section has a maximum of 99.
 
 <Props of={Header} />
 
-# Header
-This component is the header that is common to all web screens. At the moment it does not have functionalities, it is only visual. He doesn't miss any prop either
 
+export const Template = (args) => <Header count={args.count}/>;
+
+## Basic
 <Canvas>
   <Story 
     name="Basic"
+    args={{
+        count : 0
+    }}
    >
         {Template.bind({})}
   </Story>
 </Canvas>
 
+<ArgsTable story="Basic" />
 
 
 
