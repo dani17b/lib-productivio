@@ -1,4 +1,3 @@
-import { UserImage } from '../userPhoto/UserPhoto';
 import './userDetails.scss';
 
 export interface UserDetailsProps {
@@ -18,7 +17,7 @@ export const UserDetails = (props: UserDetailsProps) => {
     <div className="user-details">
       {/* TODO implementar el componente de la foto de prefil */}
       <div className="user-details__pic">
-        <UserImage imageSrc={user.img} borderColor={user.profileColor} />
+        <img src={user.img} alt="User Profile" />
       </div>
       <div className="user-details__info">
         <div className="user-details__info__top">
