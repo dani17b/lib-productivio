@@ -5,6 +5,7 @@ export interface UserDetailsProps {
   user: {
     username: string;
     description: string;
+// TODO: if stars are deleted, delete this
     score: number;
     profileColor: string;
     img: string;
