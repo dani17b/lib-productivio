@@ -1,34 +1,30 @@
-import { useState, useEffect } from 'react';
-import { ContactsNumberProps, CurrentTasksProps, LevelProps } from './actions';
 import './userSummary.scss';
 
-export const UserSummary = () => {
-  const [level, setLevel] = useState<LevelProps>({
-    //TODO Añadir lógica real
-    username: 'Logica pendiente',
-    totalPoints: 2,
-    level: 1,
-  });
+interface UserSummaryProps {
+  /**
+   * Label that contains the user's username
+   */
+  username: string;
+  /**
+   * User's total points
+   */
+  totalPoints: number;
+  /**
+   * User's current level
+   */
+  level: number;
+  /**
+   * User's total contacts
+   */
+  contactsNumber: number;
+  /**
+   * Total number of current missions/tasks
+   */
+  currentTasks: number;
+}
 
-  const updateLevel = (points: number) => {
-    const pointsPerLevel = 350;
-    const currentLevel = Math.floor(points / pointsPerLevel) + 1;
-    setLevel((previousLevel) => ({ ...previousLevel, level: currentLevel }));
-  };
-
-  useEffect(() => {
-    updateLevel(level.totalPoints);
-  }, [level.totalPoints]);
-
-  const [contacts, setContacts] = useState<ContactsNumberProps>({
-    //TODO Añadir lógica real
-    contactsNumber: 4,
-  });
-
-  const [tasks, setTasks] = useState<CurrentTasksProps>({
-    //TODO Añadir lógica real
-    currentTasks: 2,
-  });
+export const UserSummary = (props: UserSummaryProps) => {
+  const { username, totalPoints, level, contactsNumber, currentTasks } = props;
 
   return (
     <div className="user-summary">
@@ -36,20 +32,15 @@ export const UserSummary = () => {
         <div className="user-summary__user-pic"></div>
       </div>
       <div className="user-summary__center-column">
-        <div className="user-summary__username">
-          danituriño22
-          {/* {userInfo.login} */}
-        </div>
+        <div className="user-summary__username"> {username}</div>
         <div className="user-summary__current-missions">
-          {tasks.currentTasks} misiones en curso
+          {currentTasks} missions in progress
         </div>
-        <div className="user-summary__user-level">Nivel {level.level}</div>
+        <div className="user-summary__user-level">Level {level}</div>
       </div>
       <div className="user-summary__right-column">
-        <div className="user-summary__contacts">
-          {contacts.contactsNumber} contactos
-        </div>
-        <div className="user-summary__total-points">{level.totalPoints}pts</div>
+        <div className="user-summary__contacts">{contactsNumber} contacts</div>
+        <div className="user-summary__total-points">{totalPoints}pts</div>
       </div>
     </div>
   );
