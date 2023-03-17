@@ -10,7 +10,7 @@ UserSummary placed in the user's profile page. It contains information relative 
 <Props of={UserSummary} />
 
 export const Template = (args) => (
-  <UserSummaryProps
+  <UserSummary
     username={args.username}
     totalPoints={args.totalPoints}
     level={args.level}
@@ -36,4 +36,4 @@ export const Template = (args) => (
   </Story>
 </Canvas>
 
-<ArgsTable story="Basic" />
+<ArgsTable of={UserSummary} story="Basic" />
