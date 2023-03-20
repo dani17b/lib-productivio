@@ -19,8 +19,8 @@ export const TimeRemaining = (props: TimeRemainingProps) => {
   );
 
   return (
-    <div>
-      <TbClockFilled></TbClockFilled>
+    <div className='time-remaining'>
+      <TbClockFilled className='time-remaining__icon' size={24}></TbClockFilled>
       {msRemaining > 0 ? `${daysRemaining}d ${hoursRemaining}h` : 'Expirado'}
     </div>
   );
