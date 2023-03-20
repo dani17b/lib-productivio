@@ -21,7 +21,7 @@ export const TimeRemaining = (props: TimeRemainingProps) => {
   return (
     <div className='time-remaining'>
       <TbClockFilled className='time-remaining__icon' size={24}></TbClockFilled>
-      {msRemaining > 0 ? `${daysRemaining}d ${hoursRemaining}h` : 'Expirado'}
+      {msRemaining > 0 ? `${daysRemaining}d ${hoursRemaining}h` : <span style={{color: 'red', fontWeight: 'bold', fontSize: '0.75em'}}>EXPIRADO</span>}
     </div>
   );
 };
