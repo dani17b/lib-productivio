@@ -7,10 +7,11 @@ export interface InputWithLabelProps {
   name: string;
   textColor?: string;
   fontSize?: number;
+  placeHolder?: string;
 }
 
 export const InputWithLabel = (props: InputWithLabelProps) => {
-  const { label, height, width, name, textColor, fontSize } = props;
+  const { label, height, width, name, textColor, fontSize, placeHolder } = props;
 
   const labelStyle = {
     color: textColor,
@@ -27,7 +28,7 @@ export const InputWithLabel = (props: InputWithLabelProps) => {
         <label htmlFor={name} style={labelStyle}>
           {label}
         </label>
-        <textarea id={name} name={name} style={textAreaStyle}></textarea>
+        <textarea id={name} name={name} style={textAreaStyle} placeholder={placeHolder}></textarea>
       </div>
     </>
   );
