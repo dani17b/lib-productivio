@@ -1,0 +1,9 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  margin-top: 5px;
+  resize: none;
+}
