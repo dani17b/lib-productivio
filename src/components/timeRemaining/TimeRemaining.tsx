@@ -1,7 +1,10 @@
 import React from 'react';
 import './timeRemaining.scss';
 
-interface TimeRemainingProps {
+export interface TimeRemainingProps {
+    /**
+   * Date of completion
+   */
   dueTime: Date;
 }
 
