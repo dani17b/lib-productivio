@@ -16,9 +16,10 @@ export const TimeRemaining = (props: TimeRemainingProps) => {
   const hoursRemaining = Math.floor(
     (msRemaining - daysRemaining * (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
+
   return (
     <div>
-      Quedan {daysRemaining} días y {hoursRemaining} horas.
+      {msRemaining > 0 ? `${daysRemaining}d ${hoursRemaining}h` : 'Expirado'}
     </div>
   );
 };
