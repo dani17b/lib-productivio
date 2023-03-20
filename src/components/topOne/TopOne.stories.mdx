@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { TopOne } from './TopOne';
+
+<Meta title="Components/Content/TopOne" component={TopOne} />
+
+# TopOne
+
+This component will show the pofile picture, username and points of the top one user.
+
+<Props of={TopOne} />
+
+export const Template = (args) => (
+  <TopOne avatar={args.avatar} username={args.username} points={args.points} />
+);
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+    args={{
+      avatar:
+        'https://www.mannsparsh.com/uploads/15927529805eef7b54033e37.57919719.jpg',
+      username: 'ricardo84',
+      points: '180',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
