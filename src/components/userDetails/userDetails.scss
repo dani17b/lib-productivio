@@ -14,25 +14,20 @@
     height: 80px;
     border-radius: 50%;
     margin: 10px;
-
-    img {
-      width: 80px;
-      height: 80px;
-      border: 5px solid blue;
-      border-radius: 50%;
-    }
   }
 
   &__info {
     width: 265px;
-    padding-left: 15px;
     display: flex;
     flex-direction: column;
 
     &__top {
+      padding-top: 10px;
+      height: 12px;
       width: inherit;
       display: flex;
       flex-direction: column;
+      margin-bottom: 0;
 
       &__username-star {
         height: 50px;
@@ -42,14 +37,22 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: 0;
       }
     }
 
     &__bottom {
-      width: fit-content;
-      color: rgb(99, 98, 97);
+      margin-top: 0;
+      overflow: hidden;
       height: fit-content;
       font-size: 14px;
+      color: rgb(99, 98, 97);
+
+      &__description {
+        width: 80px;
+        text-align: left;
+        justify-content: center;
+      }
     }
   }
 }
