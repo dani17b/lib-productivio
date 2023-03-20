@@ -1,5 +1,6 @@
 // import {useState} from 'react';
 import './timeRemaining.scss';
+import { TbClockFilled } from 'react-icons/tb';
 
 export interface TimeRemainingProps {
   /**
@@ -19,6 +20,7 @@ export const TimeRemaining = (props: TimeRemainingProps) => {
 
   return (
     <div>
+      <TbClockFilled></TbClockFilled>
       {msRemaining > 0 ? `${daysRemaining}d ${hoursRemaining}h` : 'Expirado'}
     </div>
   );
