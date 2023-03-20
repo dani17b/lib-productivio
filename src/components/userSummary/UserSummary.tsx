@@ -1,10 +1,19 @@
 import './userSummary.scss';
+import { UserPhoto } from '../userPhoto/UserPhoto';
 
 interface UserSummaryProps {
   /**
    * Label that contains the user's username
    */
   username: string;
+  /**
+   * User's profile picture
+   */
+  userImg: string;
+  /**
+   * User's color based on their level
+   */
+  userColor: string;
   /**
    * User's total points
    */
@@ -24,12 +33,22 @@ interface UserSummaryProps {
 }
 
 export const UserSummary = (props: UserSummaryProps) => {
-  const { username, totalPoints, level, contactsNumber, currentTasks } = props;
+  const {
+    username,
+    userImg,
+    userColor,
+    totalPoints,
+    level,
+    contactsNumber,
+    currentTasks,
+  } = props;
 
   return (
     <div className="user-summary">
       <div className="user-summary__left-column">
-        <div className="user-summary__user-pic"></div>
+        <div className="user-summary__user-pic">
+          <UserPhoto imageSrc={userImg} borderColor={userColor} />
+        </div>
       </div>
       <div className="user-summary__center-column">
         <div className="user-summary__username"> {username}</div>
