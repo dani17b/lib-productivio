@@ -10,7 +10,7 @@ TaskProgressBar component.
 <Props of={TaskProgressBar} />
 
 export const Template = (args) => (
-  <TaskProgressBar percentage={args.percentage} text={args.text} />
+  <TaskProgressBar percentage={args.percentage} text={args.text} parentBackgroundColor={args.parentBackgroundColor} childBackgroundColor={args.childBackgroundColor} />
 );
 
 ## Basic
@@ -20,10 +20,14 @@ export const Template = (args) => (
      argTypes={{
       percentage: 
         { control: { type: 'number', min:0, max:100, step: 1 } } 
+      
     }}
    
     args={{
-        percentage : 0
+        percentage : 0,
+        childBackgroundColor :" red",
+        parentBackgroundColor : "blue"
+        
     }}
      
   
@@ -33,3 +37,4 @@ export const Template = (args) => (
 </Canvas>
 
 <ArgsTable story="0% - NO TEXT" />
+
