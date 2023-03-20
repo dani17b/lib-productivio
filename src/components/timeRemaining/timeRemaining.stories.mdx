@@ -1,0 +1,18 @@
+import { TimeRemaining } from './TimeRemaining';
+
+<Meta title="Components/Content/TimeRemaining" component={TimeRemaining} />
+
+<Canvas>
+  <Story 
+    name="Basic example"
+    args={{
+      dueTime: null,
+    }}
+   >
+    {(args) => <TimeRemaining {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable of={TimeRemaining} story="Basic example" />
+
+<TimeRemaining></TimeRemaining>
