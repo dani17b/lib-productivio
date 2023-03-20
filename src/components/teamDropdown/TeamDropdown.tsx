@@ -1,6 +1,7 @@
 import './teamDropdown.scss';
 import { useState } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
+import { UserDetails, UserDetailsProps } from '../userDetails/UserDetails';
 
 export interface TeamDropdownProps {
   /**
@@ -10,14 +11,14 @@ export interface TeamDropdownProps {
   /**
    * Components to render on dropdown clicked
    */
-  data: any[]; //TODO Cambiar cuando se sepan los datos que van al componente del perfil
+  data: UserDetailsProps[];
   /**
    * Color to the dropdown menu
    */
   bgColor?: string;
 }
 
-const DEFAULT_COLOR = '#FF00FF'; //TODO definir el color por defecto
+const DEFAULT_BACK_COLOR = '#1a3891'; //Color principal de la app
 
 export const TeamDropdown = (props: TeamDropdownProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -29,7 +30,9 @@ export const TeamDropdown = (props: TeamDropdownProps) => {
       <div
         className="dropdown-container"
         onClick={() => setIsExpanded(!isExpanded)}
-        style={{ backgroundColor: bgColor || DEFAULT_COLOR }}
+        style={{
+          backgroundColor: bgColor || DEFAULT_BACK_COLOR,
+        }}
       >
         <div className="dropdown-container__title">{title}</div>
         <span className="dropdown-container__arrow">
@@ -40,8 +43,7 @@ export const TeamDropdown = (props: TeamDropdownProps) => {
         <div className="dropdown-container__data">
           {data.map((profileData, index) => (
             <div key={index} className="dropdown-container__data__profile">
-              {/*TODO Aquí va el componente de cada perfil*/}
-              <div>{`Perfil #${index} ${profileData.name}`}</div>
+              <UserDetails user={profileData} />
             </div>
           ))}
         </div>

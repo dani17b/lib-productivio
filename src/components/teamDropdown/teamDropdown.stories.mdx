@@ -20,7 +20,16 @@ This is a basic example on how to use the component `TeamDropdown`.
     name="Basic example"
     args={{
       title: 'Development team',
-      data: [{ name: 'John Doe' }, { name: 'Jane Doe' }],
+      data: [{ username: 'Myusername',
+        description: 'This is a brief description from the user',
+        score: 4,
+        profileColor: 'yellow',
+        img: 'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png' },
+        { username: 'Myusername',
+        description: 'This is a brief description from the user',
+        score: 4,
+        profileColor: 'yellow',
+        img: 'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png' }],
     }}
    >
     {(args) => <TeamDropdown {...args} />}
