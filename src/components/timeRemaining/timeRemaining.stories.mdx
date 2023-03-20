@@ -7,8 +7,10 @@ import { TimeRemaining } from './TimeRemaining';
 
 TimeRemaining component.
 
+<Props of={TimeRemaining} />
+
 export const Template = (args) => (
-  <TimeRemaining percentage={args.percentage} text={args.text} />
+  <TimeRemaining dueTime={args.dueTime} />
 );
 
 ## Basic
@@ -17,14 +19,12 @@ export const Template = (args) => (
   <Story
     name="Default"
     argTypes={{
-      dueTime: { control: { type: 'date' } }
+      dueTime: { control: {  } },
     }}
     args={{
-      dueTime: null,
+      dueTime: new Date('2023-06-27'),
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
-
-<ArgsTable story="Default" />
