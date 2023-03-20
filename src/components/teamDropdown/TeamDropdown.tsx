@@ -1,5 +1,4 @@
 import './teamDropdown.scss';
-import { useState } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 import { UserDetails, UserDetailsProps } from '../userDetails/UserDetails';
 
@@ -20,16 +19,21 @@ export interface TeamDropdownProps {
 
 const DEFAULT_BACK_COLOR = '#1a3891'; //Color principal de la app
 
-export const TeamDropdown = (props: TeamDropdownProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+export const TeamDropdown = (
+  state: {
+    isExpanded: boolean;
+    onClick: any;
+  },
+  { props }: { props: TeamDropdownProps }
+) => {
   const { title, data, bgColor } = props;
+  const { isExpanded, onClick } = state;
 
   return (
     <div>
       <div
         className="dropdown-container"
-        onClick={() => setIsExpanded(!isExpanded)}
+        onClick={() => onClick()}
         style={{
           backgroundColor: bgColor || DEFAULT_BACK_COLOR,
         }}
