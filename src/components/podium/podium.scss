@@ -1,0 +1,55 @@
+@import './../style/vars.scss';
+
+.podium {
+  color: $primary-color;
+  font-family: $default-font;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .podium-bars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 250px;
+    justify-content: space-evenly;
+  }
+
+  .podium-second-position {
+    background-color: rgb(107, 128, 221);
+  }
+
+  .podium-third-position {
+    background-color: rgb(159, 174, 241);
+    height: 200px;
+    transform: translateY(25px);
+  }
+
+  .podium-forth-position {
+    background-color: rgb(215, 223, 255);
+    height: 170px;
+    transform: translateY(40px);
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .podium-position {
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: $default-shadow;
+  }
+
+  .podium-username {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .podium-points {
+    font-size: 14px;
+  }
+}
