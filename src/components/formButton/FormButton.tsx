@@ -5,13 +5,21 @@ interface FormButtonProps {
    * Text contained in the button (e.g: Save, Delete, Cancel...)
    */
   buttonText: string;
+  /**
+   * This prop allows font size changes
+   */
+  fontSize?: number;
 }
 
 export const FormButton = (props: FormButtonProps) => {
-  const { buttonText } = props;
+  const { buttonText, fontSize } = props;
+  const buttonFontSize = `${fontSize}pt`;
 
   return (
-    <button className="formButton" /* onClick={TODO lógica} */>
+    <button
+      className="formButton"
+      style={{ fontSize: buttonFontSize }} /* onClick={TODO lógica} */
+    >
       {buttonText}
     </button>
   );
