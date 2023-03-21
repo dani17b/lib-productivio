@@ -1,39 +1,61 @@
-import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import { TeamDropdown, TeamDropdownProps } from './TeamDropdown';
+import { UserDetailsProps } from '../userDetails/UserDetails';
+import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io';
 
 <Meta 
-    title="Components/Menus/TeamDropdown" 
-    component={TeamDropdown} 
+  title="Components/Menus/TeamDropdown"
+  argTypes={{
+    onClick: {action: 'onClick'}
+  }}
+  component={TeamDropdown}
 />
 
 # TeamDropdown
-Component that shows team members profiles.
 
-<Props of={TeamDropdown} />
+The `TeamDropdown` component is a dropdown menu that is used to display information about a team or group of people.
 
-## Use example
-
-This is a basic example on how to use the component `TeamDropdown`.
+## Example Usage
 
 <Canvas>
   <Story 
-    name="Basic example"
-    args={{
-      title: 'Development team',
-      data: [{ username: 'Myusername',
-        description: 'This is a brief description from the user',
-        score: 4,
-        profileColor: 'yellow',
-        img: 'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png' },
-        { username: 'Myusername',
-        description: 'This is a brief description from the user',
-        score: 4,
-        profileColor: 'yellow',
-        img: 'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png' }],
+    name="Basic Example" 
+    args={{ 
+      title: "My Team", 
+      data: [
+        {
+          username: 'Myusername',
+          description: 'This is a brief description from the user',
+          score: 4,
+          profileColor: 'yellow',
+          img: 'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png',
+        }], 
+      bgColor: "#1a3891",
+      isExpanded: false,
     }}
-   >
+  >
     {(args) => <TeamDropdown {...args} />}
   </Story>
 </Canvas>
 
-<ArgsTable of={TeamDropdown} story="Basic example" />
+## Arguments Table
+
+<ArgsTable story="Basic Example"/>
+
+## Properties
+
+The component accepts the following properties:
+
+| Property | Description |
+|-----------|-------------|
+| `title` | The title of the dropdown menu. |
+| `data` | The information to be displayed when the menu is expanded. |
+| `bgColor` | The background color of the dropdown menu. Default is `#1a3891`. |
+| `isExpanded` | The state of the dropdown menu. |
+| `onClick` | The function to be executed when clicking on the dropdown menu. |
+
+## Behavior
+
+The dropdown menu changes state when clicked. When expanded, it displays the information provided in the `data` property.
+
+Additionally, the dropdown menu displays a down arrow (<IoIosArrowDown />) when expanded and a right arrow (<IoIosArrowForward />) when closed.
