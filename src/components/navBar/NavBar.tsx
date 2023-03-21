@@ -2,26 +2,21 @@ import './navBar.scss';
 import { FaHome, FaUserFriends, FaUserAlt } from 'react-icons/fa';
 import { IoMdAdd, IoMdPodium } from 'react-icons/io';
 
-
 interface NavBarProps {
     parentBackgroundColor?: string;
     childBackgroundColor?: string;
 }
 export const NavBar = (props: NavBarProps) => {
   let {parentBackgroundColor, childBackgroundColor } = props;
-  
-
-  
+    
   const parentStyle = {
     backgroundColor: childBackgroundColor,
-    color: parentBackgroundColor,
-    
+    color: parentBackgroundColor,  
   };
+
   const childStyle = {
     backgroundColor: parentBackgroundColor,
-    color: childBackgroundColor,
-
-    
+    color: childBackgroundColor,  
   };
   return (
     <div className='nav-menu' style={parentStyle}>
