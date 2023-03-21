@@ -11,10 +11,18 @@ This component will show a podium with the top 2, 3, and 4 users.
 
 export const Template = (args) => (
   <Podium
-    userImg={args.userImg}
-    username={args.username}
-    userColor={args.userColor}
-    points={args.points}
+    thirdUserImg={args.thirdUserImg}
+    thirdUsername={args.thirdUsername}
+    thirdUserColor={args.thirdUserColor}
+    thirdUserPoints={args.thirdUserPoints}
+    secondUserImg={args.secondUserImg}
+    secondUsername={args.secondUsername}
+    secondUserColor={args.secondUserColor}
+    secondUserPoints={args.secondUserPoints}
+    forthUserImg={args.forthUserImg}
+    forthUsername={args.forthUsername}
+    forthUserColor={args.forthUserColor}
+    forthUserPoints={args.forthUserPoints}
   />
 );
 
@@ -24,11 +32,21 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      userImg:
+      thirdUserImg:
+        'https://elireview.com/wp-content/uploads/2016/12/reed-profile-square.jpg',
+      thirdUserColor: 'Users color',
+      thirdUsername: 'marinasc',
+      thirdUserPoints: '120',
+      secondUserImg:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
-      userColor: 'Users color',
-      username: 'ricardo84',
-      points: '180',
+      secondUserColor: 'Users color',
+      secondUsername: 'ricardo84',
+      secondUserPoints: '180',
+      forthUserImg:
+        'https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg',
+      forthUserColor: 'Users color',
+      forthUsername: 'gonzalo00',
+      forthUserPoints: '100',
     }}
   >
     {Template.bind({})}
