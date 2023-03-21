@@ -3,12 +3,14 @@
     width: 100%;
     border-radius: 20px;
     display: flex;
+    text-align: center;
 
 }
 
 .progress_bar_parent span{
     font-size: 15px;
     margin-left: 15px;
+    text-align: center;
 }
 
 .progress_bar_child{
@@ -22,4 +24,5 @@
 .progress_bar_child span{
     font-size: 15px;
     margin-left: 15px;
+    text-align: center;
 }
