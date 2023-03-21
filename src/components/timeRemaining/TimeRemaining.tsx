@@ -9,19 +9,26 @@ export interface TimeRemainingProps {
   dueTime: Date;
 }
 
-// const [timeLeft, setTimeLeft] = useState(0);
-
 export const TimeRemaining = (props: TimeRemainingProps) => {
+  const msOnADay = 1000 * 60 * 60 * 24;
+  const msOnAnHour = 1000 * 60 * 60;
+  
   const msRemaining = props.dueTime.getTime() - new Date().getTime();
-  const daysRemaining = Math.floor(msRemaining / (1000 * 60 * 60 * 24));
+  const daysRemaining = Math.floor(msRemaining / msOnADay);
   const hoursRemaining = Math.floor(
-    (msRemaining - daysRemaining * (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (msRemaining - daysRemaining * msOnADay) / msOnAnHour
   );
 
   return (
-    <div className='time-remaining'>
-      <TbClockFilled className='time-remaining__icon' size={24}></TbClockFilled>
-      {msRemaining > 0 ? `${daysRemaining}d ${hoursRemaining}h` : <span style={{color: 'red', fontWeight: 'bold', fontSize: '0.75em'}}>EXPIRADO</span>}
+    <div className="time-remaining">
+      <TbClockFilled className="time-remaining__icon" size={24}></TbClockFilled>
+      {msRemaining > 0 ? (
+        `${daysRemaining}d ${hoursRemaining}h`
+      ) : (
+        <span style={{ color: 'red', fontWeight: 'bold', fontSize: '0.75em' }}>
+          EXPIRADO
+        </span>
+      )}
     </div>
   );
 };
