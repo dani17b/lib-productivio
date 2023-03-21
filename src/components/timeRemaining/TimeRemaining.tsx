@@ -25,7 +25,3 @@ export const TimeRemaining = (props: TimeRemainingProps) => {
     </div>
   );
 };
-
-TimeRemaining.defaultProps = {
-  dueTime: new Date('2023-06-27'),
-};
