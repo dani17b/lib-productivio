@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { NavBar } from './NavBar';
+
+<Meta 
+    title="Components/Content/NavBar" 
+    component={NavBar}
+/>
+
+# NavBar
+This component is the NavBar that is common to all web screens. At the moment it does not have functionalities, it is only visual.
+
+<Props of={NavBar} />
+
+
+export const Template = (args) => <NavBar parentBackgroundColor={args.parentBackgroundColor} childBackgroundColor={args.childBackgroundColor}/>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args={{
+        parentBackgroundColor : "#1a3891",
+        childBackgroundColor :"white",
+        
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
