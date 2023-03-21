@@ -11,7 +11,7 @@ programmer needs.
 
 <Props of={FormButton} />
 
-export const Template = (args) => <FormButton buttonText={args.buttonText} fontSize={args.fontSize} />;
+export const Template = (args) => <FormButton buttonText={args.buttonText} fontSize={args.fontSize} buttonColor={args.buttonColor}/>;
 
 ## Basic
 
@@ -21,6 +21,7 @@ export const Template = (args) => <FormButton buttonText={args.buttonText} fontS
     args={{
       buttonText: 'Text displayed inside the button',
       fontSize: 'Changes the font size',
+      buttonColor: 'Changes the buttons color',
     }}
   >
     {Template.bind({})}

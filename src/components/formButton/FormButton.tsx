@@ -9,16 +9,23 @@ interface FormButtonProps {
    * This prop allows font size changes
    */
   fontSize?: number;
+  /**
+   * This prop allows you to change the button's color
+   */
+  buttonColor?: string;
 }
 
 export const FormButton = (props: FormButtonProps) => {
-  const { buttonText, fontSize } = props;
+  const { buttonText, fontSize, buttonColor } = props;
   const buttonFontSize = `${fontSize}pt`;
 
   return (
     <button
       className="formButton"
-      style={{ fontSize: buttonFontSize }} /* onClick={TODO lógica} */
+      style={{
+        fontSize: buttonFontSize,
+        backgroundColor: buttonColor,
+      }} /* onClick={TODO lógica} */
     >
       {buttonText}
     </button>
