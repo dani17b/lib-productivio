@@ -12,6 +12,8 @@ UserSummary placed in the user's profile page. It contains information relative 
 export const Template = (args) => (
   <UserSummary
     username={args.username}
+    userImg={args.userImg}
+    userColor={args.userColor}
     totalPoints={args.totalPoints}
     level={args.level}
     contactsNumber={args.contactsNumber}
@@ -26,6 +28,8 @@ export const Template = (args) => (
     name="Basic"
     args={{
       username: 'Users Name',
+      userImg: 'Users profile pic',
+      userColor: 'Users color based on their level',
       totalPoints: 'Users total points',
       level: 'Users current level',
       contactsNumber: 'Users total contacts',
