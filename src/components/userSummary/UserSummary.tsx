@@ -11,7 +11,8 @@ interface UserSummaryProps {
    */
   userImg: string;
   /**
-   * User's color based on their level
+   * User's color based on their level. This element could be reused
+   * for different purposes in other apps
    */
   userColor: string;
   /**
@@ -53,13 +54,13 @@ export const UserSummary = (props: UserSummaryProps) => {
       <div className="user-summary__center-column">
         <div className="user-summary__username"> {username}</div>
         <div className="user-summary__current-missions">
-          {currentTasks} missions in progress
+          {currentTasks} misiones activas
         </div>
-        <div className="user-summary__user-level">Level {level}</div>
+        <div className="user-summary__user-level">Nivel {level}</div>
       </div>
       <div className="user-summary__right-column">
-        <div className="user-summary__contacts">{contactsNumber} contacts</div>
-        <div className="user-summary__total-points">{totalPoints}pts</div>
+        <div className="user-summary__contacts">{contactsNumber} contactos</div>
+        <div className="user-summary__total-points">{totalPoints} puntos</div>
       </div>
     </div>
   );
