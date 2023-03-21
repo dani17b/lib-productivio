@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { TopOne } from './TopOne';
+
+<Meta title="Components/Content/TopOne" component={TopOne} />
+
+# TopOne
+
+This component will show the profile picture, username and points of the top one user of the week. The level of each user will determine the color bordering their profile picture.
+
+<Props of={TopOne} />
+
+export const Template = (args) => (
+  <TopOne
+    userImg={args.userImg}
+    username={args.username}
+    userColor={args.userColor}
+    points={args.points}
+  />
+);
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+    args={{
+      userImg:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
+      userColor: 'Users color',
+      username: 'ricardo84',
+      points: '180',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
