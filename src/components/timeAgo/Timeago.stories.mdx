@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { TimeAgo } from './TimeAgo';
+
+<Meta 
+    title="Components/Content/TimeAgo" 
+    component={TimeAgo}
+/>
+
+# TimeAgo
+TimeAgo component.
+
+<Props of={TimeAgo} />
+
+
+export const Template = (args) => <TimeAgo  createdAt={args.createdAt}/>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args={{
+       createdAt : new Date("2023-03-21T13:00:00.000Z")
+    }}
+   >
+        {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
+
