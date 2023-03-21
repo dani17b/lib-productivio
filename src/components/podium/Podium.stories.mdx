@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { Podium } from './Podium';
+
+<Meta title="Components/Content/Podium" component={Podium} />
+
+# Podium
+
+This component will show a podium with the top 2, 3, and 4 users.
+
+<Props of={Podium} />
+
+export const Template = (args) => (
+  <Podium
+    thirdUserImg={args.thirdUserImg}
+    thirdUsername={args.thirdUsername}
+    thirdUserColor={args.thirdUserColor}
+    thirdUserPoints={args.thirdUserPoints}
+    secondUserImg={args.secondUserImg}
+    secondUsername={args.secondUsername}
+    secondUserColor={args.secondUserColor}
+    secondUserPoints={args.secondUserPoints}
+    forthUserImg={args.forthUserImg}
+    forthUsername={args.forthUsername}
+    forthUserColor={args.forthUserColor}
+    forthUserPoints={args.forthUserPoints}
+  />
+);
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+    args={{
+      thirdUserImg:
+        'https://elireview.com/wp-content/uploads/2016/12/reed-profile-square.jpg',
+      thirdUserColor: 'Users color',
+      thirdUsername: 'marinasc',
+      thirdUserPoints: '120',
+      secondUserImg:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
+      secondUserColor: 'Users color',
+      secondUsername: 'ricardo84',
+      secondUserPoints: '180',
+      forthUserImg:
+        'https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg',
+      forthUserColor: 'Users color',
+      forthUsername: 'gonzalo00',
+      forthUserPoints: '100',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <ArgsTable story="Basic" />
+</Canvas>
