@@ -27,7 +27,6 @@
       width: inherit;
       display: flex;
       flex-direction: column;
-      margin-bottom: 0;
 
       &__username {
         height: 50px;
@@ -37,7 +36,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 0;
       }
     }
 
