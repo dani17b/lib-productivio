@@ -1,16 +1,21 @@
 import './topOne.scss';
+import { UserPhoto } from '../userPhoto/UserPhoto';
 
 export interface TopOneProps {
-  avatar: string;
+  userImg: string;
   username: string;
+  userColor: string;
   points: string;
 }
 
 export const TopOne = (props: TopOneProps) => {
-  const { avatar, username, points } = props;
+  const { userImg, username, points, userColor } = props;
   return (
     <div className="top-one">
-      <img className="top-one-photo" src={avatar}></img>
+      <div className="top-one-photo">
+        <UserPhoto imageSrc={userImg} borderColor={userColor} />
+      </div>
+
       <div>
         <div className="top-one-icon">
           <img

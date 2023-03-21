@@ -10,7 +10,12 @@ This component will show the pofile picture, username and points of the top one 
 <Props of={TopOne} />
 
 export const Template = (args) => (
-  <TopOne avatar={args.avatar} username={args.username} points={args.points} />
+  <TopOne
+    userImg={args.userImg}
+    username={args.username}
+    userColor={args.userColor}
+    points={args.points}
+  />
 );
 
 ## Basic
@@ -19,8 +24,9 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      avatar:
-        'https://www.mannsparsh.com/uploads/15927529805eef7b54033e37.57919719.jpg',
+      userImg:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
+      userColor: 'Users color',
       username: 'ricardo84',
       points: '180',
     }}
