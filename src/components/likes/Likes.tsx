@@ -16,15 +16,10 @@ export const Likes = ({ totalLikes }: LikesProps) => {
   });
 
   const handleLikeClick = () => {
-    let likes = numberOfLikes;
-    if (!isLiked) {
-      likes += 1;
-    } else {
-      likes -= 1;
-    }
-    setNumberOfLikes(likes);
+    setNumberOfLikes(prevState => prevState + (isLiked ? -1 : 1));
     setIsLiked(!isLiked);
   };
+  
 
   return (
     <div className="like-container" onClick={handleLikeClick}>

@@ -8,4 +8,4 @@ export {InputWithLabel} from './components/inputWithLabel/InputWithLabel';
 export {SearchBox} from './components/searchBox/SearchBox';
 export {TeamDropdown} from './components/teamDropdown/TeamDropdown';
 export {Likes} from './components/likes/Likes';
-export {Comments} from './components/coments/Comments';
+export {Comments} from './components/comments/Comments';
