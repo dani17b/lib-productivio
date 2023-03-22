@@ -22,11 +22,8 @@ export const TimeAgo = (props: TimeAgoProps) => {
     locale: es,
   });
 
-  const ownColor = {
-    color: textColor,
-  };
   return (
-    <span className="time" style={ownColor}>
+    <span className="time" style={{ color: textColor }}>
       {timeAgo.replace('alrededor de', '')}
     </span>
   );
