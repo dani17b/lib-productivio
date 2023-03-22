@@ -6,10 +6,12 @@ const maxNoti = 99;
 
 interface HeaderProps {
  count: number;
+ title: string;
 }
 
 export const Header = (props: HeaderProps) => {
-  let { count } = props;
+  let { count, title } = props;
+
 
   if (count >= maxNoti) {
     count = maxNoti;
@@ -17,7 +19,7 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <header className="header">
-      <h1>Productivio</h1>
+      <h1>{title}</h1>
       <div className="notifications">
         <GrNotification />
         <span className="count">{count}</span>

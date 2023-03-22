@@ -27,11 +27,12 @@ module.exports = [
       typescript({ tsconfig: "./tsconfig.json" }),
       scss()
     ],
+    external: ["react", "react-dom"]
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
-    external: [/\.scss$/],
+    external: [/\.scss$/, "react", "react-dom"],
     plugins: [dts()],
   },
 ];
