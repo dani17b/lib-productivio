@@ -1,0 +1,11 @@
+.search-box{
+    background-color: red;
+
+    &__icon{
+        background-color: green;
+    }
+
+    &__input{
+        background-color: yellow;
+    }
+}
