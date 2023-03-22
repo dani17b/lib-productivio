@@ -8,13 +8,20 @@ import { Likes } from './Likes';
 Likes component.
 
 export const Template = (args) => (
-  <Likes />
+  <Likes totalLikes={args.totalLikes}/>
 );
 
 ## Basic
 
 <Canvas>
-  <Story name="Basic"><Template /></Story>
+  <Story
+    name="Basic"
+    args={{
+      totalLikes: 0
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-<ArgsTable story="Basic" />
+<ArgsTable of={Likes} story="Basic" />
