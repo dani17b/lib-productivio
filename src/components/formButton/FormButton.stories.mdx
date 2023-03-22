@@ -25,12 +25,21 @@ export const Template = (args) => (
   <Story
     name="Basic"
     argTypes={{
-      fontSize: { default: { type: 'number', min: 5, max: 50 } },
+      buttonColor: {
+        table: {
+          defaultValue: { summary: '#1a3891' },
+        },
+      },
+      fontSize: {
+        table: {
+          defaultValue: { summary: 12 },
+        },
+      },
     }}
     args={{
       buttonText: 'Text displayed inside the button',
       fontSize: 'Changes the font size',
-      buttonColor: '#0074d9',
+      buttonColor: '#1a3891',
     }}
   >
     {Template.bind({})}
