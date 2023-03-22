@@ -14,8 +14,6 @@ export interface TimeRemainingProps {
   simpleDisplay?: boolean;
 }
 
-const getMsRemaining = (dueTime: Date) => {};
-
 const getTimeRemaining = (dueTime: Date) => {
   const msOnADay = 1000 * 60 * 60 * 24;
   const msOnAnHour = 1000 * 60 * 60;
@@ -27,7 +25,7 @@ const getTimeRemaining = (dueTime: Date) => {
     (totalMilliseconds - days * msOnADay) / msOnAnHour
   );
   const minutes: number = +Math.floor(
-    totalMilliseconds - (days * msOnADay + hours * msOnAnHour) / msOnAnMinute
+    (totalMilliseconds - (days * msOnADay + hours * msOnAnHour)) / msOnAnMinute
   );
 
   return [
@@ -38,31 +36,26 @@ const getTimeRemaining = (dueTime: Date) => {
 };
 
 const getTimeText = (props: TimeRemainingProps) => {
-  const totalMilliseconds = props.dueTime.getTime() - new Date().getTime();
-  let result;
+  let result = '';
 
-  if (totalMilliseconds > 0) {
-    result = '';
-    for (const [value, unitType] of getTimeRemaining(props.dueTime)) {
-      if (value > 0) {
-        result += `${value}${unitType} `;
-        if (props.simpleDisplay) {
-          break;
-        }
+  for (const [value, unitType] of getTimeRemaining(props.dueTime)) {
+    if (value > 0) {
+      result += `${value}${unitType} `;
+      if (props.simpleDisplay == true) {
+        break;
       }
     }
+  }
 
-    if(result =''){
-      
-    }
-  } else {
-    result = (
+  if ((result == '')) {
+    return (
       <span style={{ color: 'red', fontWeight: 'bold', fontSize: '0.75em' }}>
         EXPIRADO
       </span>
     );
+  } else {
+    return result;
   }
-  return result;
 };
 
 export const TimeRemaining = (props: TimeRemainingProps) => {
