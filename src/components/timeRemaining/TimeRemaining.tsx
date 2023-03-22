@@ -19,17 +19,17 @@ const getMsRemaining = (dueTime: Date) => {
 };
 
 const getFormattedTimeReamining = (dueTime: Date) => {
-  const msOnADay = 1000 * 60 * 60 * 24;
-  const msOnAnHour = 1000 * 60 * 60;
-  const msOnAnMinute = 1000 * 60;
+  const MS_PER_DAY = 1000 * 60 * 60 * 24;
+  const MS_PER_HOUR = 1000 * 60 * 60;
+  const MS_PER_MINUTE = 1000 * 60;
 
   const totalMilliseconds = getMsRemaining(dueTime);
-  const days: number = +Math.floor(totalMilliseconds / msOnADay);
+  const days: number = +Math.floor(totalMilliseconds / MS_PER_DAY);
   const hours: number = +Math.floor(
-    (totalMilliseconds - days * msOnADay) / msOnAnHour
+    (totalMilliseconds - days * MS_PER_DAY) / MS_PER_HOUR
   );
   const minutes: number = +Math.floor(
-    (totalMilliseconds - (days * msOnADay + hours * msOnAnHour)) / msOnAnMinute
+    (totalMilliseconds - (days * MS_PER_DAY + hours * MS_PER_HOUR)) / MS_PER_MINUTE
   );
 
   return [
