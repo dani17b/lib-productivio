@@ -17,7 +17,7 @@ interface FormButtonProps {
 
 export const FormButton = (props: FormButtonProps) => {
   const { buttonText, fontSize, buttonColor } = props;
-  const buttonFontSize = `${fontSize}pt`;
+  const buttonFontSize = `${Math.max(5, Math.min(45, fontSize || 12))}pt`;
 
   return (
     <button
