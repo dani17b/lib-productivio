@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { SearchBox } from './SearchBox';
+
+<Meta title="Components/Content/SearchBox" component={SearchBox} />
+
+# SearchBox
+A search bar.
+For the results to show, it is neccessary to click outside of the bar, since the function is executed through the onBlur event.
+
+<Props of={SearchBox} />
+
+export const Template = (args) => <SearchBox />;
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
