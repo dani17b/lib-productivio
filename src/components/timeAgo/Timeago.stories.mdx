@@ -7,22 +7,23 @@ import { TimeAgo } from './TimeAgo';
 />
 
 # TimeAgo
-TimeAgo component.
+TimeAgo component shows the time when someone posted something in the feed.
 
 <Props of={TimeAgo} />
 
 
-export const Template = (args) => <TimeAgo  createdAt={args.createdAt}/>;
+export const Template = (args) => <TimeAgo  createdAt={args.createdAt} textColor={args.textColor}/>;
 
 ## Basic
 <Canvas>
   <Story 
     name="Basic"
     args={{
-       createdAt : new Date("2023-03-21T13:00:00.000Z")
+       createdAt : new Date("2023-03-21T13:00:00.000Z"),
+       textColor: ''
     }}
    >
-        {Template.bind({})}
+      {Template.bind({})}
   </Story>
 </Canvas>
 
