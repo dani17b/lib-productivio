@@ -10,7 +10,7 @@ TimeRemaining component.
 <Props of={TimeRemaining} />
 
 export const Template = (args) => (
-  <TimeRemaining dueTime={args.dueTime} />
+  <TimeRemaining dueTime={args.dueTime} simpleDisplay={args.simpleDisplay}/>
 );
 
 ## Basic
@@ -23,6 +23,7 @@ export const Template = (args) => (
     }}
     args={{
       dueTime: new Date('2023-06-27'),
+      simpleDisplay: true
     }}
   >
     {Template.bind({})}
