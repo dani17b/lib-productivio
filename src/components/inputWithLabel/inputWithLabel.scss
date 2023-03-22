@@ -1,0 +1,10 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  margin-top: 5px;
+  box-shadow: 2px 2px 2px 1px darkgray;
+  resize: none;
+}
