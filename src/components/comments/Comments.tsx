@@ -9,13 +9,9 @@ interface CommentsProps {
 export const Comments = ({ comments }: CommentsProps) => {
   const [showComments, setShowComments] = useState(false);
 
-  const handleCommentToggle = () => {
-    setShowComments(!showComments);
-  };
-
   return (
     <div className="comments-container">
-      <div className="comment-toggle-container" onClick={handleCommentToggle}>
+      <div className="comment-toggle-container" onClick={() => setShowComments(!showComments)}>
         <span className="comment-icon">{showComments ? '🔽' : '💬'}</span>
         <span className="comment-text">Show Comments</span>
       </div>
