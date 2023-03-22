@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 import './comments.scss';
 
-export const Comments = () => {
+interface CommentsProps {
+  comments: string[];
+}
+
+export const Comments = ({ comments }: CommentsProps) => {
   const [showComments, setShowComments] = useState(false);
 
   const handleCommentToggle = () => {
@@ -17,9 +21,9 @@ export const Comments = () => {
       </div>
       {showComments && (
         <div>
-          {/* Aquí irían los comentarios */}
-          <p>Comment 1</p>
-          <p>Comment 2</p>
+          {comments.map(comment => (
+            <p key={comment}>{comment}</p>
+          ))}
         </div>
       )}
     </div>

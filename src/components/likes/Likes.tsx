@@ -3,9 +3,13 @@ import { useSpring, animated } from 'react-spring';
 
 import './likes.scss';
 
-export const Likes = () => {
-  const [isLiked, setIsLiked] = useState(false);
-  const [numberOfLikes, setNumberOfLikes] = useState(0);
+interface LikesProps {
+  totalLikes: number;
+}
+
+export const Likes = ({ totalLikes }: LikesProps) => {
+  const [isLiked, setIsLiked] = useState<boolean>(false);
+  const [numberOfLikes, setNumberOfLikes] = useState<number>(totalLikes);
 
   const fillAnimation = useSpring({
     opacity: isLiked ? 1 : 0,

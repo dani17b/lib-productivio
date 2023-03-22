@@ -3,18 +3,27 @@ import { Comments } from './Comments';
 
 <Meta title="Components/Content/Comments" component={Comments} />
 
-# Likes
+# Comments
 
 Comments component.
 
+<Props of={Comments} />
+
 export const Template = (args) => (
-  <Comments />
+  <Comments comments={args.comments} />
 );
 
 ## Basic
- 
+
 <Canvas>
-  <Story name="Basic"><Template /></Story>
+  <Story
+    name="Basic"
+    args={{
+      comments: ['Comment 1', 'Comment 2', 'Comment 3']
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Basic" />
