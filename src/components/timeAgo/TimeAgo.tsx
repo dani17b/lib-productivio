@@ -3,14 +3,15 @@ import es from 'date-fns/locale/es';
 import './timeAgo.scss';
 
 export interface TimeAgoProps {
-  createdAt: Date;
   /**
    * Date format YYYY-MM-DDThh:mm:ss.sssZ
    */
-  textColor?: string;
+  createdAt: Date;
+
   /**
    * Color for the text
    */
+  textColor?: string;
 }
 
 export const TimeAgo = (props: TimeAgoProps) => {
