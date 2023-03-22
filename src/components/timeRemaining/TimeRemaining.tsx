@@ -14,12 +14,16 @@ export interface TimeRemainingProps {
   simpleDisplay?: boolean;
 }
 
-const getTimeRemaining = (dueTime: Date) => {
+const getMsRemaining = (dueTime: Date) => {
+  return dueTime.getTime() - new Date().getTime();
+};
+
+const getFormattedTimeReamining = (dueTime: Date) => {
   const msOnADay = 1000 * 60 * 60 * 24;
   const msOnAnHour = 1000 * 60 * 60;
   const msOnAnMinute = 1000 * 60;
 
-  const totalMilliseconds = dueTime.getTime() - new Date().getTime();
+  const totalMilliseconds = getMsRemaining(dueTime);
   const days: number = +Math.floor(totalMilliseconds / msOnADay);
   const hours: number = +Math.floor(
     (totalMilliseconds - days * msOnADay) / msOnAnHour
@@ -38,23 +42,23 @@ const getTimeRemaining = (dueTime: Date) => {
 const getTimeText = (props: TimeRemainingProps) => {
   let result = '';
 
-  for (const [value, unitType] of getTimeRemaining(props.dueTime)) {
-    if (value > 0) {
-      result += `${value}${unitType} `;
-      if (props.simpleDisplay == true) {
-        break;
+  if (getMsRemaining(props.dueTime) > 0) {
+    for (const [value, unitType] of getFormattedTimeReamining(props.dueTime)) {
+      if (value > 0) {
+        result += `${value}${unitType} `;
+        if (props.simpleDisplay) {
+          break;
+        }
       }
     }
-  }
 
-  if ((result == '')) {
+    return result;
+  } else {
     return (
       <span style={{ color: 'red', fontWeight: 'bold', fontSize: '0.75em' }}>
         EXPIRADO
       </span>
     );
-  } else {
-    return result;
   }
 };
 
