@@ -45,7 +45,7 @@ const show = (input: string) => {
 };
 
 const showInfo = (prefix: string, info: string, suffix: string) => {
-  return info != 'undefined' ? `${prefix}} ${info} ${suffix}` : '';
+  return info != 'undefined' ? `${prefix} ${info} ${suffix}` : '';
 };
 
 export const UserInfo = ({ user }: { user: UserInfoProps }) => {
