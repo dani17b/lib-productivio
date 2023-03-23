@@ -1,7 +1,7 @@
 import './userSummary.scss';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 
-interface UserSummaryProps {
+interface UserInfoProps {
   /**
    * Label that contains the user's username
    */
@@ -15,6 +15,10 @@ interface UserSummaryProps {
    * for different purposes in other apps
    */
   userColor: string;
+  /**
+   * User's description
+   */
+  description: string;
   /**
    * User's total points
    */
@@ -33,34 +37,36 @@ interface UserSummaryProps {
   currentTasks: number;
 }
 
-export const UserSummary = (props: UserSummaryProps) => {
+export const UserInfo = ({ user }: { user: UserInfoProps }) => {
   const {
     username,
     userImg,
     userColor,
+    description,
     totalPoints,
     level,
     contactsNumber,
     currentTasks,
-  } = props;
+  } = user;
 
   return (
-    <div className="user-summary">
-      <div className="user-summary__left-column">
-        <div className="user-summary__user-pic">
+    <div className="user-info-summary">
+      <div className="user-info__left-column">
+        <div className="user-info__user-pic">
           <UserPhoto imageSrc={userImg} borderColor={userColor} />
         </div>
       </div>
-      <div className="user-summary__center-column">
-        <div className="user-summary__username"> {username}</div>
-        <div className="user-summary__current-missions">
+      <div className="user-info__center-column">
+        <div className="user-info__username"> {username}</div>
+        <div className="user-info__description">{description}</div>
+        <div className="user-info__current-missions">
           {currentTasks} misiones activas
         </div>
-        <div className="user-summary__user-level">Nivel {level}</div>
+        <div className="user-info__user-level">Nivel {level}</div>
       </div>
-      <div className="user-summary__right-column">
-        <div className="user-summary__contacts">{contactsNumber} contactos</div>
-        <div className="user-summary__total-points">{totalPoints} puntos</div>
+      <div className="user-info__right-column">
+        <div className="user-info__contacts">{contactsNumber} contactos</div>
+        <div className="user-info__total-points">{totalPoints} puntos</div>
       </div>
     </div>
   );
