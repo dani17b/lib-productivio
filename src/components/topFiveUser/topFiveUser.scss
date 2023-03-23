@@ -1,0 +1,28 @@
+@import './../style/vars.scss';
+
+.user {
+  color: $primary-color;
+  font-family: $default-font;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+}
+
+.user-username {
+  font-weight: bold;
+}
+
+.user-position {
+  color: grey;
+}
+
+.user-points {
+  margin-left: 50px;
+}
