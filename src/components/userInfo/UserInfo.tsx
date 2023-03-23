@@ -41,7 +41,7 @@ interface UserInfoProps {
 }
 
 const show = (input: string) => {
-  return input != null ? BLOCK : NONE;
+  return input != null || input != 'undefined' ? BLOCK : NONE;
 };
 
 const showInfo = (prefix: string, info: string, suffix: string) => {
@@ -77,26 +77,29 @@ export const UserInfo = ({ user }: { user: UserInfoProps }) => {
         </div>
         <div
           className="user-info__current-missions"
-          style={{ display: show(currentTasks.toString()) }}
+          style={{ display: show(String(currentTasks)) }}
         >
-          {showInfo('', currentTasks + '', 'misiones activas')}
+          {showInfo('', String(currentTasks), 'misiones activas')}
         </div>
-        <div className="user-info__user-level" style={{ display: show(level) }}>
-          {showInfo('Nivel ', level + '', '')}
+        <div
+          className="user-info__user-level"
+          style={{ display: show(String(level)) }}
+        >
+          {showInfo('Nivel ', String(level), '')}
         </div>
       </div>
       <div className="user-info__right-column">
         <div
           className="user-info__contacts"
-          style={{ display: show(contactsNumber) }}
+          style={{ display: show(String(contactsNumber)) }}
         >
-          {showInfo('', contactsNumber + '', 'contactos')}
+          {showInfo('', String(contactsNumber), 'contactos')}
         </div>
         <div
           className="user-info__total-points"
-          style={{ display: show(totalPoints) }}
+          style={{ display: show(String(totalPoints)) }}
         >
-          {showInfo('', totalPoints + '', 'puntos')}
+          {showInfo('', String(totalPoints), 'puntos')}
         </div>
       </div>
     </div>
