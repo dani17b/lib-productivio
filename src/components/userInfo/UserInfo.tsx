@@ -3,7 +3,8 @@ import { UserPhoto } from '../userPhoto/UserPhoto';
 
 const BLOCK = 'block';
 const NONE = 'none';
-const DEFAULT_COLOR = 'rgb(87, 160, 255)';
+const DEFAULT_COLOR = 'white';
+const DEFAULT_BG_COLOR = 'rgb(87, 160, 255)';
 
 interface UserInfoProps {
   /**
@@ -40,9 +41,13 @@ interface UserInfoProps {
    */
   currentTasks?: number;
   /**
-   * Use the default background
+   * Choose the background color otherwise default color is blue
    */
-  showBackground: boolean;
+  backgroundColor?: string;
+  /**
+   *Choose the text color otherwise default color is white
+   */
+  textColor?: string;
 }
 
 const show = (input: string) => {
@@ -50,12 +55,9 @@ const show = (input: string) => {
 };
 
 const showInfo = (prefix: string, info: string, suffix: string) => {
-  return info != 'undefined' ? `${prefix} ${info} ${suffix}` : '';
+  return info != null ? `${prefix} ${info} ${suffix}` : '';
 };
 
-const setBackground = (isShown: boolean) => {
-  return isShown != true ?{ background: NONE , color: 'black'} : {background: DEFAULT_COLOR};
-};
 export const UserInfo = ({ user }: { user: UserInfoProps }) => {
   const {
     username,
@@ -66,14 +68,19 @@ export const UserInfo = ({ user }: { user: UserInfoProps }) => {
     level,
     contactsNumber,
     currentTasks,
-    showBackground,
+    backgroundColor,
+    textColor,
   } = user;
 
+  const setStyle = () => {
+    return {
+      background: backgroundColor || DEFAULT_BG_COLOR,
+      color: textColor || DEFAULT_COLOR,
+    };
+  };
+
   return (
-    <div
-      className="user-info"
-      style={ setBackground(showBackground) }
-    >
+    <div className="user-info" style={setStyle()}>
       <div className="user-info__left-column">
         <div className="user-info__user-pic">
           <UserPhoto imageSrc={userImg} borderColor={userColor} />
@@ -89,29 +96,29 @@ export const UserInfo = ({ user }: { user: UserInfoProps }) => {
         </div>
         <div
           className="user-info__current-missions"
-          style={{ display: show(String(currentTasks)) }}
+          style={{ display: show(String(currentTasks || '')) }}
         >
-          {showInfo('', String(currentTasks), 'misiones activas')}
+          {showInfo('', String(currentTasks || ''), 'misiones activas')}
         </div>
         <div
           className="user-info__user-level"
-          style={{ display: show(String(level)) }}
+          style={{ display: show(String(level || '')) }}
         >
-          {showInfo('Nivel ', String(level), '')}
+          {showInfo('Nivel ', String(level || ''), '')}
         </div>
       </div>
       <div className="user-info__right-column">
         <div
           className="user-info__contacts"
-          style={{ display: show(String(contactsNumber)) }}
+          style={{ display: show(String(contactsNumber || '')) }}
         >
-          {showInfo('', String(contactsNumber), 'contactos')}
+          {showInfo('', String(contactsNumber || ''), 'contactos')}
         </div>
         <div
           className="user-info__total-points"
-          style={{ display: show(String(totalPoints)) }}
+          style={{ display: show(String(totalPoints || '')) }}
         >
-          {showInfo('', String(totalPoints), 'puntos')}
+          {showInfo('', String(totalPoints || ''), 'puntos')}
         </div>
       </div>
     </div>

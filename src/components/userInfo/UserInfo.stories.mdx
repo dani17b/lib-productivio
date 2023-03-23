@@ -5,7 +5,8 @@ import { UserInfo } from './UserInfo';
 
 # UserInfo
 
-TODO
+This component contains all the information about an specific user. It allows you to delete certain information depending on what you want to display.
+It also allows you to either show a colored background or a White one
 
 <Props of={UserInfo} />
 
@@ -21,13 +22,14 @@ export const Template = (args) => <UserInfo user={args.user} />;
         username: 'Users Name',
         userImg:
           'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png',
-        userColor: 'Users color based on their level',
-        description: 'Users description',
-        totalPoints: 'Users total points',
-        level: 'Users current level',
-        contactsNumber: 'Users total contacts',
-        currentTasks: 'Users tasks/missions in progress',
-        showBackground: 'false',
+        userColor: 'yellow',
+        description: 'this is a brief description by the user',
+        totalPoints: 300,
+        level: 2,
+        contactsNumber: 40,
+        currentTasks: 3,
+        backgroundColor: 'white',
+        textColor: 'grey',
       },
     }}
   >
