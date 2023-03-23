@@ -11,17 +11,35 @@ programmer needs.
 
 <Props of={FormButton} />
 
-export const Template = (args) => <FormButton buttonText={args.buttonText} fontSize={args.fontSize} buttonColor={args.buttonColor}/>;
+export const Template = (args) => (
+  <FormButton
+    buttonText={args.buttonText}
+    fontSize={args.fontSize}
+    buttonColor={args.buttonColor}
+  />
+);
 
 ## Basic
 
 <Canvas>
   <Story
     name="Basic"
+    argTypes={{
+      buttonColor: {
+        table: {
+          defaultValue: { summary: '#1a3891' },
+        },
+      },
+      fontSize: {
+        table: {
+          defaultValue: { summary: 12 },
+        },
+      },
+    }}
     args={{
       buttonText: 'Text displayed inside the button',
       fontSize: 'Changes the font size',
-      buttonColor: 'Changes the buttons color',
+      buttonColor: '#1a3891',
     }}
   >
     {Template.bind({})}
