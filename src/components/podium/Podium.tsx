@@ -1,67 +1,37 @@
 import './podium.scss';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 
+interface User {
+  userImg: string;
+  username: string;
+  userColor: string;
+  userPoints: string;
+}
+
 interface PodiumProps {
-  secondUserImg: string;
-  secondUsername: string;
-  secondUserColor: string;
-  secondUserPoints: string;
-
-  thirdUserImg: string;
-  thirdUsername: string;
-  thirdUserColor: string;
-  thirdUserPoints: string;
-
-  forthUserImg: string;
-  forthUsername: string;
-  forthUserColor: string;
-  forthUserpoints: string;
+  users: User[];
 }
 
 export const Podium = (props: PodiumProps) => {
-  const {
-    secondUserImg,
-    secondUsername,
-    secondUserColor,
-    secondUserPoints,
-    thirdUserImg,
-    thirdUsername,
-    thirdUserColor,
-    thirdUserPoints,
-    forthUserImg,
-    forthUsername,
-    forthUserColor,
-    forthUserpoints,
-  } = props;
+  const { users } = props;
+  debugger;
   return (
     <div className="podium">
-      <div className="podium-bars podium-third-position">
-        <UserPhoto
-          imageSrc={thirdUserImg}
-          borderColor={thirdUserColor}
-        ></UserPhoto>
-        <div className="podium-username">{thirdUsername}</div>
-        <div className="podium-position">3</div>
-        <div className="podium-points">{thirdUserPoints} puntos</div>
-      </div>
-      <div className="podium-bars podium-second-position">
-        <UserPhoto
-          imageSrc={secondUserImg}
-          borderColor={secondUserColor}
-        ></UserPhoto>
-        <div className="podium-username">{secondUsername}</div>
-        <div className="podium-position">2</div>
-        <div className="podium-points">{secondUserPoints} puntos</div>
-      </div>
-      <div className="podium-bars podium-forth-position">
-        <UserPhoto
-          imageSrc={forthUserImg}
-          borderColor={forthUserColor}
-        ></UserPhoto>
-        <div className="podium-username">{forthUsername}</div>
-        <div className="podium-position">4</div>
-        <div className="podium-points">{forthUserpoints} puntos</div>
-      </div>
+      {users.map((user, index) => (
+        <div
+          key={index}
+          className={`podium-bars podium-${
+            index == 0 ? 3 : index == 1 ? 2 : 4
+          }-position`}
+        >
+          <UserPhoto imageSrc={user.userImg} borderColor={user.userColor} />
+          <div className="podium-username">{user.username}</div>
+          <div className="podium-position">
+            {index == 0 ? 3 : index == 1 ? 2 : 4}
+          </div>
+          <div className="podium-points">{user.userPoints} puntos</div>
+        </div>
+      ))}
     </div>
   );
 };
