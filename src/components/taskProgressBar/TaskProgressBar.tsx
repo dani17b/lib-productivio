@@ -21,13 +21,22 @@ export interface TaskProgressProps {
 
 export const TaskProgressBar = (props: TaskProgressProps) => {
   const TEXT_LIMIT = 35;
+  const MAX_LIMIT = 100;
+  const MIN_LIMIT = 0;
   let { percentage, text, parentBackgroundColor, childBackgroundColor } = props;
-
-  if (percentage > 100) {
-    percentage = 100;
+  
+  if(parentBackgroundColor === null){
+    parentBackgroundColor = '#96ff9d';
   }
-  if (percentage < 0) {
-    percentage = 0;
+  if(childBackgroundColor === null){
+    childBackgroundColor = '#00d715';
+  }
+
+  if (percentage > MAX_LIMIT) {
+    percentage = MAX_LIMIT;
+  }
+  if (percentage < MIN_LIMIT) {
+    percentage = MIN_LIMIT;
   }
   const parentStyle = {
     backgroundColor: parentBackgroundColor,
