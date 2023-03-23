@@ -3,6 +3,7 @@ import { UserPhoto } from '../userPhoto/UserPhoto';
 
 const BLOCK = 'block';
 const NONE = 'none';
+const DEFAULT_COLOR = 'rgb(87, 160, 255)';
 
 interface UserInfoProps {
   /**
@@ -21,23 +22,27 @@ interface UserInfoProps {
   /**
    * User's description
    */
-  description: string;
+  description?: string;
   /**
    * User's total points
    */
-  totalPoints: number;
+  totalPoints?: number;
   /**
    * User's current level
    */
-  level: number;
+  level?: number;
   /**
    * User's total contacts
    */
-  contactsNumber: number;
+  contactsNumber?: number;
   /**
    * Total number of current missions/tasks
    */
-  currentTasks: number;
+  currentTasks?: number;
+  /**
+   * Use the default background
+   */
+  showBackground: boolean;
 }
 
 const show = (input: string) => {
@@ -48,6 +53,9 @@ const showInfo = (prefix: string, info: string, suffix: string) => {
   return info != 'undefined' ? `${prefix} ${info} ${suffix}` : '';
 };
 
+const setBackground = (isShown: boolean) => {
+  return isShown != true ?{ background: NONE , color: 'black'} : {background: DEFAULT_COLOR};
+};
 export const UserInfo = ({ user }: { user: UserInfoProps }) => {
   const {
     username,
@@ -58,10 +66,14 @@ export const UserInfo = ({ user }: { user: UserInfoProps }) => {
     level,
     contactsNumber,
     currentTasks,
+    showBackground,
   } = user;
 
   return (
-    <div className="user-info">
+    <div
+      className="user-info"
+      style={ setBackground(showBackground) }
+    >
       <div className="user-info__left-column">
         <div className="user-info__user-pic">
           <UserPhoto imageSrc={userImg} borderColor={userColor} />
@@ -71,7 +83,7 @@ export const UserInfo = ({ user }: { user: UserInfoProps }) => {
         <div className="user-info__username"> {username}</div>
         <div
           className="user-info__description"
-          style={{ display: show(description) }}
+          style={{ display: show(description || '') }}
         >
           {description}
         </div>
