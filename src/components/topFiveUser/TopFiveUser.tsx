@@ -1,7 +1,7 @@
-import './userListRanking.scss';
+import './topFiveUser.scss';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 
-export interface UserListRankingProps {
+export interface TopFiveUserProps {
   userImg: string;
   username: string;
   userColor: string;
@@ -9,7 +9,7 @@ export interface UserListRankingProps {
   position: string;
 }
 
-export const UserListRanking = (props: UserListRankingProps) => {
+export const TopFiveUser = (props: TopFiveUserProps) => {
   const { userImg, username, points, userColor, position } = props;
   return (
     <div className="user">

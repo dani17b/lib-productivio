@@ -1,16 +1,16 @@
 import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
-import { UserListRanking } from './UserListRanking';
+import { TopFiveUser } from './TopFiveUser';
 
-<Meta title="Components/Content/UserListRanking" component={UserListRanking} />
+<Meta title="Components/Content/TopFiveUser" component={TopFiveUser} />
 
-# UserListRanking
+# TopFiveUser
 
 This component shows the profile picture, username and points of one of the top 5 - 10 users of the week. The level of each user will determine the color bordering their profile picture.
 
-<Props of={UserListRanking} />
+<Props of={TopFiveUser} />
 
 export const Template = (args) => (
-  <UserListRanking
+  <TopFiveUser
     position={args.position}
     userImg={args.userImg}
     username={args.username}
