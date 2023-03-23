@@ -9,18 +9,7 @@ TODO
 
 <Props of={UserInfo} />
 
-export const Template = (args) => (
-  <UserInfo
-    username={args.username}
-    userImg={args.userImg}
-    userColor={args.userColor}
-    description={args.description}
-    totalPoints={args.totalPoints}
-    level={args.level}
-    contactsNumber={args.contactsNumber}
-    currentTasks={args.currentTasks}
-  />
-);
+export const Template = (args) => <UserInfo user={args.user} />;
 
 ## Basic
 

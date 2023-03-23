@@ -50,7 +50,7 @@ export const UserInfo = ({ user }: { user: UserInfoProps }) => {
   } = user;
 
   return (
-    <div className="user-info-summary">
+    <div className="user-info">
       <div className="user-info__left-column">
         <div className="user-info__user-pic">
           <UserPhoto imageSrc={userImg} borderColor={userColor} />
