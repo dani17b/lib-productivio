@@ -2,8 +2,8 @@ import './header.scss';
 
 import React, { useRef, useEffect } from 'react';
 import { GrNotification } from 'react-icons/gr';
-const maxNoti = 99;
-const minNoti = 1;
+const MAX_NOTI = 99;
+const MIN_NOTI = 1;
 
 interface HeaderProps {
  count: number;
@@ -16,7 +16,7 @@ export const Header = (props: HeaderProps) => {
 
   useEffect(() => {
     if (elementoContador.current) {
-      if (count < minNoti) {
+      if (count < MIN_NOTI) {
         elementoContador.current.style.display = 'none';
       } else {
         elementoContador.current.style.display = 'flex';
@@ -24,8 +24,8 @@ export const Header = (props: HeaderProps) => {
     }
   }, [count]);
 
-  if (count >= maxNoti) {
-    count = maxNoti;
+  if (count >= MAX_NOTI) {
+    count = MAX_NOTI;
   }
 
   return (
