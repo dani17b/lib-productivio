@@ -1,6 +1,9 @@
 import './userInfo.scss';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 
+const BLOCK = 'block';
+const NONE = 'none';
+
 interface UserInfoProps {
   /**
    * Label that contains the user's username
@@ -37,6 +40,14 @@ interface UserInfoProps {
   currentTasks: number;
 }
 
+const show = (input: string) => {
+  return input != null ? BLOCK : NONE;
+};
+
+const showInfo = (prefix: string, info: string, suffix: string) => {
+  return info != 'undefined' ? `${prefix}} ${info} ${suffix}` : '';
+};
+
 export const UserInfo = ({ user }: { user: UserInfoProps }) => {
   const {
     username,
@@ -58,15 +69,35 @@ export const UserInfo = ({ user }: { user: UserInfoProps }) => {
       </div>
       <div className="user-info__center-column">
         <div className="user-info__username"> {username}</div>
-        <div className="user-info__description">{description}</div>
-        <div className="user-info__current-missions">
-          {currentTasks} misiones activas
+        <div
+          className="user-info__description"
+          style={{ display: show(description) }}
+        >
+          {description}
         </div>
-        <div className="user-info__user-level">Nivel {level}</div>
+        <div
+          className="user-info__current-missions"
+          style={{ display: show(currentTasks.toString()) }}
+        >
+          {showInfo('', currentTasks + '', 'misiones activas')}
+        </div>
+        <div className="user-info__user-level" style={{ display: show(level) }}>
+          {showInfo('Nivel ', level + '', '')}
+        </div>
       </div>
       <div className="user-info__right-column">
-        <div className="user-info__contacts">{contactsNumber} contactos</div>
-        <div className="user-info__total-points">{totalPoints} puntos</div>
+        <div
+          className="user-info__contacts"
+          style={{ display: show(contactsNumber) }}
+        >
+          {showInfo('', contactsNumber + '', 'contactos')}
+        </div>
+        <div
+          className="user-info__total-points"
+          style={{ display: show(totalPoints) }}
+        >
+          {showInfo('', totalPoints + '', 'puntos')}
+        </div>
       </div>
     </div>
   );
