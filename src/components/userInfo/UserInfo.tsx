@@ -1,4 +1,4 @@
-import './userSummary.scss';
+import './userInfo.scss';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 
 interface UserInfoProps {

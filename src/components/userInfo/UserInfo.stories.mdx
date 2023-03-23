@@ -1,19 +1,20 @@
 import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
-import { UserSummary } from './UserSummary';
+import { UserInfo } from './UserInfo';
 
-<Meta title="Components/Content/UserSummary" component={UserSummary} />
+<Meta title="Components/Content/UserInfo" component={UserInfo} />
 
-# UserSummary
+# UserInfo
 
-UserSummary placed in the user's profile page. It contains information relative to the user's missions, total points, contacts...
+TODO
 
-<Props of={UserSummary} />
+<Props of={UserInfo} />
 
 export const Template = (args) => (
-  <UserSummary
+  <UserInfo
     username={args.username}
     userImg={args.userImg}
     userColor={args.userColor}
+    description={args.description}
     totalPoints={args.totalPoints}
     level={args.level}
     contactsNumber={args.contactsNumber}
@@ -27,17 +28,21 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      username: 'Users Name',
-      userImg: 'Users profile pic',
-      userColor: 'Users color based on their level',
-      totalPoints: 'Users total points',
-      level: 'Users current level',
-      contactsNumber: 'Users total contacts',
-      currentTasks: 'Users tasks/missions in progress',
+      user: {
+        username: 'Users Name',
+        userImg:
+          'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png',
+        userColor: 'Users color based on their level',
+        description: 'Users description',
+        totalPoints: 'Users total points',
+        level: 'Users current level',
+        contactsNumber: 'Users total contacts',
+        currentTasks: 'Users tasks/missions in progress',
+      },
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable of={UserSummary} story="Basic" />
+<ArgsTable of={UserInfo} story="Basic" />
