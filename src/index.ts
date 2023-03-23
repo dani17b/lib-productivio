@@ -1,4 +1,3 @@
-export { AddIcon } from './components/addIcon/AddIcon';
 export { Badge } from './components/badge/Badge';
 export { FormButton } from './components/formButton/FormButton';
 export { Header } from './components/header/Header';
