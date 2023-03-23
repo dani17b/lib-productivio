@@ -39,8 +39,8 @@ export const TeamDropdown = (props: TeamDropdownProps) => {
       </div>
       {isExpanded && (
         <div className="dropdown-container__data">
-          {data.map((profileData, index) => (
-            <UserDetails user={profileData.user} />
+          {data.map((data, index) => (
+            <UserDetails user={data} />
           ))}
         </div>
       )}
