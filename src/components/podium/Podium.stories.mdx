@@ -9,22 +9,7 @@ This component will show a podium with the top 2, 3, and 4 users.
 
 <Props of={Podium} />
 
-export const Template = (args) => (
-  <Podium
-    thirdUserImg={args.thirdUserImg}
-    thirdUsername={args.thirdUsername}
-    thirdUserColor={args.thirdUserColor}
-    thirdUserPoints={args.thirdUserPoints}
-    secondUserImg={args.secondUserImg}
-    secondUsername={args.secondUsername}
-    secondUserColor={args.secondUserColor}
-    secondUserPoints={args.secondUserPoints}
-    forthUserImg={args.forthUserImg}
-    forthUsername={args.forthUsername}
-    forthUserColor={args.forthUserColor}
-    forthUserPoints={args.forthUserPoints}
-  />
-);
+export const Template = ({ users }) => <Podium users={users} />;
 
 ## Basic
 
@@ -32,21 +17,29 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      thirdUserImg:
-        'https://elireview.com/wp-content/uploads/2016/12/reed-profile-square.jpg',
-      thirdUserColor: 'Users color',
-      thirdUsername: 'marinasc',
-      thirdUserPoints: '120',
-      secondUserImg:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
-      secondUserColor: 'Users color',
-      secondUsername: 'ricardo84',
-      secondUserPoints: '180',
-      forthUserImg:
-        'https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg',
-      forthUserColor: 'Users color',
-      forthUsername: 'gonzalo00',
-      forthUserPoints: '100',
+      users: [
+        {
+          userImg:
+            'https://elireview.com/wp-content/uploads/2016/12/reed-profile-square.jpg',
+          userColor: 'red',
+          username: 'marinasc',
+          userPoints: '120',
+        },
+        {
+          userImg:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
+          userColor: 'green',
+          username: 'ricardo84',
+          userPoints: '180',
+        },
+        {
+          userImg:
+            'https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg',
+          userColor: 'blue',
+          username: 'gonzalo00',
+          userPoints: '100',
+        },
+      ],
     }}
   >
     {Template.bind({})}
