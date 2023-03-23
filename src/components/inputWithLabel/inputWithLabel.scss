@@ -1,10 +1,13 @@
-.parent {
-  display: flex;
-  flex-direction: column;
-}
+.input {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
 
-textarea {
-  margin-top: 5px;
-  box-shadow: 2px 2px 2px 1px darkgray;
-  resize: none;
+  &__textarea {
+    margin-top: 5px;
+    box-shadow: 2px 2px 2px 1px darkgray;
+    resize: none;
+    border: 1px solid;
+  }
 }
