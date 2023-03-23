@@ -1,5 +1,9 @@
 import './formButton.scss';
 
+const MIN_SIZE = 5;
+const MAX_SIZE = 45;
+const DEFAULT_SIZE = 12;
+
 interface FormButtonProps {
   /**
    * Text contained in the button (e.g: Save, Delete, Cancel...)
@@ -17,9 +21,7 @@ interface FormButtonProps {
 
 export const FormButton = (props: FormButtonProps) => {
   const { buttonText, fontSize, buttonColor } = props;
-  const MIN_SIZE = 5;
-  const MAX_SIZE = 45;
-  const DEFAULT_SIZE = 12;
+
   const buttonFontSize = `${Math.max(
     MIN_SIZE,
     Math.min(MAX_SIZE, fontSize || DEFAULT_SIZE)
