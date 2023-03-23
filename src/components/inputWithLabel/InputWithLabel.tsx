@@ -29,17 +29,18 @@ export const InputWithLabel = (props: InputWithLabelProps) => {
   };
 
   const textAreaStyle = {
-    border: '1px solid' + borderColor,
+    borderColor,
     height,
     width,
   };
   return (
     <>
-      <div className="parent">
+      <div className="input__container">
         <label htmlFor={name} style={labelStyle}>
           {label}
         </label>
         <textarea
+          className="input__textarea"
           id={name}
           name={name}
           style={textAreaStyle}
