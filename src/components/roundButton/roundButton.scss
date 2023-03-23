@@ -2,7 +2,8 @@
     width: 40px;
     height: 40px;
     padding: 20px;
-    background: #1a3891;
+    size: '20px';
+    background-color: #1a3891;
     color: #ffffff;
     display: inline-flex;
     align-items: center;
@@ -15,6 +16,6 @@
   }
   
   .rounded-button:hover {
-    background: #005ac2;
+    background-color: #005ac2;
   }
   
