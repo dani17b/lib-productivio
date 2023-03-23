@@ -1,20 +1,8 @@
-.like-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    cursor: pointer;
-  
-    .heart {
-      position: relative;
-      margin-right: 4px;
+.likes-container {
+  display: flex;
+  align-items: center;
+}
 
-  
-      &::before {
-        content: '🤍';
-      }
-  
-      &.--liked::before {
-        content: '❤️';
-      }
-    }
-  }
+.heart {
+  margin-right: 5px; // Agrega espaciado si el icono está demasiado cerca del texto
+}

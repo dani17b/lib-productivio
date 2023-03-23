@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 import './likes.scss';
 
@@ -16,20 +17,26 @@ export const Likes = ({ totalLikes }: LikesProps) => {
   });
 
   const handleLikeClick = () => {
-    setNumberOfLikes(prevState => prevState + (isLiked ? -1 : 1));
+    setNumberOfLikes((prevState) => prevState + (isLiked ? -1 : 1));
     setIsLiked(!isLiked);
   };
-  
 
   return (
-    <div className="like-container" onClick={handleLikeClick}>
+    <div className="likes-container">
       <animated.span className={`heart ${isLiked ? '--liked' : ''}`}>
+        {isLiked ? (
+          <FaHeart onClick={handleLikeClick} />
+        ) : (
+          <FaRegHeart onClick={handleLikeClick} />
+        )}
+
         <animated.div
           className={`${isLiked ? '--filled' : ''}`}
           style={fillAnimation}
         />
       </animated.span>
-      {numberOfLikes} Likes
+
+      <span>{numberOfLikes} Likes</span>
     </div>
   );
 };
