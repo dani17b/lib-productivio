@@ -7,12 +7,21 @@ export enum MissionStatusEnum {
   EN_CURSO = 'En Curso',
   FINALIZADA = 'Finalizada',
 }
+
+// export interface Task{
+//   taskName: string;
+//   group: string;
+//   deadline: Date;
+//   status: MissionStatusEnum;
+//   percentageCompleted: number;
+// }
+
 export interface MissionBlockProps {
+  // task : Task;
   taskName: string;
   group: string;
   deadline: Date;
   status: MissionStatusEnum;
-  //status: string;
   percentageCompleted: number;
   backgroundColor?: string;
   progressBarColor?: string;
@@ -20,6 +29,7 @@ export interface MissionBlockProps {
 
 export const MissionBlock = (props: MissionBlockProps) => {
   const {
+    // task,
     taskName,
     group,
     deadline,
@@ -30,6 +40,7 @@ export const MissionBlock = (props: MissionBlockProps) => {
   } = props;
 
   let statusColor;
+  //switch (task.status)
   switch (status) {
     case MissionStatusEnum.EN_CURSO:
       statusColor = 'red';
@@ -52,26 +63,47 @@ export const MissionBlock = (props: MissionBlockProps) => {
     <>
       <div className="mission-block__container" style={containerStyle}>
         <div className="mission-block__left">
-          <div className="mission-block__task-name">{taskName}</div>
-          <div className="mission-block__group-name">{group}</div>
+          <div className="mission-block__task-name">
+            {
+              //task.taskName
+              taskName
+            }
+          </div>
+          <div className="mission-block__group-name">
+            {
+              //task.group
+              group
+            }
+          </div>
         </div>
 
         <div className="mission-block__left">
           <div className="mission-block__time-left">
             {
               <TimeRemaining
-                dueTime={new Date(deadline)}
+                dueTime={
+                  new Date(
+                    //task.deadline
+                    deadline
+                  )
+                }
                 simpleDisplay={true}
               />
             }
           </div>
           <div className="mission-block__status" style={statusStyle}>
-            {status}
+            {
+              //task.status
+              status
+            }
           </div>
         </div>
       </div>
       <ProfileProgressBar
-        completed={percentageCompleted}
+        completed={
+          //task.percentageCompleted
+          percentageCompleted
+        }
         bgColor={'white'}
         completedColor={progressBarColor}
       />
