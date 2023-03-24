@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { DateSelect } from './DateSelect';
+
+<Meta title="Components/Content/DateSelect" component={DateSelect} />
+
+# DateSelect
+
+The `DateSelect` component is used to select a date and time using a Material-UI `TextField`.
+
+## Usage
+
+```jsx
+import { DateSelect } from './DateSelect';
+
+<DateSelect />
+```
+
+## Props
+
+<!-- AUTO-GENERATED-CONTENT:START (PROPS) -->
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `defaultValue` | `string` | `{ defaultDateAndTime }` | The default date and time value in the format of "YYYY-MM-DDTHH:mm" |
+| `InputLabelProps` | `object` | `{ shrink: true }` | Props applied to the `InputLabel` element. |
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Examples
+
+<Canvas>
+  <Story
+   name="Default"
+   args={{
+        label: 'Seleccione fecha',
+        defaultDateAndTime: '2023-05-24T10:30',
+   }}
+   >
+    {({label, defaultDateAndTime}) => (
+        <DateSelect 
+            label={label}
+            defaultDateAndTime={defaultDateAndTime}
+        />
+    )}
+  </Story>
+</Canvas>

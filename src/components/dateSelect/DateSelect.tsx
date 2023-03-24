@@ -1,16 +1,45 @@
-import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
+export interface DateSelectProps{
+  /**
+   * Label string for the date time selector 
+   */
+  label: string;
+  /**
+   * Todays date to show as default date 
+   */
+  defaultDateAndTime: string;
+}
 
-export const DateSelect = () => {
-  const [selectedDate, setSelectedDate] = useState(
-    new Date('2019-08-24T22:12:54')
-  );
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
-  const handleDateChange = (date: Date) => {
-    setSelectedDate(date);
-  };
+export const DateSelect = (props: DateSelectProps) => {
+  const {label, defaultDateAndTime} = props;
+  const classes = useStyles();
 
   return (
-    <div></div>
-  ); 
-}
+    <form className={classes.container} noValidate>
+      <TextField
+        id="datetime-local"
+        label={label}
+        type="datetime-local"
+        defaultValue={defaultDateAndTime}
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+    </form>
+  );
+};
