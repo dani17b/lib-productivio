@@ -17,7 +17,14 @@ interface ProgressBarProps {
 }
 
 export function ProfileProgressBar(props: ProgressBarProps) {
-  const { completed, bgColor, completedColor } = props;
+  let { completed, bgColor, completedColor } = props;
+
+  if (completed < 0) {
+    completed = 0;
+  }
+  if (completed > 100) {
+    completed = 100;
+  }
 
   return (
     <div className="progress-bar" style={{ backgroundColor: bgColor }}>
@@ -31,5 +38,3 @@ export function ProfileProgressBar(props: ProgressBarProps) {
     </div>
   );
 }
-
-
