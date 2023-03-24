@@ -19,11 +19,14 @@ interface ProgressBarProps {
 export function ProfileProgressBar(props: ProgressBarProps) {
   let { completed, bgColor, completedColor } = props;
 
-  if (completed < 0) {
-    completed = 0;
+  const MIN_PERCENTAGE = 0;
+  const MAX_PERCENTAGE = 100;
+
+  if (completed < MIN_PERCENTAGE) {
+    completed = MIN_PERCENTAGE;
   }
-  if (completed > 100) {
-    completed = 100;
+  if (completed > MAX_PERCENTAGE) {
+    completed = MAX_PERCENTAGE;
   }
 
   return (
