@@ -10,13 +10,31 @@ It also allows you to either show a colored background or a White one
 
 <Props of={UserInfo} />
 
-export const Template = (args) => <UserInfo user={args.user} />;
+export const Template = (args) => (
+  <UserInfo
+    user={args.user}
+    backgroundColor={args.backgroundColor}
+    textColor={args.textColor}
+  />
+);
 
 ## Basic
 
 <Canvas>
   <Story
     name="Basic"
+    argTypes={{
+      backgroundColor: {
+        table: {
+          defaultValue: { summary: 'rgb(87, 160, 255)' },
+        },
+      },
+      textColor: {
+        table: {
+          defaultValue: { summary: 'grey' },
+        },
+      },
+    }}
     args={{
       user: {
         username: 'Users Name',
@@ -28,9 +46,9 @@ export const Template = (args) => <UserInfo user={args.user} />;
         level: 2,
         contactsNumber: 40,
         currentTasks: 3,
-        backgroundColor: 'white',
-        textColor: 'grey',
       },
+      backgroundColor: '',
+      textColor: '',
     }}
   >
     {Template.bind({})}
