@@ -1,5 +1,7 @@
 import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
 import { NavBar } from './NavBar';
+import { FaHome, FaUserFriends, FaUserAlt } from 'react-icons/fa';
+import { IoMdAdd, IoMdPodium } from 'react-icons/io';
 
 <Meta 
     title="Components/Content/NavBar" 
@@ -11,20 +13,23 @@ This component is the NavBar that is common to all web screens. At the moment it
 
 <Props of={NavBar} />
 
-
-export const Template = (args) => <NavBar parentBackgroundColor={args.parentBackgroundColor} childBackgroundColor={args.childBackgroundColor} icons={args.icons}/>;
-
 ## Basic
+
 <Canvas>
-  <Story 
-    name="Basic"
-    args={{
-        parentBackgroundColor : "#1a3891",
-        childBackgroundColor :"white",
-        
-    }}
-   >
-        {Template.bind({})}
+  <Story name="Basic">
+    {(props) => (
+      <NavBar
+        parentBackgroundColor={props.parentBackgroundColor}
+        childBackgroundColor={props.childBackgroundColor}
+        icons={[
+          FaHome,
+          FaUserFriends,
+          IoMdAdd,
+          IoMdPodium,
+          FaUserAlt
+        ]}
+      />
+    )}
   </Story>
 </Canvas>
 
