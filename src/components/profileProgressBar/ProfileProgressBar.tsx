@@ -17,7 +17,17 @@ interface ProgressBarProps {
 }
 
 export function ProfileProgressBar(props: ProgressBarProps) {
-  const { completed, bgColor, completedColor } = props;
+  let { completed, bgColor, completedColor } = props;
+
+  const MIN_PERCENTAGE = 0;
+  const MAX_PERCENTAGE = 100;
+
+  if (completed < MIN_PERCENTAGE) {
+    completed = MIN_PERCENTAGE;
+  }
+  if (completed > MAX_PERCENTAGE) {
+    completed = MAX_PERCENTAGE;
+  }
 
   return (
     <div className="progress-bar" style={{ backgroundColor: bgColor }}>
@@ -31,5 +41,3 @@ export function ProfileProgressBar(props: ProgressBarProps) {
     </div>
   );
 }
-
-

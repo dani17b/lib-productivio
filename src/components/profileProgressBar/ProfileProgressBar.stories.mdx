@@ -22,9 +22,12 @@ export const Template = (args) => <ProfileProgressBar completed={args.completed}
         completed : 'Percentage completed'
         
     }}
-    controls={{
-        completed: { type: 'range', min: 0, max: 100 }
+     argTypes={{
+      completed: 
+        { control: { type: 'number', min:0, max:100, step: 1 } } 
+      
     }}
+  
    >
         {Template.bind({})}
   </Story>
