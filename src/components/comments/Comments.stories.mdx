@@ -19,7 +19,7 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      comments: ['Comment 1', 'Comment 2', 'Comment 3']
+      comments: [{user: 'User 1', comment: 'Comment 1'}, {user: 'User 2', comment: 'Comment 2'}, {user: 'User 3', comment: 'Comment 3'}]
     }}
   >
     {Template.bind({})}
