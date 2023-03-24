@@ -18,8 +18,21 @@ export const Template = (args) => (
   <Story 
     name="50% - Standard"
      argTypes={{
-      percentage: 
-        { control: { type: 'number', min:0, max:100, step: 1 } } 
+      percentage: {
+         control: {
+           type: 'number', min:0, max:100, step: 1 
+           },
+      },
+      childBackgroundColor: {
+        table: {
+          defaultValue: { summary: '#00d715'},
+        },
+      },
+      parentBackgroundColor: {
+        table: {
+          defaultValue: { summary: '#96ff9d'},
+        },
+      },
       
     }}
    
