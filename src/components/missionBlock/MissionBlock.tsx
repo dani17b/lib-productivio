@@ -29,7 +29,12 @@ export interface MissionBlockProps {
   progressBarColor?: string;
 }
 
+
 export const MissionBlock = (props: MissionBlockProps) => {
+
+  const DEFAULT_PARENT_COLOR = 'azure';
+  const DEFAULT_CHILD_COLOR = 'rgb(105, 228, 222)';
+  
   const {
     // task,
     taskName,
@@ -37,8 +42,8 @@ export const MissionBlock = (props: MissionBlockProps) => {
     deadline,
     status,
     percentageCompleted,
-    backgroundColor = 'azure',
-    progressBarColor = 'rgb(105, 228, 222)',
+    backgroundColor = DEFAULT_PARENT_COLOR,
+    progressBarColor = DEFAULT_CHILD_COLOR,
   } = props;
 
   let statusColor;
