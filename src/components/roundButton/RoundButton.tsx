@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { IconContext } from 'react-icons';
+// import { IconContext } from 'react-icons';
 import {
   FaUserPlus,
   FaPlus,
@@ -20,7 +20,7 @@ export enum IconButtonEnum {
 }
 
 export interface RoundButtonProps {
-  /** 
+  /**
    *   The icon you can pick from the list:
    * -UserPlus
    * -Plus
@@ -47,7 +47,7 @@ export const RoundButton: React.FC<RoundButtonProps> = (props) => {
       onClick();
     }
   };
-  
+
   let IconComponent = FaBan;
   switch (iconName) {
     case 'AddPerson':
@@ -67,8 +67,8 @@ export const RoundButton: React.FC<RoundButtonProps> = (props) => {
       break;
   }
   return (
-    <div className='rounded-button' style={{ backgroundColor: bgColor }}>
-      <IconComponent color="white" size={35} onClick={handleClick}/>
+    <div className="rounded-button" style={{ backgroundColor: bgColor }}>
+      <IconComponent color="white" size={35} onClick={handleClick} />
     </div>
   );
 };
