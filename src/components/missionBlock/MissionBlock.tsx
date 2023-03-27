@@ -2,12 +2,14 @@ import { ProfileProgressBar } from '../profileProgressBar/ProfileProgressBar';
 import { TimeRemaining } from '../timeRemaining/TimeRemaining';
 import './missionBlock.scss';
 
-/* eslint no-unused-vars: 0 */
+
 export enum MissionStatusEnum {
   EN_CURSO = 'En Curso',
   FINALIZADA = 'Finalizada',
 }
 
+
+// TO DO: 
 // export interface Task{
 //   taskName: string;
 //   group: string;
