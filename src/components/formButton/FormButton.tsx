@@ -1,8 +1,13 @@
 import './formButton.scss';
 
+// fontSize default values
 const MIN_SIZE = 5;
 const MAX_SIZE = 45;
 const DEFAULT_SIZE = 12;
+// buttonWidth default values
+const BUTTON_MIN_SIZE = 20;
+const BUTTON_MAX_SIZE = 1000;
+const BUTTON_DEFAULT_SIZE = 40;
 
 interface FormButtonProps {
   /**
@@ -17,15 +22,24 @@ interface FormButtonProps {
    * This prop allows you to change the button's color
    */
   buttonColor?: string;
+  /**
+   * Changes the button's width.
+   */
+  buttonWidth?: number;
 }
 
 export const FormButton = (props: FormButtonProps) => {
-  const { buttonText, fontSize, buttonColor } = props;
+  const { buttonText, fontSize, buttonColor, buttonWidth } = props;
 
   const buttonFontSize = `${Math.max(
     MIN_SIZE,
     Math.min(MAX_SIZE, fontSize || DEFAULT_SIZE)
   )}pt`;
+
+  const buttonWidthLimits = `${Math.max(
+    BUTTON_MIN_SIZE,
+    Math.min(BUTTON_MAX_SIZE, buttonWidth || BUTTON_DEFAULT_SIZE)
+  )}px`;
 
   return (
     <button
@@ -33,6 +47,7 @@ export const FormButton = (props: FormButtonProps) => {
       style={{
         fontSize: buttonFontSize,
         backgroundColor: buttonColor,
+        width: buttonWidthLimits,
       }} /* onClick={TODO lógica} */
     >
       {buttonText}
