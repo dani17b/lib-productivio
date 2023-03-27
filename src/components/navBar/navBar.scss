@@ -1,9 +1,10 @@
 .nav-menu {
   background-color: #1a3891;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
   border-top: 1px solid #ccc;
   align-items: center;
   color: white;
