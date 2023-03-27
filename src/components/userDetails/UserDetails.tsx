@@ -1,33 +1,28 @@
 import './userDetails.scss';
+import { UserPhoto } from '../userPhoto/UserPhoto';
 
 export interface UserDetailsProps {
-  user: {
-    username: string;
-    description: string;
-    score: number; // TODO: if stars are deleted, delete this
-    profileColor: string;
-    img: string;
-  };
+  username: string;
+  description: string;
+  profileColor: string;
+  userImg: string;
 }
 
-export const UserDetails = (props: UserDetailsProps) => {
-  const { user } = props;
+export const UserDetails = ({ user }: { user: UserDetailsProps }) => {
+  const { username, description, profileColor, userImg } = user;
 
   return (
     <div className="user-details">
-      {/* TODO implementar el componente de la foto de prefil */}
       <div className="user-details__pic">
-        <img src={user.img} alt="User Profile" />
+        <UserPhoto imageSrc={userImg} borderColor={profileColor} />
       </div>
       <div className="user-details__info">
         <div className="user-details__info__top">
-          <div className="user-details__info__top__username-star">
-            <p>{user.username}</p>
-            {/* TODO: implementar componente estrellas o borrarlo (como en el prototipo)*/}
-            <p>estrellas</p>
-          </div>
-          <div className="user-details__info__bottom">
-            <p>{user.description}</p>
+          <div className="user-details__info__top__username">{username}</div>
+        </div>
+        <div className="user-details__info__bottom">
+          <div className="user-details__info__bottom_description">
+            <p>{description}</p>
           </div>
         </div>
       </div>

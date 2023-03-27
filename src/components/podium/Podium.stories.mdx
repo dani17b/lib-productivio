@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { Podium } from './Podium';
+
+<Meta title="Components/Content/Podium" component={Podium} />
+
+# Podium
+
+This component will show a podium with the top 2, 3, and 4 users.
+
+<Props of={Podium} />
+
+export const Template = ({ users }) => <Podium users={users} />;
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+    args={{
+      users: [
+        {
+          userImg:
+            'https://elireview.com/wp-content/uploads/2016/12/reed-profile-square.jpg',
+          userColor: 'red',
+          username: 'marinasc',
+          userPoints: '120',
+        },
+        {
+          userImg:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
+          userColor: 'green',
+          username: 'ricardo84',
+          userPoints: '180',
+        },
+        {
+          userImg:
+            'https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg',
+          userColor: 'blue',
+          username: 'gonzalo00',
+          userPoints: '100',
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <ArgsTable story="Basic" />
+</Canvas>

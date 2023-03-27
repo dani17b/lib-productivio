@@ -1,0 +1,56 @@
+@import './../style/vars.scss';
+
+.podium {
+  color: $primary-color;
+  font-family: $default-font;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__bars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 250px;
+    width: 120px;
+    justify-content: space-evenly;
+  }
+
+  &__2-position {
+    background-color: rgb(107, 128, 221);
+  }
+
+  &__3-position {
+    background-color: rgb(159, 174, 241);
+    height: 200px;
+    transform: translateY(25px);
+  }
+
+  &__4-position {
+    background-color: rgb(215, 223, 255);
+    height: 170px;
+    transform: translateY(40px);
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__position {
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: $default-shadow;
+  }
+
+  &__username {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__points {
+    font-size: 14px;
+  }
+}
