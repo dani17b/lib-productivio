@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { postComment } from './PostComment';
+
+<Meta 
+  title="Components/Content/PostComment" 
+  component={postComment}
+/>
+
+# postComment
+
+Documentation for the `postComment` component.
+
+## Props 
+
+<ArgsTable of={postComment} />
+
+## Basic Usage
+
+<Canvas>
+  <Story name="Basic">
+    {() => (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {postComment({
+          commentProps: {
+            height: 50,
+            width: 200,
+            name: 'nameInput',
+            textColor: 'blue',
+            borderColor: 'black',
+            fontSize: 16,
+            imageSrc: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+            photoBorderColor: 'red',
+          },
+        })}
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+
+<ArgsTable story="Basic" />
