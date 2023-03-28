@@ -1,3 +1,4 @@
+export { SelectMenu } from './components/selectMenu/SelectMenu';
 export { Badge } from './components/badge/Badge';
 export { FormButton } from './components/formButton/FormButton';
 export { Header } from './components/header/Header';
