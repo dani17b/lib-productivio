@@ -1,45 +1,32 @@
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import * as React from 'react';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { MobileDateTimePicker } from '@mui/x-date-pickers/MobileDateTimePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import './dateSelect.scss';
 
-export interface DateSelectProps{
+interface Props {
   /**
-   * Label string for the date time selector 
+   * Text for the label
    */
   label: string;
   /**
-   * Todays date to show as default date 
+   * Generic color
    */
-  defaultDateAndTime: string;
+  color?: string;
+  /**
+   * Label FontSize
+   */
+  fontSize?: number;
 }
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
-  },
-}));
-
-export const DateSelect = (props: DateSelectProps) => {
-  const {label, defaultDateAndTime} = props;
-  const classes = useStyles();
+export function DateSelect(props: Props) {
+  const { label, color, fontSize } = props;
+  const commonStyle = { color, fontSize };
 
   return (
-    <form className={classes.container} noValidate>
-      <TextField
-        id="datetime-local"
-        label={label}
-        type="datetime-local"
-        defaultValue={defaultDateAndTime}
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-    </form>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <label style={commonStyle}>{label}</label>
+      <MobileDateTimePicker />
+    </LocalizationProvider>
   );
-};
+}
