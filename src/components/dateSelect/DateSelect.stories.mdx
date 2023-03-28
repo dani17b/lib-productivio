@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { DateSelect }  from './DateSelect';
+
+<Meta title="Components/Content/DateSelect" component={DateSelect}/>
+
+# DateSelect
+
+The DateSelect component is a mobile-friendly date and time picker.
+
+<Props of={DateSelect} />
+
+## Basic
+<Canvas>
+  <Story 
+      name="Basic"
+      args={{
+        label : "Pick a date",
+        fontSize : 16
+      }}
+  >
+    {({label, color, fontSize}) => (
+      <DateSelect 
+        label={label}
+        color={color}
+        fontSize={fontSize}
+      />  
+    )}    
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />
