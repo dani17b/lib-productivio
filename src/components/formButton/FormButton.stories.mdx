@@ -16,6 +16,7 @@ export const Template = (args) => (
     buttonText={args.buttonText}
     fontSize={args.fontSize}
     buttonColor={args.buttonColor}
+    buttonWidth={args.buttonWidth}
   />
 );
 
@@ -35,11 +36,17 @@ export const Template = (args) => (
           defaultValue: { summary: 12 },
         },
       },
+      buttonWidth: {
+        table: {
+          defaultValue: { summary: '40' },
+        },
+      },
     }}
     args={{
       buttonText: 'Text displayed inside the button',
       fontSize: 'Changes the font size',
       buttonColor: '#1a3891',
+      buttonWidth: '40px',
     }}
   >
     {Template.bind({})}
