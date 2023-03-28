@@ -2,7 +2,6 @@ $background-color: #dddddd;
 $item-color: #757575;
 
 .search-bar {
-  margin: 10px;
   background-color: $background-color;
   width: fit-content;
   border-radius: 6px;
@@ -11,21 +10,21 @@ $item-color: #757575;
   padding: 7px;
   justify-content: space-around;
 
-  .search-bar__input {
+  &__input {
     background-color: $background-color;
     border-style: none;
     border-radius: inherit;
   }
 
-  .search-bar__input:focus {
+  &__input:focus {
     outline: none;
   }
 
-  .search-bar__icon {
+  &__icon {
     color: $item-color;
   }
 
-  .search-bar__button {
+  &__button {
     background-color: $background-color;
     outline: none;
     border-style: none;
@@ -34,11 +33,11 @@ $item-color: #757575;
     margin-top: 3px;
   }
 
-  .search-bar__icon-voice {
+  &__icon-voice {
     margin-bottom: 2px;
   }
 
-  .search-bar__button-input {
+  &__button-input {
     display: flex;
     align-items: center;
   }
