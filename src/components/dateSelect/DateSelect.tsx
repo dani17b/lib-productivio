@@ -10,7 +10,7 @@ interface Props {
    */
   label: string;
   /**
-   * Generic color
+   * Label text color 
    */
   color?: string;
   /**
