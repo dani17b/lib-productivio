@@ -23,14 +23,10 @@ export const TaskProgressBar = (props: TaskProgressProps) => {
   const TEXT_LIMIT = 35;
   const MAX_LIMIT = 100;
   const MIN_LIMIT = 0;
+
+  const DEFAULT_PARENT_COLOR = '#96ff9d';
+  const DEFAULT_CHILD_COLOR = '00d715';
   let { percentage, text, parentBackgroundColor, childBackgroundColor } = props;
-  
-  if(parentBackgroundColor === null){
-    parentBackgroundColor = '#96ff9d';
-  }
-  if(childBackgroundColor === null){
-    childBackgroundColor = '#00d715';
-  }
 
   if (percentage > MAX_LIMIT) {
     percentage = MAX_LIMIT;
@@ -39,12 +35,12 @@ export const TaskProgressBar = (props: TaskProgressProps) => {
     percentage = MIN_LIMIT;
   }
   const parentStyle = {
-    backgroundColor: parentBackgroundColor,
+    backgroundColor: parentBackgroundColor || DEFAULT_PARENT_COLOR,
     color: childBackgroundColor,
   };
   const childStyle = {
     width: percentage + '%',
-    backgroundColor: childBackgroundColor,
+    backgroundColor: childBackgroundColor || DEFAULT_CHILD_COLOR,
     color: parentBackgroundColor,
   };
   return (
