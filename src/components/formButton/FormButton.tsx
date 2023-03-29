@@ -32,12 +32,7 @@ interface FormButtonProps {
 
 export const FormButton = (props: FormButtonProps) => {
   const { buttonText, fontSize, buttonColor, buttonWidth, onClick } = props;
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
-    }
-  };
-  
+
   const buttonFontSize = `${Math.max(
     MIN_SIZE,
     Math.min(MAX_SIZE, fontSize || DEFAULT_SIZE)
@@ -51,12 +46,12 @@ export const FormButton = (props: FormButtonProps) => {
   return (
     <button
       className="formButton"
+      onClick={onClick}
       style={{
         fontSize: buttonFontSize,
         backgroundColor: buttonColor,
         width: buttonWidthLimits,
-      }} 
-      onClick={handleClick} 
+      }}
     >
       {buttonText}
     </button>
