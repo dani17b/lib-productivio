@@ -23,7 +23,7 @@ export const VisualComments = ({
 
   return (
     <>
-      <div className="postComment">
+      <div className="visualComment">
         <div className="user-photo">
           <UserPhoto
             imageSrc={imageSrc}
