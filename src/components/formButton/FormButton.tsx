@@ -26,11 +26,18 @@ interface FormButtonProps {
    * Changes the button's width.
    */
   buttonWidth?: number;
+
+  onClick?: () => void;
 }
 
 export const FormButton = (props: FormButtonProps) => {
-  const { buttonText, fontSize, buttonColor, buttonWidth } = props;
-
+  const { buttonText, fontSize, buttonColor, buttonWidth, onClick } = props;
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+  
   const buttonFontSize = `${Math.max(
     MIN_SIZE,
     Math.min(MAX_SIZE, fontSize || DEFAULT_SIZE)
@@ -48,7 +55,8 @@ export const FormButton = (props: FormButtonProps) => {
         fontSize: buttonFontSize,
         backgroundColor: buttonColor,
         width: buttonWidthLimits,
-      }} /* onClick={TODO lógica} */
+      }} 
+      onClick={handleClick} 
     >
       {buttonText}
     </button>
