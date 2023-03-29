@@ -47,7 +47,11 @@ export const InputWithLabel = (props: InputWithLabelProps) => {
           name={name}
           style={textAreaStyle}
           placeholder={placeHolder}
-          onChange={onChange}
+          onChange={(e) => {
+            if (onChange) {
+              onChange(e.target.value);
+            }
+          }}
         ></textarea>
       </div>
     </>
