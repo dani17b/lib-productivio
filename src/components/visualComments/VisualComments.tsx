@@ -3,7 +3,9 @@ import { Likes } from '../likes/Likes';
 import { TimeAgo } from '../timeAgo/TimeAgo';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 import './visualComments.scss';
+
 const date = new Date();
+const DEFAULT_BORDER_COLOR = 'red';
 
 export interface CommentProps {
   imageSrc: string;
@@ -23,11 +25,14 @@ export const VisualComments = ({
     <>
       <div className="postComment">
         <div className="user-photo">
-          <UserPhoto imageSrc={imageSrc} borderColor={photoBorderColor || 'red'} />
+          <UserPhoto
+            imageSrc={imageSrc}
+            borderColor={photoBorderColor || DEFAULT_BORDER_COLOR}
+          />
         </div>
         <div className="data">
           <div className="username">{username}</div>
-          <div className='comment'>{comment}</div>
+          <div className="comment">{comment}</div>
         </div>
         <div className="like-time">
           <div className="time-ago">
