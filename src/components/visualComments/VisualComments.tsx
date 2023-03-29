@@ -23,7 +23,7 @@ export const VisualComments = ({
     <>
       <div className="postComment">
         <div className="user-photo">
-          <UserPhoto imageSrc={imageSrc} borderColor={photoBorderColor || ''} />
+          <UserPhoto imageSrc={imageSrc} borderColor={photoBorderColor || 'red'} />
         </div>
         <div className="data">
           <div className="username">{username}</div>
