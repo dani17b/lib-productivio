@@ -1,0 +1,27 @@
+.postComment {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  
+
+  
+    .data {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+  
+      .username {
+        font-weight: bold;
+      }
+    }
+  
+    .like-time {
+      margin-left: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 20px;
+    }
+  }

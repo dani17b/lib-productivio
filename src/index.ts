@@ -22,3 +22,5 @@ export { UserPhoto } from './components/userPhoto/UserPhoto';
 export { UserInfo } from './components/userInfo/UserInfo';
 export { DateSelect } from './components/dateSelect/DateSelect';
 export { PostComment } from './components/postComment/PostComment';
+export { VisualComments} from './components/visualComments/VisualComments';
+
