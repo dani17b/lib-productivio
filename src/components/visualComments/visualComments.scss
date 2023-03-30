@@ -1,27 +1,43 @@
-.postComment {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  
+.visualComment {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid black;
+  flex-wrap: nowrap;
 
-  
-    .data {
+  .user-photo {
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    margin-top: 5px;
+
+    .username {
+      font-weight: bold;
+    }
+
+    .comment {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      color: grey;
+      margin-left: 5px;
+    }
+
+    .like-time {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      
-  
-      .username {
-        font-weight: bold;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 5px;
+
+      .likes {
+        margin-right: 10px;
       }
     }
-  
-    .like-time {
-      margin-left: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-between;
-      height: 20px;
-    }
   }
+}

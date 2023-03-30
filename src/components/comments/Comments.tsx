@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
 import { FaComments, FaChevronDown } from 'react-icons/fa';
+import { PostComment } from '../postComment/PostComment';
+import { VisualComments } from '../visualComments/VisualComments';
 import './comments.scss';
 
-interface CommentsProps {
-    /**
-   * Array of comments with their corresponding user
-   */
-  comments: { user: string; comment: string }[];
+interface CommentProps {
+  name: string;
+  imageSrc: string;
+  inputText: string;
 }
 
-export const Comments = ({ comments }: CommentsProps) => {
+interface VisualCommentsProps {
+  imageSrc: string;
+  photoBorderColor: string;
+  username: string;
+  comment: string;
+}
+
+export const Comments = ({
+  commentProps,
+  visualCommentsProps,
+  onPostClick,
+}: {
+  commentProps: CommentProps;
+  visualCommentsProps: VisualCommentsProps[];
+  onPostClick: () => void;
+}) => {
   const [showComments, setShowComments] = useState(false);
 
   return (
@@ -25,12 +41,16 @@ export const Comments = ({ comments }: CommentsProps) => {
       </div>
       {showComments && (
         <div>
-          {comments.map((comment) => (
-            <div className="comment">
-              <span className="comment-user">{comment.user}</span>
-              <span className="comment-text">{comment.comment}</span>
-            </div>
-          ))}
+          <div className="Comments">
+            <span className="postComment">
+              <PostComment commentProps={commentProps} onClick={onPostClick} />
+            </span>
+            {visualCommentsProps.map((visualCommentProps, index) => (
+              <span className="visualComment" key={index}>
+                <VisualComments commentProps={visualCommentProps} />
+              </span>
+            ))}
+          </div>
         </div>
       )}
     </div>
