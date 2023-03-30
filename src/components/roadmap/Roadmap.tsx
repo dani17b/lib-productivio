@@ -1,5 +1,14 @@
 import './roadmap.scss';
 
+// Default variables for tasks' dots
+const DOT_TASK_COLOR = '#8394c4';
+const DOT_TASK_HEIGHT = 18;
+const DOT_TASK_WIDTH = 18;
+// Default variables for levels' dots
+const DOT_LEVEL_COLOR = '#1a3891';
+const DOT_LEVEL_HEIGHT = 20;
+const DOT_LEVEL_WIDTH = 20;
+
 enum TaskStatusEnum {
   /**
    * Task in progress
@@ -13,13 +22,17 @@ enum TaskStatusEnum {
 
 interface RoadmapStyle {
   /**
-   * Changes the circle's size depending on the event displayed
+   * Changes the circle's height. The number must be the same as dotWidth's
    */
-  circleSize: number;
+  dotHeight: number;
+  /**
+   * Changes the dot's width. The number must be the same as dotHeight's
+   */
+  dotWidth: number;
   /**
    * Changes the circle's color depending on the event
    */
-  circleColor: string;
+  dotColor: string;
   /**
    * Allows you to change the line's color
    */
@@ -54,7 +67,24 @@ interface RoadmapProps {
 }
 
 export const Roadmap = (props: RoadmapProps) => {
-  const { taskDate, taskName, level, status } = props;
+  const { taskDate, taskName, level, status, style } = props;
+
+  // Set's the dot style depending on whether it is a task or a new level
+  const dotType = () => {
+    if (level == null && level == undefined) {
+      return {
+        background: style.dotColor || DOT_TASK_COLOR,
+        width: style.dotWidth || DOT_TASK_WIDTH,
+        height: style.dotHeight || DOT_TASK_HEIGHT,
+      };
+    } else if (level != null && level != undefined) {
+      return {
+        background: style.dotColor || DOT_LEVEL_COLOR,
+        width: style.dotWidth || DOT_LEVEL_WIDTH,
+        height: style.dotHeight || DOT_LEVEL_HEIGHT,
+      };
+    }
+  };
 
   return (
     <div className="roadmap-container">
@@ -62,7 +92,7 @@ export const Roadmap = (props: RoadmapProps) => {
         <div className="roadmap-container__date">{taskDate.toString()}</div>
       </div>
       <div className="roadmap-container__center-column">
-        <div className="roadmap-container__circle"></div>
+        <div className="roadmap-container__dot" style={dotType()}></div>
         <div className="roadmap-container__line"></div>
       </div>
       <div className="roadmap-container__right-column">
