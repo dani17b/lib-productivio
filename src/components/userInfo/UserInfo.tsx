@@ -64,33 +64,42 @@ export const UserInfo = (props: UserInfoProps) => {
   return (
     <div className="user-info" style={setStyle()}>
       <div className="user-info__left-column">
-        <div className="user-info__user-pic">
+        <div className="user-info__left-column_user-pic">
           <UserPhoto imageSrc={user.userImg} borderColor={user.userColor} />
         </div>
       </div>
       <div className="user-info__center-column">
-        <div className="user-info__username"> {user.username}</div>
+        <div className="user-info__center-column__username">
+          {' '}
+          {user.username}
+        </div>
+
         {user.description && (
-          <div className="user-info__description">{user.description}</div>
-        )}
-        {user.currentTasks && (
-          <div className="user-info__current-missions">
-            {user.currentTasks} misiones
+          <div className="user-info__center-column__description">
+            {user.description}
           </div>
         )}
-
-        {user.level && (
-          <div className="user-info__user-level">Nivel {user.level}</div>
-        )}
+        <div className="user-info__center-column__user-level-mission">
+          {user.level && (
+            <div className="user-info__center-column__user-level-mission__mission">
+              Nivel {user.level}
+            </div>
+          )}
+          {user.currentTasks && (
+            <div className="user-info__center-column__user-level-mission__task">
+              {user.currentTasks} Misiones
+            </div>
+          )}
+        </div>
       </div>
       <div className="user-info__right-column">
         {user.contactsNumber && (
-          <div className="user-info__contacts">
+          <div className="user-info__right-column__contacts">
             {user.contactsNumber} contactos
           </div>
         )}
         {
-          <div className="user-info__total-points">
+          <div className="user-info__right-column__total-points">
             {user.totalPoints} puntos
           </div>
         }
