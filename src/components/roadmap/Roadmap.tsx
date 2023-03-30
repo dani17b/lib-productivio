@@ -54,16 +54,24 @@ interface RoadmapProps {
 }
 
 export const Roadmap = (props: RoadmapProps) => {
-  const { taskDate, taskName, level, status, style } = props;
+  const { taskDate, taskName, level, status } = props;
 
   return (
     <div className="roadmap-container">
-      <div className="roadmap-container__left-column"></div>
+      <div className="roadmap-container__left-column">
+        <div className="roadmap-container__date">{taskDate.toString()}</div>
+      </div>
       <div className="roadmap-container__center-column">
         <div className="roadmap-container__circle"></div>
         <div className="roadmap-container__line"></div>
       </div>
-      <div className="roadmap-container__right-column"></div>
+      <div className="roadmap-container__right-column">
+        <div className="roadmap-container__task-name">
+          {status}
+          {taskName}
+        </div>
+        <div className="roadmap-container__level">Nivel {level}</div>
+      </div>
     </div>
   );
 };
