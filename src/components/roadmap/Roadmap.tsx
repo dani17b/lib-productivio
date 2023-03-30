@@ -69,6 +69,16 @@ interface RoadmapProps {
 export const Roadmap = (props: RoadmapProps) => {
   const { taskDate, taskName, level, status, style } = props;
 
+  // Sets the current date of the task or level up registered
+  const savedDate = () => {
+    let today = new Date(taskDate);
+    let day = today.getDate().toString().padStart(2, '0');
+    let month = (today.getMonth() + 1).toString().padStart(2, '0');
+    let year = today.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  };
+
   // Sets the dot style depending on whether it is a task or a new level
   const dotType = () => {
     if (level == null && level == undefined) {
@@ -96,7 +106,7 @@ export const Roadmap = (props: RoadmapProps) => {
   return (
     <div className="roadmap-container">
       <div className="roadmap-container__left-column">
-        <div className="roadmap-container__date">{taskDate.toString()}</div>
+        <div className="roadmap-container__date">{savedDate()}</div>
       </div>
       <div className="roadmap-container__center-column">
         <div className="roadmap-container__dot" style={dotType()}></div>
