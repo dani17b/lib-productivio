@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { VisualComments } from './VisualComments';
+
+<Meta title="Components/Content/Visual Comments" component={VisualComments} />
+
+# Visual Comments
+
+Componente de comentarios visual.
+
+<Props of={VisualComments} />
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+    args={{
+      commentProps: {
+        imageSrc: 'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png',
+        photoBorderColor: '#FF1493',
+        username: 'Pepe',
+        comment: 'This is a test comment',
+      },
+    }}
+  >
+    {({ commentProps }) => (
+      <VisualComments commentProps={commentProps} />
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Basic" />

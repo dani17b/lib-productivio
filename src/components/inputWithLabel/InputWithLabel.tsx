@@ -9,6 +9,7 @@ export interface InputWithLabelProps {
   borderColor?: string;
   fontSize?: number;
   placeHolder?: string;
+  onChange?: any;
 }
 
 export const InputWithLabel = (props: InputWithLabelProps) => {
@@ -21,6 +22,7 @@ export const InputWithLabel = (props: InputWithLabelProps) => {
     borderColor,
     fontSize,
     placeHolder,
+    onChange,
   } = props;
 
   const labelStyle = {
@@ -45,6 +47,11 @@ export const InputWithLabel = (props: InputWithLabelProps) => {
           name={name}
           style={textAreaStyle}
           placeholder={placeHolder}
+          onChange={(e) => {
+            if (onChange) {
+              onChange(e.target.value);
+            }
+          }}
         ></textarea>
       </div>
     </>

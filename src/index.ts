@@ -1,3 +1,4 @@
+export { SelectMenu } from './components/selectMenu/SelectMenu';
 export { Badge } from './components/badge/Badge';
 export { FormButton } from './components/formButton/FormButton';
 export { Header } from './components/header/Header';
@@ -21,3 +22,6 @@ export { UserDetails } from './components/userDetails/UserDetails';
 export { UserPhoto } from './components/userPhoto/UserPhoto';
 export { UserInfo } from './components/userInfo/UserInfo';
 export { DateSelect } from './components/dateSelect/DateSelect';
+export { PostComment } from './components/postComment/PostComment';
+export { VisualComments} from './components/visualComments/VisualComments';
+

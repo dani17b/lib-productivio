@@ -16,17 +16,30 @@ export const Template = (args) => (
 ## Basic
 <Canvas>
   <Story 
-    name="0% - NO TEXT"
+    name="50% - Standard"
      argTypes={{
-      percentage: 
-        { control: { type: 'number', min:0, max:100, step: 1 } } 
+      percentage: {
+         control: {
+           type: 'number', min:0, max:100, step: 1 
+           },
+      },
+      childBackgroundColor: {
+        table: {
+          defaultValue: { summary: '#00d715'},
+        },
+      },
+      parentBackgroundColor: {
+        table: {
+          defaultValue: { summary: '#96ff9d'},
+        },
+      },
       
     }}
    
     args={{
-        percentage : 0,
-        childBackgroundColor :'red',
-        parentBackgroundColor : 'blue'
+        percentage : 50,
+        childBackgroundColor :'#00d715',
+        parentBackgroundColor : '#96ff9d'
         
     }}
      
@@ -36,5 +49,5 @@ export const Template = (args) => (
   </Story>
 </Canvas>
 
-<ArgsTable story="0% - NO TEXT" />
+<ArgsTable story="50% - Standard" />
 
