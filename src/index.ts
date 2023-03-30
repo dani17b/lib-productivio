@@ -24,4 +24,5 @@ export { DateSelect } from './components/dateSelect/DateSelect';
 export { PostComment } from './components/postComment/PostComment';
 export { VisualComments} from './components/visualComments/VisualComments';
 export {MissionBlock} from './components/missionBlock/MissionBlock';
+export {Loading} from './components/loadingAnimation/Loading';
 
