@@ -69,7 +69,7 @@ interface RoadmapProps {
 export const Roadmap = (props: RoadmapProps) => {
   const { taskDate, taskName, level, status, style } = props;
 
-  // Set's the dot style depending on whether it is a task or a new level
+  // Sets the dot style depending on whether it is a task or a new level
   const dotType = () => {
     if (level == null && level == undefined) {
       return {
@@ -86,6 +86,13 @@ export const Roadmap = (props: RoadmapProps) => {
     }
   };
 
+  // Changes the message on screen depending on the status
+  const setStatus = () => {
+    return status === TaskStatusEnum.FINALIZADA
+      ? `Finalizada tarea ${taskName}`
+      : `Tarea ${taskName} en curso`;
+  };
+
   return (
     <div className="roadmap-container">
       <div className="roadmap-container__left-column">
@@ -96,10 +103,7 @@ export const Roadmap = (props: RoadmapProps) => {
         <div className="roadmap-container__line"></div>
       </div>
       <div className="roadmap-container__right-column">
-        <div className="roadmap-container__task-name">
-          {status}
-          {taskName}
-        </div>
+        <div className="roadmap-container__task-name">{setStatus()}</div>
         <div className="roadmap-container__level">Nivel {level}</div>
       </div>
     </div>
