@@ -11,13 +11,29 @@ const commentProps = {
   inputText: 'Escribe tu comentario aquí...',
 };
 
-const visualCommentProps = {
-  imageSrc:
-    'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
-  photoBorderColor: 'blue',
-  username: 'John Doe',
-  comment: 'This is a great post!',
-};
+const visualCommentsProps = [
+  {
+    imageSrc:
+      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+    photoBorderColor: 'blue',
+    username: 'John Doe',
+    comment: 'This is a great post!',
+  },
+  {
+    imageSrc:
+      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+    photoBorderColor: 'red',
+    username: 'Jane Smith',
+    comment: 'Fantastic content, I loved it!',
+  },
+  {
+    imageSrc:
+      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+    photoBorderColor: 'green',
+    username: 'Bob Johnson',
+    comment: 'This is very useful, thanks for sharing!',
+  },
+];
 
 export const Comments = () => {
   const [showComments, setShowComments] = useState(false);
@@ -37,11 +53,13 @@ export const Comments = () => {
         <div>
           <div className="Comments">
             <span className="postComment">
-              <PostComment commentProps={commentProps} />
+              <PostComment commentProps={commentProps} onClick={() => {}} />
             </span>
-            <span className="visualComment">
-              {<VisualComments commentProps={visualCommentProps} />}
-            </span>
+            {visualCommentsProps.map((visualCommentProps, index) => (
+              <span className="visualComment" key={index}>
+                <VisualComments commentProps={visualCommentProps} />
+              </span>
+            ))}
           </div>
         </div>
       )}
