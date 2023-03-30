@@ -5,7 +5,7 @@ import { Roadmap } from './Roadmap';
 
 # Roadmap
 
-TODO description
+Component tha includes information about the users tasks and level ups
 
 <Props of={Roadmap} />
 
@@ -13,7 +13,7 @@ export const Template = (args) => (
   <Roadmap
     taskDate={args.taskDate}
     taskName={args.taskName}
-    levelName={args.levelName}
+    level={args.level}
     status={args.status}
     style={args.style}
   />
@@ -22,15 +22,22 @@ export const Template = (args) => (
 ## Basic
 
 <Canvas>
-  <Story>
-    name="Basic" argsTypes=
-    {{
-      TODO,
+  <Story
+    name="Basic"
+    args={{
+      taskDate: new Date('2023-03-30T13:00:00.000Z'),
+      taskName: 'Tasks name',
+      level: 3,
+      status: 'EN_CURSO',
+      style: {
+        circleSize: 10,
+        circleColor: 'blue',
+        lineColor: 'grey',
+        lineHeight: 40,
+      },
     }}
-    args
-    {{
-      TODO,
-    }}>{Template.bind({})}
+  >
+    {Template.bind({})}
   </Story>
 </Canvas>
 

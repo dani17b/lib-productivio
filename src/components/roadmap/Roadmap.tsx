@@ -15,7 +15,7 @@ interface RoadmapStyle {
 interface RoadmapProps {
   taskDate: Date;
   taskName?: string;
-  levelName?: string;
+  level?: number;
   status?: TaskStatusEnum;
   style: RoadmapStyle;
 }
