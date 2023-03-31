@@ -6,10 +6,12 @@ import './likes.scss';
 
 interface LikesProps {
   totalLikes: number;
+  likedByMe: boolean;
 }
 
-export const Likes = ({ totalLikes }: LikesProps) => {
-  const [isLiked, setIsLiked] = useState<boolean>(false);
+export const Likes = (props: LikesProps) => {
+  const { likedByMe, totalLikes } = props;
+  const [isLiked, setIsLiked] = useState<boolean>(likedByMe);
   const [numberOfLikes, setNumberOfLikes] = useState<number>(totalLikes);
 
   const fillAnimation = useSpring({

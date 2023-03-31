@@ -34,7 +34,7 @@ export const VisualComments = ({
         <div className="comment">{comment}</div>
         <div className="like-time">
           <div className="likes">
-            <Likes totalLikes={10} />
+            <Likes totalLikes={10} likedByMe={false}/>
           </div>
           <div className="time-ago">
             <TimeAgo createdAt={date} />
