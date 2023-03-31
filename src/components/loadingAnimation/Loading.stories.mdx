@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { Loading } from './Loading';
+
+<Meta title="Components/Animations/Loading" component={Loading} />
+
+# Loading
+
+This animation will show a loading indicator for all loading states.
+
+export const Template = (args) => (
+  <Loading size={args.size} autoplay={args.autoplay} loop={args.loop} />
+);
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+      args={{
+        size: 150,
+        autoplay: true,
+        loop:false,
+      }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Loading} story="Basic" />

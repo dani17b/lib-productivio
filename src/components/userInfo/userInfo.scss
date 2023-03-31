@@ -6,52 +6,76 @@
   width: 100vw;
   height: 100px;
   padding: 5px;
-  color: white;
   position: relative;
+  box-sizing: border-box;
 
   &__left-column {
-    flex: 1;
+    flex: 1 1;
     position: absolute;
-    left: 20px;
+    left: 10px;
+
+    &__user-pic {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   &__center-column {
-    flex: 1;
+    flex: 1 1;
     position: absolute;
-    left: 100px;
-    margin-right: 40px;
+    left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 88px;
+    padding-top: 4px;
+
+    &__username {
+      padding-left: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    &__description {
+      padding-left: 10px;
+      padding-bottom: 4px;
+    }
+
+    &__user-level-mission {
+      font-size: 14px;
+      margin-bottom: 8px;
+      padding-left: 10px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+
+      &__task {
+        padding-right: 70px;
+      }
+    }
   }
 
   &__right-column {
-    flex: 1;
+    flex: 1 1;
     position: absolute;
-    right: 32px;
+    top: 10px;
+    right: 15px;
     text-align: end;
-  }
+    display: flex;
+    flex-direction: column;
+    height: 77px;
+    justify-content: space-between;
+    padding-top: 4px;
 
-  &__username {
-    font-size: 20px;
-    font-weight: bold;
-  }
+    &__contacts {
+      font-size: 14px;
+    }
 
-  &__current-missions {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  &__user-level {
-    font-size: 16px;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-
-  &__contacts {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  &__total-points {
-    font-size: 16px;
-    font-weight: bold;
+    &__total-points {
+      font-size: 14px;
+      padding-bottom: 2px;
+    }
   }
 }

@@ -17,6 +17,7 @@ export { TeamDropdown } from './components/teamDropdown/TeamDropdown';
 export { TimeAgo } from './components/timeAgo/TimeAgo';
 export { TimeRemaining } from './components/timeRemaining/TimeRemaining';
 export { TopOne } from './components/topOne/TopOne';
+export { TopFiveUser } from './components/topFiveUser/TopFiveUser';
 export { UserDetails } from './components/userDetails/UserDetails';
 export { UserPhoto } from './components/userPhoto/UserPhoto';
 export { UserInfo } from './components/userInfo/UserInfo';
@@ -24,3 +25,7 @@ export { DateSelect } from './components/dateSelect/DateSelect';
 export { PostComment } from './components/postComment/PostComment';
 export { VisualComments } from './components/visualComments/VisualComments';
 export { Roadmap } from './components/roadmap/Roadmap';
+export { VisualComments} from './components/visualComments/VisualComments';
+export {MissionBlock} from './components/missionBlock/MissionBlock';
+export {Loading} from './components/loadingAnimation/Loading';
+

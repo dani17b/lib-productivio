@@ -10,7 +10,7 @@ MissionBlock component.
 <Props of={MissionBlock} />
 
 export const Template = (args) => (
-  <MissionBlock taskName = {args.taskName} group = {args.group} deadline = {args.deadline} status={ args.status} percentageCompleted={args.percentageCompleted} backgroundColor={args.backgroundColor} progressBarColor={args.progressBarColor} />
+  <MissionBlock task={args.task} backgroundColor={args.backgroundColor} progressBarColor={args.progressBarColor} />
 );
 
 ## Basic
@@ -18,13 +18,12 @@ export const Template = (args) => (
   <Story 
     name="Basic"   
     args={{
-     // task :{
-        taskName: "Example Name",
-      group: "FP DUAL ALTIA",
-      deadline: new Date("2023-06-27T00:00:00.000Z"),
-      status: "En Curso",
-      percentageCompleted: 80
-   //   }
+      task :{
+        name: "Example Name",
+      team: "FP DUAL ALTIA",
+      endDate: "2023-06-29",
+      progress: 80
+   }
       
     }}
      

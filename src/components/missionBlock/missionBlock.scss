@@ -1,6 +1,6 @@
 .mission-block {
   &__container {
-    padding: 30px;
+    padding: 25px;
     background-color: azure;
     width: 100%;
     box-sizing: border-box;
@@ -9,37 +9,41 @@
   }
 
   &__left {
-
-    width: 65%;
+    width: 75%;
+    position: relative;
   }
 
   &__task-name {
-
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     width: 100%;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
   }
 
   &__group-name {
-
-    font-size: 16px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
   }
 
   &__right {
- 
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 20%;
   }
 
   &__time-left {
     display: flex;
 
     justify-content: flex-end;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   &__status {
-    font-size: 16px;
+    font-size: 14px;
     text-align: right;
-
+    position: absolute;
+    bottom: 0;
   }
 }
