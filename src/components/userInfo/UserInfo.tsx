@@ -4,7 +4,7 @@ import { UserPhoto } from '../userPhoto/UserPhoto';
 const DEFAULT_COLOR = 'white';
 const DEFAULT_BG_COLOR = 'rgb(87, 160, 255)';
 const MAX_LONG = 150;
-const STARt = 0;
+const START = 0;
 
 export interface UserInfoProps {
   user: {
@@ -77,7 +77,7 @@ export const UserInfo = (props: UserInfoProps) => {
 
         {user.description && (
           <div className="user-info__center-column__description">
-            {user.description.slice(STARt, MAX_LONG)}
+            {user.description.slice(START, MAX_LONG)}
           </div>
         )}
         <div className="user-info__center-column__user-level-mission">
