@@ -1,0 +1,46 @@
+.roadmap-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 5px;
+  position: relative;
+
+  &__left-column {
+    flex: 1;
+    position: absolute;
+  }
+
+  &__center-column {
+    flex: 1;
+    position: absolute;
+    left: 95px;
+  }
+
+  &__right-column {
+    flex: 1;
+    flex-direction: row;
+    position: absolute;
+    right: 838px;
+  }
+
+  // Left column elements
+  &__date {
+  }
+
+  // Center column elements
+  &__dot {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  &__line {
+  }
+
+  // Right column elements
+  &__task-name {
+  }
+}
