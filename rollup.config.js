@@ -4,6 +4,7 @@ const typescript = require('@rollup/plugin-typescript');
 const dts = require('rollup-plugin-dts').default;
 const scss = require('rollup-plugin-scss');
 const copy = require('rollup-plugin-copy');
+const json = require('@rollup/plugin-json');
 
 const packageJson = require('./package.json');
 
@@ -23,6 +24,7 @@ module.exports = [
       },
     ],
     plugins: [
+      json(),
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
