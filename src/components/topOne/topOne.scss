@@ -7,53 +7,30 @@
   flex-direction: column;
   align-items: center;
 
-  // .top-one-photo {
-  //   width: 120px;
-  //   height: 120px;
-  //   border-radius: 60px;
-  //   margin-bottom: 15px;
-  // }
-
-  .circle {
-    width: unset;
-    height: unset;
-  }
-
-  .square {
-    width: unset;
-  }
-
-  .top-one-photo {
+  &__photo {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
   }
 
-  .top-one-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .top-one-username {
+  &__username {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
-  .top-one-position {
+  &__position {
     font-size: 28px;
     font-weight: bold;
     text-shadow: $default-shadow;
   }
 
-  .top-one-points {
+  &__points {
     font-size: 14px;
   }
 
-  .top-one-icon-img {
+  &__icon-img {
     width: 5%;
     margin: 0px 20px 20px 20px;
   }
@@ -62,10 +39,17 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
 
-  .top-one-animation {
-    width: 120px;
-    height: 120px;
+    &__animation {
+      width: 120px;
+      height: 120px;
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 }
