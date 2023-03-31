@@ -9,7 +9,8 @@ interface LikesProps {
   likedByMe: boolean;
 }
 
-export const Likes = ({ totalLikes, likedByMe }: LikesProps) => {
+export const Likes = (props: LikesProps) => {
+  const { likedByMe, totalLikes } = props;
   const [isLiked, setIsLiked] = useState<boolean>(likedByMe);
   const [numberOfLikes, setNumberOfLikes] = useState<number>(totalLikes);
 
