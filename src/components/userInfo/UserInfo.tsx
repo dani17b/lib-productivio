@@ -4,7 +4,7 @@ import { UserPhoto } from '../userPhoto/UserPhoto';
 const DEFAULT_COLOR = 'white';
 const DEFAULT_BG_COLOR = 'rgb(87, 160, 255)';
 
-interface UserInfoProps {
+export interface UserInfoProps {
   user: {
     /**
      * Label that contains the user's username

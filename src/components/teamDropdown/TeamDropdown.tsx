@@ -1,7 +1,7 @@
 import './teamDropdown.scss';
 import { useState } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
-import { UserDetails, UserDetailsProps } from '../userDetails/UserDetails';
+import { UserInfo, UserInfoProps } from '../userInfo/UserInfo';
 
 export interface TeamDropdownProps {
   /**
@@ -11,7 +11,7 @@ export interface TeamDropdownProps {
   /**
    * Components to render on dropdown clicked
    */
-  data: UserDetailsProps[];
+  userInfoProps: UserInfoProps[];
   /**
    * Color to the dropdown menu
    */
@@ -23,7 +23,7 @@ const DEFAULT_COLOR = '#1a3891';
 export const TeamDropdown = (props: TeamDropdownProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const { title, data, bgColor } = props;
+  const { title, userInfoProps, bgColor } = props;
 
   return (
     <div>
@@ -39,9 +39,16 @@ export const TeamDropdown = (props: TeamDropdownProps) => {
       </div>
       {isExpanded && (
         <div className="dropdown-container__data">
-          {data.map((data, index) => (
-            <UserDetails user={data} />
-          ))}
+          <>
+            {userInfoProps.map((userInfoProp) => (
+              <UserInfo
+                user={userInfoProp.user}
+                backgroundColor={userInfoProp.backgroundColor}
+                textColor={userInfoProp.textColor}
+              />
+            ))}
+            {console.log(userInfoProps)}
+          </>
         </div>
       )}
     </div>
