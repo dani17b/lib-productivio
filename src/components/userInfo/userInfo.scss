@@ -32,13 +32,15 @@
 
     &__username {
       padding-left: 10px;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
     }
 
     &__description {
       padding-left: 10px;
       padding-bottom: 4px;
+      font-size: 12px;
+      width: 285px;
     }
 
     &__user-level-mission {
@@ -67,7 +69,6 @@
     flex-direction: column;
     height: 77px;
     justify-content: space-between;
-    padding-top: 4px;
 
     &__contacts {
       font-size: 14px;

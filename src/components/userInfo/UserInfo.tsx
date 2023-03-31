@@ -70,7 +70,6 @@ export const UserInfo = (props: UserInfoProps) => {
       </div>
       <div className="user-info__center-column">
         <div className="user-info__center-column__username">
-          {' '}
           {user.username}
         </div>
 
