@@ -23,7 +23,7 @@ interface RoadmapProps {
    */
   difficulty?: number;
   /**
-   * Changes the style depending on whether the condition is true or false
+   * Changes the style depending on whether the element displayed is a task or a level up
    */
   bigStyle: boolean;
 }

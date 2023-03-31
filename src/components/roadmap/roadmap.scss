@@ -25,10 +25,22 @@
     right: 838px;
   }
 
+  // Left column elements
+  &__date {
+  }
+
+  // Center column elements
   &__dot {
     height: 18px;
     width: 18px;
     border-radius: 50%;
     display: inline-block;
+  }
+
+  &__line {
+  }
+
+  // Right column elements
+  &__task-name {
   }
 }
