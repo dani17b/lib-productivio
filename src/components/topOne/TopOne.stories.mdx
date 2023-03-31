@@ -11,8 +11,8 @@ This component will show the profile picture, username and points of the top one
 
 export const Template = (args) => (
   <TopOne
-    userImg={args.userImg}
-    username={args.username}
+    userPicUrl={args.userPicUrl}
+    name={args.name}
     userColor={args.userColor}
     points={args.points}
   />
@@ -24,10 +24,10 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      userImg:
+      userPicUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
       userColor: 'Users color',
-      username: 'ricardo84',
+      name: 'ricardo84',
       points: '180',
     }}
   >
