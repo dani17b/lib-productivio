@@ -15,10 +15,10 @@ export const UserPhoto: React.FC<UserPhotoProps> = ({
   };
 
   return (
-    <div className="square">
-      <div className="circle-image-container">
-        <div className="circle" style={circleStyle}>
-          <img src={imageSrc} alt="User" className="circle-image" />
+    <div className="user-photo">
+      <div className="user-photo__circle-image-container">
+        <div className="user-photo__circle" style={circleStyle}>
+          <img src={imageSrc} alt="User" className="user-photo__circle-image" />
         </div>
       </div>
     </div>
