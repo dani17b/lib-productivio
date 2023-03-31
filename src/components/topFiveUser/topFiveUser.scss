@@ -1,28 +1,22 @@
 @import './../style/vars.scss';
 
-.user {
+.top-five-user {
   color: $primary-color;
   font-family: $default-font;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 300px;
   justify-content: space-between;
-}
 
-.circle {
-  width: 30px;
-  height: 30px;
-}
+  &__username {
+    font-weight: bold;
+  }
 
-.user-username {
-  font-weight: bold;
-}
+  &__position {
+    color: grey;
+  }
 
-.user-position {
-  color: grey;
-}
-
-.user-points {
-  margin-left: 50px;
+  &__points {
+    margin-left: 50px;
+  }
 }

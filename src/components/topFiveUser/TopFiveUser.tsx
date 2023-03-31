@@ -12,13 +12,13 @@ export interface TopFiveUserProps {
 export const TopFiveUser = (props: TopFiveUserProps) => {
   const { userImg, username, points, userColor, position } = props;
   return (
-    <div className="user">
-      <div className="user-position">{position}</div>
-      <div className="user-photo">
+    <div className="top-five-user">
+      <div className="top-five-user__position">{position}</div>
+      <div className="top-five-user__photo">
         <UserPhoto imageSrc={userImg} borderColor={userColor} />
       </div>
-      <div className="user-username">{username}</div>
-      <div className="user-points">{points} pts</div>
+      <div className="top-five-user__username">{username}</div>
+      <div className="top-five-user__points">{points} pts</div>
     </div>
   );
 };

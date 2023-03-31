@@ -14,28 +14,26 @@ export const TopOne = (props: TopOneProps) => {
 
   return (
     <div className="top-one">
-      <div className="top-one-photo">
+      <div className="top-one__photo">
         <UserPhoto imageSrc={userImg} borderColor={userColor} />
       </div>
 
       <div>
         <div className="top-one-animation-details">
           <Player
-            className="top-one-animation"
+            className="top-one-animation-details__animation"
             src="https://assets5.lottiefiles.com/packages/lf20_jR229r.json"
             autoplay
-            loop
           ></Player>
-          <div className="top-one-details">
-            <div className="top-one-username">{username}</div>
-            <div className="top-one-position">1</div>
-            <div className="top-one-points">{points} puntos</div>
+          <div className="top-one-animation-details__details">
+            <div className="top-one__username">{username}</div>
+            <div className="top-one__position">1</div>
+            <div className="top-one__points">{points} puntos</div>
           </div>
           <Player
-            className="top-one-animation"
+            className="top-one-animation-details__animation"
             src="https://assets5.lottiefiles.com/packages/lf20_jR229r.json"
             autoplay
-            loop
           ></Player>
         </div>
       </div>
