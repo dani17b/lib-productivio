@@ -22,7 +22,7 @@ export interface UserInfoProps {
      */
     userColor: string;
     /**
-     * User's description. Max Characters 100
+     * User's description. Max Characters 150
      */
     description?: string;
     /**
