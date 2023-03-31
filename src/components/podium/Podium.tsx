@@ -2,8 +2,8 @@ import './podium.scss';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 
 interface User {
-  userImg: string;
-  username: string;
+  userPicUrl: string;
+  name: string;
   userColor: string;
   userPoints: string;
 }
@@ -29,9 +29,12 @@ export const Podium = (props: PodiumProps) => {
           className={`podium__bars podium__${setIndex(index)}-position`}
         >
           <div className="podium__userphoto">
-            <UserPhoto imageSrc={user.userImg} borderColor={user.userColor} />
+            <UserPhoto
+              imageSrc={user.userPicUrl}
+              borderColor={user.userColor}
+            />
           </div>
-          <div className="podium__username">{user.username}</div>
+          <div className="podium__username">{user.name}</div>
           <div className="podium__position">{setIndex(index)}</div>
           <div className="podium__points">{user.userPoints} puntos</div>
         </div>
