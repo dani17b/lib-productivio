@@ -20,12 +20,15 @@ export interface CommentProps {
   imageSrc: string;
   photoBorderColor?: string;
   inputText?: string;
+  onClick?: () => void;
 }
 
 export const PostComment = ({
   commentProps,
+  onClick,
 }: {
   commentProps: CommentProps;
+  onClick: () => void;
 }) => {
   const {
     label,
@@ -39,8 +42,6 @@ export const PostComment = ({
     photoBorderColor,
     inputText,
   } = commentProps;
-
-  const handleClick = () => {};
 
   return (
     <>
@@ -64,7 +65,7 @@ export const PostComment = ({
           />
         </div>
         <div className="sendButton">
-          <SendButton onClick={handleClick} />
+          <SendButton onClick={onClick} />
         </div>
       </div>
     </>

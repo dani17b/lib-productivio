@@ -21,12 +21,18 @@
   margin-right: 4px;
 }
 
-.comment {
+
+.Comments {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.comment-user {
-  margin-bottom: 4px;
+.postComment {
+  width: 100%;
+}
+
+.visualComment {
+  width: 100%;
 }

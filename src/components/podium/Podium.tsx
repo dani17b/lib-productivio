@@ -21,7 +21,6 @@ const setIndex = (index: number) => {
 
 export const Podium = (props: PodiumProps) => {
   const { users } = props;
-  debugger;
   return (
     <div className="podium">
       {users.map((user, index) => (

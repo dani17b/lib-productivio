@@ -10,7 +10,7 @@ Comments component.
 <Props of={Comments} />
 
 export const Template = (args) => (
-  <Comments comments={args.comments} />
+  <Comments commentProps={args.commentProps} visualCommentsProps={args.visualCommentsProps} />
 );
 
 ## Basic
@@ -19,7 +19,26 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      comments: [{user: 'User 1', comment: 'Comment 1'}, {user: 'User 2', comment: 'Comment 2'}, {user: 'User 3', comment: 'Comment 3'}]
+      
+      commentProps: {
+        name: 'Fulano', 
+        imageSrc: 'https://album.mediaset.es/eimg/2023/03/05/lluvia-de-memes-tras-el-podio-conseguido-por-fernando-alonso-en-barein_ef74.jpg?w=1200&h=900', 
+        inputText: 'Añade un comentario...'},
+      
+      visualCommentsProps: [
+        {
+          imageSrc: 'https://www.motoradictos.com/images/2012/04/196004.jpg', 
+          photoBorderColor: 'red', 
+          username: 'Juanin', 
+          comment: 'Comment 2'
+        }, 
+        {
+          imageSrc: 'https://pbs.twimg.com/media/B1jlwbjCEAA59mx.jpg', 
+          photoBorderColor: 'blue', 
+          username: 'Pepin33', 
+          comment: 'Comment 3'
+        }
+      ]
     }}
   >
     {Template.bind({})}
