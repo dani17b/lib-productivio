@@ -66,12 +66,17 @@ export const Roadmap = (props: RoadmapProps) => {
         <div className="roadmap-container__date">{finishDate()}</div>
       </div>
       <div className="roadmap-container__center-column">
-        <div className="roadmap-container__dot" style={dotType()}></div>
-        <div className="roadmap-container__line"></div>
+        <div className="roadmap-container__dot-line-container">
+          <div className="roadmap-container__dot" style={dotType()}></div>
+          <div className="roadmap-container__line"></div>
+        </div>
       </div>
       <div className="roadmap-container__right-column">
         <div className="roadmap-container__task-name">
-          {name} {difficulty && ` ${difficulty} pts`}
+          {name}
+          <div className="roadmap-container__difficulty">
+            {difficulty && ` ${difficulty} pts`}
+          </div>
         </div>
       </div>
     </div>
