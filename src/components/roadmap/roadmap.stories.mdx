@@ -10,13 +10,7 @@ Component tha includes information about the users tasks and level ups
 <Props of={Roadmap} />
 
 export const Template = (args) => (
-  <Roadmap
-    taskDate={args.taskDate}
-    taskName={args.taskName}
-    level={args.level}
-    status={args.status}
-    style={args.style}
-  />
+  <Roadmap task={args.task} style={args.style} />
 );
 
 ## Basic
@@ -25,10 +19,13 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      taskDate: '2023-03-30',
-      taskName: 'Tasks name',
-      level: 3,
-      status: 'EN_CURSO',
+      task: {
+        taskCreationDate: '2023-03-30',
+        taskStartDate: '2023-03-31',
+        taskFinishDate: '2023-04-10',
+        name: 'Task name',
+        points: 100,
+      },
       style: {
         dotHeight: 18,
         dotWidth: 18,

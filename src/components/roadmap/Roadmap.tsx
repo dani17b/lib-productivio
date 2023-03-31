@@ -9,17 +9,6 @@ import './roadmap.scss';
 // const DOT_LEVEL_HEIGHT = 20;
 // const DOT_LEVEL_WIDTH = 20;
 
-enum TaskStatusEnum {
-  /**
-   * Task in progress
-   */
-  EN_CURSO = 'En Curso',
-  /**
-   * Task is finished
-   */
-  FINALIZADA = 'Finalizada',
-}
-
 interface RoadmapStyle {
   /**
    * Changes the circle's height. The number must be the same as dotWidth's
@@ -43,35 +32,50 @@ interface RoadmapStyle {
   lineHeight: number;
 }
 
+interface Task {
+  /**
+   * Stores the date in which a task was created
+   */
+  taskCreationDate: Date;
+  /**
+   * Stores the date in which a task was started
+   */
+  taskStartDate: Date;
+  /**
+   * Stores the date in which a task was finished
+   */
+  taskFinishDate: Date;
+  /**
+   * Task's name
+   */
+  name: string;
+  /**
+   * Number of points the task is worth
+   */
+  points: number;
+}
+
 interface RoadmapProps {
   /**
-   * Date when the task is updated or a new level is reached
+   * Contains all the attributes necessary to work with a task
    */
-  taskDate: Date;
+  task: Task;
   /**
-   * Task name or description
-   */
-  taskName?: string;
-  /**
-   * Displays the new level once it's reached
-   */
-  level?: number;
-  /**
-   * Allows to change the task status from "EN_CURSO" to "FINALIZADA"
-   */
-  status?: TaskStatusEnum;
-  /**
-   * Various style options that change depending on the information displayed
+   * Style settings
    */
   style: RoadmapStyle;
 }
 
 export const Roadmap = (props: RoadmapProps) => {
-  const { taskDate, taskName, level, status /*style*/ } = props;
+  const { task /* style*/ } = props;
+
+  //TODO encontrar forma de saber cuándo una tarea está activa a o cerrada para
+  //implementar bien la lógica
+  //TODO establecer sistema de puntos y subida de nivel para implementar la lógica del dotType
 
   // Sets the current date of the task or level up registered
-  const savedDate = () => {
-    let today = new Date(taskDate);
+  const startDate = () => {
+    let today = new Date(task.taskStartDate);
     let day = today.getDate().toString().padStart(2, '0');
     let month = (today.getMonth() + 1).toString().padStart(2, '0');
     let year = today.getFullYear();
@@ -79,7 +83,14 @@ export const Roadmap = (props: RoadmapProps) => {
     return `${day}/${month}/${year}`;
   };
 
-  //TODO establecer sistema de puntos y subida de nivel para implementar la lógica del dotType
+  // const finishDate = () => {
+  //   let today = new Date(task.taskFinishDate);
+  //   let day = today.getDate().toString().padStart(2, '0');
+  //   let month = (today.getMonth() + 1).toString().padStart(2, '0');
+  //   let year = today.getFullYear();
+
+  //   return `${day}/${month}/${year}`;
+  // };
 
   // Sets the dot style depending on whether it is a task or a new level
   // const dotType = () => {
@@ -99,24 +110,24 @@ export const Roadmap = (props: RoadmapProps) => {
   // };
 
   // Changes the message on screen depending on the status
-  const setStatus = () => {
-    return status === TaskStatusEnum.FINALIZADA
-      ? `Finalizada tarea ${taskName}`
-      : `Tarea ${taskName} en curso`;
-  };
+  // const setStatus = () => {
+  //   return status === TaskStatusEnum.FINALIZADA
+  //     ? `Finalizada tarea ${taskName}`
+  //     : `Tarea ${taskName} en curso`;
+  // };
 
   return (
     <div className="roadmap-container">
       <div className="roadmap-container__left-column">
-        <div className="roadmap-container__date">{savedDate()}</div>
+        <div className="roadmap-container__date">{startDate()}</div>
       </div>
       <div className="roadmap-container__center-column">
-        <div className="roadmap-container__dot" /* style={dotType()} */></div>
+        <div className="roadmap-container__dot"></div>
         <div className="roadmap-container__line"></div>
       </div>
       <div className="roadmap-container__right-column">
-        <div className="roadmap-container__task-name">{setStatus()}</div>
-        <div className="roadmap-container__level">Nivel {level}</div>
+        <div className="roadmap-container__task-name"></div>
+        <div className="roadmap-container__level"></div>
       </div>
     </div>
   );
