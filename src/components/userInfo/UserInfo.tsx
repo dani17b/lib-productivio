@@ -3,8 +3,10 @@ import { UserPhoto } from '../userPhoto/UserPhoto';
 
 const DEFAULT_COLOR = 'white';
 const DEFAULT_BG_COLOR = 'rgb(87, 160, 255)';
+const MAX_LONG = 150;
+const STARt = 0;
 
-interface UserInfoProps {
+export interface UserInfoProps {
   user: {
     /**
      * Label that contains the user's username
@@ -20,7 +22,7 @@ interface UserInfoProps {
      */
     userColor: string;
     /**
-     * User's description
+     * User's description. Max Characters 100
      */
     description?: string;
     /**
@@ -75,15 +77,10 @@ export const UserInfo = (props: UserInfoProps) => {
 
         {user.description && (
           <div className="user-info__center-column__description">
-            {user.description}
+            {user.description.slice(STARt, MAX_LONG)}
           </div>
         )}
         <div className="user-info__center-column__user-level-mission">
-          {user.level && (
-            <div className="user-info__center-column__user-level-mission__mission">
-              Nivel {user.level}
-            </div>
-          )}
           {user.currentTasks && (
             <div className="user-info__center-column__user-level-mission__task">
               {user.currentTasks} Misiones
@@ -97,11 +94,6 @@ export const UserInfo = (props: UserInfoProps) => {
             {user.contactsNumber} contactos
           </div>
         )}
-        {
-          <div className="user-info__right-column__total-points">
-            {user.totalPoints} puntos
-          </div>
-        }
       </div>
     </div>
   );
