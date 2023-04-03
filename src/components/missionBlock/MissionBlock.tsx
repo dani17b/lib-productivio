@@ -81,9 +81,9 @@ export const MissionBlock = (props: MissionBlockProps) => {
         </div>
       </div>
       <ProfileProgressBar
-        completed={task.progress}
+        progress={task.progress}
         bgColor={'white'}
-        completedColor={progressBarColor}
+        progressColor={progressBarColor}
       />
     </>
   );
