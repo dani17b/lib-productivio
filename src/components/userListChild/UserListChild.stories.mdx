@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
+import { UserListChild } from './UserListChild';
+
+<Meta title="Components/Content/UserListChild" component={UserListChild} />
+
+# UserListChild
+
+<Props of={UserListChild} />
+
+export const Template = (args) => (
+  <UserListChild
+    user={args.user}
+    backgroundColor={args.backgroundColor}
+    textColor={args.textColor}
+  />
+);
+
+## Basic
+
+<Canvas>
+  <Story
+    name="Basic"
+    argTypes={{
+      backgroundColor: {
+        table: {
+          defaultValue: { summary: 'rgb(87, 160, 255)' },
+        },
+      },
+      textColor: {
+        table: {
+          defaultValue: { summary: 'white' },
+        },
+      },
+    }}
+    args={{
+      user: {
+        username: 'Username',
+        userImg:
+          'https://www.semana.com/resizer/AhOjY7VO50nkdLUyhuzX2HcLZuc=/fit-in/768x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png',
+        userColor: 'yellow',
+        description: 'this is a brief description by the user',
+        totalPoints: 300,
+        level: 2,
+        contactsNumber: 40,
+        currentTasks: 3,
+      },
+      backgroundColor: '',
+      textColor: '',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={UserListChild} story="Basic" />
