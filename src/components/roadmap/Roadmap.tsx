@@ -50,6 +50,7 @@ export const Roadmap = (props: RoadmapProps) => {
         background: DOT_TASK_COLOR,
         width: DOT_TASK_WIDTH,
         height: DOT_TASK_HEIGHT,
+        left: 122,
       };
     } else {
       return {
