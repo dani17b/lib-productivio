@@ -1,44 +1,71 @@
 import React from 'react';
 import './profileProgressBar.scss';
 
+const DEFAULT_COLOR = 'black';
+
 interface ProgressBarProps {
   /**
    * The percentage completed
    */
-  completed: number;
+  progress: number;
   /**
-   * The background color of the progress bar
+   * The background
    */
   bgColor: string;
   /**
-   * The color of the completed progress bar
+   * The color for the progress bar
    */
-  completedColor: string;
+  progressColor?: string;
+
+  /**
+   * The level to show it inside the progress bar
+   */
+  level?: number;
+  /**
+   * The poinst to show inside the progress bar
+   */
+
+  points?: number;
+
+  /**
+   * Text color for the level and points. Default black
+   */
+  textColor?: string;
 }
 
 export function ProfileProgressBar(props: ProgressBarProps) {
-  let { completed, bgColor, completedColor } = props;
+  let { progress, bgColor, progressColor, level, points, textColor } = props;
 
-  const MIN_PERCENTAGE = 0;
-  const MAX_PERCENTAGE = 100;
+  const MIN_VALUE = 0;
+  const MAX_VALUE = 100;
 
-  if (completed < MIN_PERCENTAGE) {
-    completed = MIN_PERCENTAGE;
-  }
-  if (completed > MAX_PERCENTAGE) {
-    completed = MAX_PERCENTAGE;
-  }
+  const checkNegative = (value: number) => {
+    return value < MIN_VALUE ? MIN_VALUE : value;
+  };
 
+  progress = checkNegative(progress);
   return (
     <div className="progress-bar" style={{ backgroundColor: bgColor }}>
       <div
-        className="progress-bar-completed"
+        className="progress-bar__progress"
         style={{
-          width: `${completed}%`,
-          backgroundColor: completedColor,
+          width: `${progress > MAX_VALUE ? MAX_VALUE : progress}%`,
+          backgroundColor: progressColor,
         }}
       >
-        <span className="progress-text"> puntos</span>
+        {level && (
+          <span
+            className="progress-bar__progress__text-level"
+            style={{ color: textColor || DEFAULT_COLOR }}
+          >
+            Nivel {checkNegative(level)}{' '}
+            {points && (
+              <span className="progress-bar__progress__text-level__points">
+                {checkNegative(points)}pts
+              </span>
+            )}
+          </span>
+        )}
       </div>
     </div>
   );
