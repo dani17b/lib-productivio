@@ -26,3 +26,4 @@ export { Roadmap } from './components/roadmap/Roadmap';
 export { VisualComments } from './components/visualComments/VisualComments';
 export { MissionBlock } from './components/missionBlock/MissionBlock';
 export { Loading } from './components/loadingAnimation/Loading';
+export { RoundButton } from './components/roundButton/RoundButton';
