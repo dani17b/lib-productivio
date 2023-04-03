@@ -35,7 +35,7 @@ export const NavBar = ({
   };
 
   const setOnClick = (index: number) => {
-    if (onClickFunctions != null && onClickFunctions[index] !== null) {
+    if (onClickFunctions != null && onClickFunctions[index] != null) {
       return onClickFunctions[index];
     }
     return undefined;
@@ -45,13 +45,7 @@ export const NavBar = ({
     <div className="nav-menu" style={parentStyle}>
       <nav className="nav-containers" style={childStyle}>
         {icons.map((Icon, index) => (
-          <div
-            key={index}
-            className="nav-button"
-            onClick={() => {
-              setOnClick(index);
-            }}
-          >
+          <div key={index} className="nav-button" onClick={setOnClick(index)}>
             <Icon />
           </div>
         ))}
