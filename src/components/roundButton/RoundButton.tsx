@@ -9,6 +9,8 @@ import {
   FaFolderPlus,
   FaRedo,
   FaBan,
+  FaSave,
+  
 } from 'react-icons/fa/index';
 import './roundButton.scss';
 
@@ -18,6 +20,7 @@ export enum IconButtonEnum {
   FaListUl,
   FaFolderPlus,
   FaRedo,
+  FaSave,
 }
 
 export interface RoundButtonProps {
@@ -66,6 +69,8 @@ export const RoundButton: React.FC<RoundButtonProps> = (props) => {
     case 'Redo':
       IconComponent = FaRedo;
       break;
+    case 'Save':
+      IconComponent = FaSave;
   }
   return (
     <div className="rounded-button" style={{ backgroundColor: bgColor }}>
