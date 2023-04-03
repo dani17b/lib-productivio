@@ -2,6 +2,8 @@ import React from 'react';
 import './profileProgressBar.scss';
 
 const DEFAULT_COLOR = 'black';
+const MIN_VALUE = 0;
+const MAX_VALUE = 100;
 
 interface ProgressBarProps {
   /**
@@ -16,7 +18,6 @@ interface ProgressBarProps {
    * The color for the progress bar
    */
   progressColor?: string;
-
   /**
    * The level to show it inside the progress bar
    */
@@ -24,9 +25,7 @@ interface ProgressBarProps {
   /**
    * The poinst to show inside the progress bar
    */
-
   points?: number;
-
   /**
    * Text color for the level and points. Default black
    */
@@ -35,33 +34,30 @@ interface ProgressBarProps {
 
 export function ProfileProgressBar(props: ProgressBarProps) {
   let { progress, bgColor, progressColor, level, points, textColor } = props;
+  if (progress < MIN_VALUE) {
+    progress = MIN_VALUE;
+  } else if (progress > MAX_VALUE) {
+    progress = MAX_VALUE;
+  }
 
-  const MIN_VALUE = 0;
-  const MAX_VALUE = 100;
-
-  const checkNegative = (value: number) => {
-    return value < MIN_VALUE ? MIN_VALUE : value;
-  };
-
-  progress = checkNegative(progress);
   return (
     <div className="progress-bar" style={{ backgroundColor: bgColor }}>
       <div
         className="progress-bar__progress"
         style={{
-          width: `${progress > MAX_VALUE ? MAX_VALUE : progress}%`,
+          width: `${progress}%`,
           backgroundColor: progressColor,
         }}
       >
-        {level && (
+        {level !== undefined && level !== MIN_VALUE && (
           <span
             className="progress-bar__progress__text-level"
             style={{ color: textColor || DEFAULT_COLOR }}
           >
-            Nivel {checkNegative(level)}{' '}
-            {points && (
+            Nivel {level}{' '}
+            {points !== undefined && points >= MIN_VALUE && (
               <span className="progress-bar__progress__text-level__points">
-                {checkNegative(points)}pts
+                {points}pts
               </span>
             )}
           </span>
