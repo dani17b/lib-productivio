@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, Props, ArgsTable } from '@storybook/addon-docs';
 import { TeamDropdown, TeamDropdownProps } from './TeamDropdown';
 
-<Meta title="Components/Menus/TeamDropdown" component={TeamDropdown} />
+<Meta title="Components/Content/TeamDropdown" component={TeamDropdown} />
 
 # TeamDropdown
 
@@ -45,8 +45,8 @@ This is a basic example on how to use the component `TeamDropdown`.
       ],
       bgColor: 'yellow'
     }}
->
-    {Template.bind({})}
+  >
+    {(args) => <TeamDropdown {...args} />}
   </Story>
 </Canvas>
 

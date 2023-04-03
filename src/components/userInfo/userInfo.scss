@@ -1,9 +1,10 @@
 .user-info {
+  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100px;
   padding: 5px;
   position: relative;
@@ -32,13 +33,15 @@
 
     &__username {
       padding-left: 10px;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
     }
 
     &__description {
       padding-left: 10px;
       padding-bottom: 4px;
+      font-size: 12px;
+      width: 285px;
     }
 
     &__user-level-mission {
@@ -50,10 +53,6 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: baseline;
-
-      &__task {
-        padding-right: 70px;
-      }
     }
   }
 
@@ -67,15 +66,9 @@
     flex-direction: column;
     height: 77px;
     justify-content: space-between;
-    padding-top: 4px;
 
     &__contacts {
       font-size: 14px;
-    }
-
-    &__total-points {
-      font-size: 14px;
-      padding-bottom: 2px;
     }
   }
 }
