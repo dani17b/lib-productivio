@@ -12,8 +12,8 @@ This component shows the profile picture, username and points of one of the top 
 export const Template = (args) => (
   <TopFiveUser
     position={args.position}
-    userImg={args.userImg}
-    username={args.username}
+    userPicUrl={args.userPicUrl}
+    name={args.name}
     userColor={args.userColor}
     points={args.points}
   />
@@ -26,10 +26,10 @@ export const Template = (args) => (
     name="Basic"
     args={{
       position: '5',
-      userImg:
+      userPicUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX48DTma6JzBvRjAy2fQRZMXZmWq5iNlVryn0S7oc&s',
       userColor: 'Users color',
-      username: 'ricardo84',
+      name: 'ricardo84',
       points: '180',
     }}
   >
