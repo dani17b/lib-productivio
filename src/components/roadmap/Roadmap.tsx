@@ -4,10 +4,13 @@ import './roadmap.scss';
 const DOT_TASK_COLOR = '#8394c4';
 const DOT_TASK_HEIGHT = 18;
 const DOT_TASK_WIDTH = 18;
+const SMALL_DOT_POSITION = 3;
 // Default variables for levels' dots
 const DOT_LEVEL_COLOR = '#1a3891';
 const DOT_LEVEL_HEIGHT = 24;
 const DOT_LEVEL_WIDTH = 24;
+
+const LINE_POSITION = 11;
 
 interface RoadmapProps {
   /**
@@ -26,10 +29,14 @@ interface RoadmapProps {
    * Changes the style depending on whether the element displayed is a task or a level up
    */
   bigStyle: boolean;
+  /**
+   * Changes the line style depending on the dot size
+   */
+  bigLineStyle: boolean;
 }
 
 export const Roadmap = (props: RoadmapProps) => {
-  const { date, name, difficulty, bigStyle } = props;
+  const { date, name, difficulty, bigStyle, bigLineStyle } = props;
 
   // Sets the current date of the finished task or level up registered
   const finishDate = () => {
@@ -50,7 +57,7 @@ export const Roadmap = (props: RoadmapProps) => {
         background: DOT_TASK_COLOR,
         width: DOT_TASK_WIDTH,
         height: DOT_TASK_HEIGHT,
-        left: 3,
+        left: SMALL_DOT_POSITION,
       };
     } else {
       return {
@@ -60,6 +67,8 @@ export const Roadmap = (props: RoadmapProps) => {
       };
     }
   };
+
+  const lineType = () => {};
 
   return (
     <div className="roadmap-container">

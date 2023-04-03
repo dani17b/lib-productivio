@@ -15,6 +15,7 @@ export const Template = (args) => (
     name={args.name}
     difficulty={args.difficulty}
     bigStyle={args.bigStyle}
+    bigLineStyle={args.bigLineStyle}
   />
 );
 
@@ -28,6 +29,7 @@ export const Template = (args) => (
       name: 'Task name',
       difficulty: 100,
       bigStyle: false,
+      bigLineStyle: false,
     }}
   >
     {Template.bind({})}
