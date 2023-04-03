@@ -1,7 +1,7 @@
 .progress-bar {
   width: 100%;
-  height: 20px; 
-
+  height: 20px;
+  position: relative;
   &-completed {
     height: 100%;
     display: flex;
@@ -10,5 +10,43 @@
     color: white;
     font-weight: bold;
     background-color: purple;
+    position: relative;
+  }
+
+  &__progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap; /* Agregamos la propiedad white-space para evitar que el texto se divida en varias líneas */
+
+    &before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #007bff;
+    }
+
+    &after {
+      content: attr(data-progress);
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 5px);
+      color: #007bff;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 }

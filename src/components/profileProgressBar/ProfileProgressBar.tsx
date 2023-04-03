@@ -37,7 +37,9 @@ export function ProfileProgressBar(props: ProgressBarProps) {
           width: `${completed}%`,
           backgroundColor: completedColor,
         }}
-      ></div>
+      >
+        <span className="progress-text"> puntos</span>
+      </div>
     </div>
   );
 }
