@@ -25,7 +25,7 @@
     flex: 1;
     flex-direction: row;
     position: absolute;
-    right: 155px;
+    left: 172px;
   }
 
   // Left column elements
@@ -52,11 +52,9 @@
 
   &__line {
     position: absolute;
-    //TODO ajustar respecto al nav bar una vez implementado en el componente padre
     bottom: calc(100%);
     width: 2px;
-    //TODO ajustar respecto al menú del perfil y el resto de elementos del roadmap una vez implementados
-    height: calc(50% + 66px);
+    height: 66px;
     background-color: rgb(190, 187, 187);
   }
 

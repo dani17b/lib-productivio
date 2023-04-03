@@ -9,8 +9,9 @@ const SMALL_DOT_POSITION = 3;
 const DOT_LEVEL_COLOR = '#1a3891';
 const DOT_LEVEL_HEIGHT = 24;
 const DOT_LEVEL_WIDTH = 24;
-
-const LINE_POSITION = 11;
+// Default small line's variables
+const SMALL_LINE_POSITION = 11;
+const SMALL_LINE_HEIGHT = 38;
 
 interface RoadmapProps {
   /**
@@ -68,7 +69,14 @@ export const Roadmap = (props: RoadmapProps) => {
     }
   };
 
-  const lineType = () => {};
+  const lineType = () => {
+    if (!bigLineStyle) {
+      return {
+        left: SMALL_LINE_POSITION,
+        height: SMALL_LINE_HEIGHT,
+      };
+    }
+  };
 
   return (
     <div className="roadmap-container">
@@ -78,7 +86,7 @@ export const Roadmap = (props: RoadmapProps) => {
       <div className="roadmap-container__center-column">
         <div className="roadmap-container__dot-line-container">
           <div className="roadmap-container__dot" style={dotType()}></div>
-          <div className="roadmap-container__line"></div>
+          <div className="roadmap-container__line" style={lineType()}></div>
         </div>
       </div>
       <div className="roadmap-container__right-column">
