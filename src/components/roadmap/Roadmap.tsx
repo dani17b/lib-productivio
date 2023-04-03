@@ -11,7 +11,6 @@ const DOT_LEVEL_HEIGHT = 24;
 const DOT_LEVEL_WIDTH = 24;
 // Default small line's variables
 const SMALL_LINE_POSITION = 11;
-const SMALL_LINE_HEIGHT = 38;
 
 interface RoadmapProps {
   /**
@@ -30,14 +29,10 @@ interface RoadmapProps {
    * Changes the style depending on whether the element displayed is a task or a level up
    */
   bigStyle: boolean;
-  /**
-   * Changes the line style depending on the dot size
-   */
-  bigLineStyle: boolean;
 }
 
 export const Roadmap = (props: RoadmapProps) => {
-  const { date, name, difficulty, bigStyle, bigLineStyle } = props;
+  const { date, name, difficulty, bigStyle } = props;
 
   // Sets the current date of the finished task or level up registered
   const finishDate = () => {
@@ -69,11 +64,11 @@ export const Roadmap = (props: RoadmapProps) => {
     }
   };
 
+  // Sets the line's positions depending on whether it is for a task or a level
   const lineType = () => {
-    if (!bigLineStyle) {
+    if (!bigStyle) {
       return {
         left: SMALL_LINE_POSITION,
-        height: SMALL_LINE_HEIGHT,
       };
     }
   };
