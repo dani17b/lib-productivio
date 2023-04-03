@@ -2,6 +2,8 @@ import React from 'react';
 import './profileProgressBar.scss';
 
 const DEFAULT_COLOR = 'black';
+const SUFIX = ['', 'K', 'M', 'G'];
+const THOUSAND = 1000;
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
 
@@ -32,6 +34,16 @@ interface ProgressBarProps {
   textColor?: string;
 }
 
+function convertNumber(value: number) {
+  let i = MIN_VALUE;
+  const length = SUFIX.length - 1;
+  while (value >= THOUSAND && i < length) {
+    value /= THOUSAND;
+    i++;
+  }
+  return value.toFixed(1) + SUFIX[i];
+}
+
 export function ProfileProgressBar(props: ProgressBarProps) {
   let { progress, bgColor, progressColor, level, points, textColor } = props;
   if (progress < MIN_VALUE) {
@@ -57,7 +69,7 @@ export function ProfileProgressBar(props: ProgressBarProps) {
             Nivel {level}{' '}
             {points !== undefined && points >= MIN_VALUE && (
               <span className="progress-bar__progress__text-level__points">
-                {points}pts
+                {convertNumber(points)}pts
               </span>
             )}
           </span>
