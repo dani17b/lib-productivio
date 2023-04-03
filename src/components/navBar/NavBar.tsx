@@ -15,12 +15,14 @@ interface NavBarProps {
   parentBackgroundColor?: string;
   childBackgroundColor?: string;
   icons?: IconType[];
+  onClickFunctions?: (() => void)[];
 }
 
 export const NavBar = ({
   parentBackgroundColor,
   childBackgroundColor,
   icons = defaultIcons,
+  onClickFunctions,
 }: NavBarProps) => {
   const parentStyle = {
     backgroundColor: childBackgroundColor,
@@ -32,11 +34,24 @@ export const NavBar = ({
     color: childBackgroundColor,
   };
 
+  const setOnClick = (index: number) => {
+    if (onClickFunctions != null && onClickFunctions[index] !== null) {
+      return onClickFunctions[index];
+    }
+    return undefined;
+  };
+
   return (
     <div className="nav-menu" style={parentStyle}>
       <nav className="nav-containers" style={childStyle}>
         {icons.map((Icon, index) => (
-          <div key={index} className="nav-button">
+          <div
+            key={index}
+            className="nav-button"
+            onClick={() => {
+              setOnClick(index);
+            }}
+          >
             <Icon />
           </div>
         ))}
