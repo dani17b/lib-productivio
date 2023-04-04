@@ -6,6 +6,7 @@ const SUFIX = ['', 'K', 'M', 'G'];
 const THOUSAND = 1000;
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
+const BREAK_VALUE = 24;
 
 interface ProgressBarProps {
   /**
@@ -44,23 +45,22 @@ function convertNumber(value: number) {
   return value.toFixed(1) + SUFIX[i];
 }
 const setDisplay = (input: number, bgColor: string, txColor: string): {} => {
-  // if (input < 25) {
-  return {
-    width: `${input}%`,
-    backgroundColor: bgColor,
-    display: 'block',
-    position: 'absolute',
-    color: txColor,
-  };
-  // } else {
-  //   return {
-  //     width: `${input}%`,
-  //     backgroundColor: bgColor,
-  //     display: 'flex',
-  //     justifyContent: 'center',
-  //     color: txColor,
-  //   };
-  // }
+  if (input > BREAK_VALUE) {
+    return {
+      width: `${input}%`,
+      backgroundColor: bgColor,
+      display: 'flex',
+      justifyContent: 'center',
+      color: txColor,
+    };
+  } else {
+    return {
+      width: `${input}%`,
+      backgroundColor: bgColor,
+      display: 'block',
+      color: txColor,
+    };
+  }
 };
 
 export function ProfileProgressBar(props: ProgressBarProps) {
@@ -83,14 +83,16 @@ export function ProfileProgressBar(props: ProgressBarProps) {
         {level !== undefined && level !== MIN_VALUE && (
           <span
             className="progress-bar__progress__text-level"
-            style={setDisplay(progress, progressColor || 'blue', textColor)}
+            style={setDisplay(
+              progress,
+              progressColor || 'blue',
+              textColor || DEFAULT_COLOR
+            )}
           >
-            Nivel {level}{' '}
+            Nivel {level}
+            {'  '}
             {points !== undefined && points >= MIN_VALUE && (
-              <span
-                className="progress-bar__progress__text-level__points"
-                style={{ color: textColor || DEFAULT_COLOR }}
-              >
+              <span className="progress-bar__progress__text-level__points">
                 {convertNumber(points)}pts
               </span>
             )}
