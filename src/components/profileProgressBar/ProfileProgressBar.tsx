@@ -1,5 +1,6 @@
 import React from 'react';
 import './profileProgressBar.scss';
+import '../style/vars.scss';
 
 const DEFAULT_COLOR = 'black';
 const SUFIX = ['', 'K', 'M', 'G'];
@@ -7,6 +8,7 @@ const THOUSAND = 1000;
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
 const BREAK_VALUE = 24;
+const DEFAULT_PROGRESS_COLOR = '#1a3891;';
 
 interface ProgressBarProps {
   /**
@@ -42,7 +44,7 @@ function convertNumber(value: number) {
     value /= THOUSAND;
     i++;
   }
-  return value.toFixed(1) + SUFIX[i];
+  return `${value.toFixed(1)}${SUFIX[i]}`;
 }
 const setDisplay = (input: number, bgColor: string, txColor: string): {} => {
   if (input > BREAK_VALUE) {
@@ -75,22 +77,19 @@ export function ProfileProgressBar(props: ProgressBarProps) {
     <div className="progress-bar" style={{ backgroundColor: bgColor }}>
       <div
         className="progress-bar__progress"
-        style={{
-          width: `${progress}%`,
-          backgroundColor: progressColor,
-        }}
+        // style={{
+        //   width: `${progress}%`,
+        //   backgroundColor: progressColor,
+        // }}
+        style={setDisplay(
+          progress,
+          progressColor || DEFAULT_PROGRESS_COLOR,
+          textColor || DEFAULT_COLOR
+        )}
       >
         {level !== undefined && level !== MIN_VALUE && (
-          <span
-            className="progress-bar__progress__text-level"
-            style={setDisplay(
-              progress,
-              progressColor || 'blue',
-              textColor || DEFAULT_COLOR
-            )}
-          >
+          <span className="progress-bar__progress__text-level">
             Nivel {level}
-            {'  '}
             {points !== undefined && points >= MIN_VALUE && (
               <span className="progress-bar__progress__text-level__points">
                 {convertNumber(points)}pts

@@ -29,7 +29,9 @@ export const Template = (args) => (
   <Story
     name="Basic"
     args={{
-      progress: 'Percentage completed',
+      progress: 20,
+      bgColor: 'blue',
+      progressColor: 'greenyellow',
     }}
     argTypes={{
       progress: { control: { type: 'number', min: 0, max: 100, step: 1 } },
