@@ -7,7 +7,7 @@ const SUFIX = ['', 'K', 'M', 'G'];
 const THOUSAND = 1000;
 const MIN_VALUE = 0;
 const MAX_VALUE = 100;
-const BREAK_VALUE = 24;
+const BREAK_VALUE = 5;
 const DEFAULT_PROGRESS_COLOR = '#1a3891;';
 
 interface ProgressBarProps {
