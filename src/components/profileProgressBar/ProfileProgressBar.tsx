@@ -43,6 +43,25 @@ function convertNumber(value: number) {
   }
   return value.toFixed(1) + SUFIX[i];
 }
+const setDisplay = (input: number, bgColor: string, txColor: string): {} => {
+  // if (input < 25) {
+  return {
+    width: `${input}%`,
+    backgroundColor: bgColor,
+    display: 'block',
+    position: 'absolute',
+    color: txColor,
+  };
+  // } else {
+  //   return {
+  //     width: `${input}%`,
+  //     backgroundColor: bgColor,
+  //     display: 'flex',
+  //     justifyContent: 'center',
+  //     color: txColor,
+  //   };
+  // }
+};
 
 export function ProfileProgressBar(props: ProgressBarProps) {
   let { progress, bgColor, progressColor, level, points, textColor } = props;
@@ -64,11 +83,14 @@ export function ProfileProgressBar(props: ProgressBarProps) {
         {level !== undefined && level !== MIN_VALUE && (
           <span
             className="progress-bar__progress__text-level"
-            style={{ color: textColor || DEFAULT_COLOR }}
+            style={setDisplay(progress, progressColor || 'blue', textColor)}
           >
             Nivel {level}{' '}
             {points !== undefined && points >= MIN_VALUE && (
-              <span className="progress-bar__progress__text-level__points">
+              <span
+                className="progress-bar__progress__text-level__points"
+                style={{ color: textColor || DEFAULT_COLOR }}
+              >
                 {convertNumber(points)}pts
               </span>
             )}
