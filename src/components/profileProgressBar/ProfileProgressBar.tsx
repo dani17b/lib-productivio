@@ -77,10 +77,6 @@ export function ProfileProgressBar(props: ProgressBarProps) {
     <div className="progress-bar" style={{ backgroundColor: bgColor }}>
       <div
         className="progress-bar__progress"
-        // style={{
-        //   width: `${progress}%`,
-        //   backgroundColor: progressColor,
-        // }}
         style={setDisplay(
           progress,
           progressColor || DEFAULT_PROGRESS_COLOR,
