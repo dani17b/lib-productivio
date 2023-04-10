@@ -4,7 +4,6 @@ import './userPhoto.scss';
 interface UserPhotoProps {
   imageSrc: string;
   borderColor: string;
-  dataTestId?: string;
 }
 
 export const UserPhoto: React.FC<UserPhotoProps> = ({
