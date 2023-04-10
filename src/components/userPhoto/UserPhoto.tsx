@@ -4,6 +4,7 @@ import './userPhoto.scss';
 interface UserPhotoProps {
   imageSrc: string;
   borderColor: string;
+  dataTestId?: string;
 }
 
 export const UserPhoto: React.FC<UserPhotoProps> = ({
@@ -17,8 +18,8 @@ export const UserPhoto: React.FC<UserPhotoProps> = ({
   return (
     <div className="user-photo">
       <div className="user-photo__circle-image-container">
-        <div className="user-photo__circle" style={circleStyle}>
-          <img src={imageSrc} alt="User" className="user-photo__circle-image" />
+        <div className="user-photo__circle" style={circleStyle} >
+          <img src={imageSrc} alt="User" className="user-photo__circle-image" data-testid="user-photo"/>
         </div>
       </div>
     </div>
