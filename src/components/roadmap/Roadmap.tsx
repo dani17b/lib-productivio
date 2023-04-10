@@ -16,7 +16,7 @@ interface RoadmapProps {
   /**
    * Stores the date in which a task was finished or a level was upped
    */
-  date?: Date;
+  date?: string | Date;
   /**
    * Task's name
    */
@@ -80,12 +80,20 @@ export const Roadmap = (props: RoadmapProps) => {
       </div>
       <div className="roadmap-container__center-column">
         <div className="roadmap-container__dot-line-container">
-          <div className="roadmap-container__dot" style={dotType()}></div>
-          <div className="roadmap-container__line" style={lineType()}></div>
+          <div
+            data-testid="dot"
+            className="roadmap-container__dot"
+            style={dotType()}
+          ></div>
+          <div
+            data-testid="line"
+            className="roadmap-container__line"
+            style={lineType()}
+          ></div>
         </div>
       </div>
       <div className="roadmap-container__right-column">
-        <div className="roadmap-container__task-name">
+        <div data-testid="task-name" className="roadmap-container__task-name">
           {name}
           <div className="roadmap-container__difficulty">
             {difficulty && ` ${difficulty} pts`}
