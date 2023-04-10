@@ -14,13 +14,8 @@ export interface CommentProps {
   comment: string;
 }
 
-export const VisualComments = ({
-  commentProps,
-}: {
-  commentProps: CommentProps;
-}) => {
+export const VisualComments = (commentProps: CommentProps) => {
   const { imageSrc, photoBorderColor, username, comment } = commentProps;
-
   return (
     <div className="visualComment">
       <div className="user-photo">

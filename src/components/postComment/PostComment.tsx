@@ -1,12 +1,11 @@
-import React from 'react';
 import { InputWithLabel } from '../inputWithLabel/InputWithLabel';
 import { SendButton } from '../sendButton/SendButton';
 import { UserPhoto } from '../userPhoto/UserPhoto';
 import './postComment.scss';
 
 const DEFAULT_BORDER_COLOR = 'red';
-const DEFAULT_WIDTH = 200;
-const DEFAULT_HEIGHT = 50;
+const DEFAULT_WIDTH = 260;
+const DEFAULT_HEIGHT = 85;
 const DEFAULT_FONT_SIZE = 16;
 
 export interface CommentProps {
@@ -52,7 +51,7 @@ export const PostComment = ({
             borderColor={photoBorderColor || DEFAULT_BORDER_COLOR}
           />
         </div>
-        <div className="input">
+        <div className="postCommentInput">
           <InputWithLabel
             label={label || ''}
             height={height || DEFAULT_HEIGHT}
