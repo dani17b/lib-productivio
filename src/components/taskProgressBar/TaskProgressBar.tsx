@@ -46,6 +46,8 @@ export const TaskProgressBar = (props: TaskProgressProps) => {
       break;
     case percentage < TEXT_LIMIT:
       break;
+    case percentage > (MAX_LIMIT - OPTICAL_ILUSION_FIXER):
+      break;
     default:
       percentage += OPTICAL_ILUSION_FIXER;
       break;
@@ -61,8 +63,8 @@ export const TaskProgressBar = (props: TaskProgressProps) => {
     color: parentBackgroundColor,
   };
   return (
-    <div className="progress_bar_parent" style={parentStyle}>
-      <div className="progress_bar_child" style={childStyle}>
+    <div className="progress_bar_parent" data-testid='progress-bar_parent'style={parentStyle}>
+      <div className="progress_bar_child" data-testid='progress-bar_child' style={childStyle}>
         {percentage >= TEXT_LIMIT && (
           <span style={childStyle}>
             {percentageText(percentage)}% {text}
