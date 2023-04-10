@@ -23,7 +23,7 @@ export const TimeAgo = (props: TimeAgoProps) => {
   });
 
   return (
-    <span className="time" style={{ color: textColor }}>
+    <span className="time" style={{ color: textColor }} data-testid="time-ago">
       {timeAgo.replace('alrededor de', '')}
     </span>
   );
