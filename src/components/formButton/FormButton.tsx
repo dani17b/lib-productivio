@@ -45,6 +45,7 @@ export const FormButton = (props: FormButtonProps) => {
 
   return (
     <button
+      data-testid="button-test"
       className="formButton"
       onClick={onClick}
       style={{
