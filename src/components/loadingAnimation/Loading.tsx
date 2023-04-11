@@ -34,6 +34,7 @@ export const Loading = (props: LoadingAnimationProps) => {
         animationData={LoadingAnimation}
         height={size || DEFAULT_SIZE}
         width={size || DEFAULT_SIZE}
+        data-testid= 'AnimationSVG'
       />
     </div>
   );
