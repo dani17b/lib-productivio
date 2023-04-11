@@ -21,16 +21,21 @@ export interface LoadingAnimationProps {
 export const Loading = (props: LoadingAnimationProps) => {
   const { loop, autoplay, size } = props;
   return (
-    <div style={{ height: size || DEFAULT_SIZE, width: size || DEFAULT_SIZE }}>
+    <div
+      style={{ height: size || DEFAULT_SIZE, width: size || DEFAULT_SIZE }}
+      data-testid='LoadingAnimation'
+    >
       <Lottie
         autoplay={autoplay || false}
         loop={loop || false}
         rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
+          preserveAspectRatio: 'xMidYMid slice',
         }}
         animationData={LoadingAnimation}
         height={size || DEFAULT_SIZE}
-        width={size || DEFAULT_SIZE}/>
+        width={size || DEFAULT_SIZE}
+        data-testid= 'AnimationSVG'
+      />
     </div>
   );
 };
