@@ -20,3 +20,19 @@ test('renders the image with the provided src and border color', () => {
   const circle = screen.getByTestId('user-photo').querySelector('.user-photo__circle');
   expect(circle).toHaveStyle({ borderColor: 'red' });
 });
+
+test('renders the image with the provided src and alt text', () => {
+  render(
+    <Router>
+      <UserPhoto imageSrc="test-image.jpg" borderColor="red" />
+    </Router>
+  );
+
+  const image = screen.getByTestId('User') as HTMLImageElement;
+  expect(image).toBeInTheDocument();
+  expect(image.src).toContain('test-image.jpg');
+  expect(image.alt).toBe('User');
+});
+
+
+
