@@ -53,12 +53,12 @@ export const UserListChild = (props: UserListChildProps) => {
     color: textColor
   };
   return (
-    <div className="user-list-child" style={style}>
+    <div className="user-list-child" data-testid='container'style={style}>
       <div className="user-list-child__img">
-        <UserPhoto imageSrc={user.userImg} borderColor={user.userColor} />
+        <UserPhoto data-testid='img' imageSrc={user.userImg} borderColor={user.userColor} />
       </div>
-      <div className="user-list-child__username" style={usernameStyle}>{user.username}</div>
-      <div className="user-list-child__button" onClick={onClick}>
+      <div className="user-list-child__username" data-testid='username' style={usernameStyle}>{user.username}</div>
+      <div className="user-list-child__button" data-testid='clickable-div'onClick={onClick}>
         X
       </div>
     </div>

@@ -13,12 +13,19 @@ export const TopFiveUser = (props: TopFiveUserProps) => {
   const { userPicUrl, name, points, userColor, position } = props;
   return (
     <div className="top-five-user">
-      <div className="top-five-user__position">{position}</div>
-      <div className="top-five-user__photo">
+      <div className="top-five-user__position" data-testid="user-position">
+        {position}
+      </div>
+      <div className="top-five-user__photo" data-testid="user-test-photo">
         <UserPhoto imageSrc={userPicUrl} borderColor={userColor} />
       </div>
-      <div className="top-five-user__username">{name}</div>
-      <div className="top-five-user__points">{points} pts</div>
+      <div className="top-five-user__username" data-testid="user-name">
+        {name}
+      </div>
+      <div
+        className="top-five-user__points"
+        data-testid="user-points"
+      >{`${points} puntos`}</div>
     </div>
   );
 };

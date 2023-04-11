@@ -27,9 +27,9 @@ export const Likes = (props: LikesProps) => {
     <div className="likes-container">
       <animated.span className={`heart ${isLiked ? '--liked' : ''}`}>
         {isLiked ? (
-          <FaHeart onClick={handleLikeClick} />
+          <FaHeart aria-label="full heart" onClick={handleLikeClick} />
         ) : (
-          <FaRegHeart onClick={handleLikeClick} />
+          <FaRegHeart aria-label="empty heart" onClick={handleLikeClick} />
         )}
 
         <animated.div
